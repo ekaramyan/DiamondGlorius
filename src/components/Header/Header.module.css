@@ -1,17 +1,5 @@
 .Header {
-    max-width: 1900px;
-    height: 100px;
-    margin: 0 auto;
-    padding: 0;
     background-color: #fd9d39;
-}
-
-.HeaderContainer {
-    display: flex;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0;
 }
 
 .Header__logo {

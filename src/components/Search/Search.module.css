@@ -1,6 +1,14 @@
+.SearchContainer {
+    display: flex;
+    align-items: center;
+    max-width: 1900px;
+    margin: 0 auto;
+    padding: 0;
+}
+
 .search__input {
     display: block;
-    width: 650px;
+    width: 500px;
     height: 40px;
     margin-left: 2px;
     margin-top: 10px;
@@ -27,23 +35,21 @@
     color: #fff;
 }
 
-
-.carat__wrapper {
-    display: flex;
-    align-items: center;
-}
-.carat__wrapper_title {
-    display: inline-block;
-    margin-left: 2px;
+.Title {
+    margin-bottom: 10px;
     font-weight: 600;
     font-size: 20px;
-    margin-right: 167px;
 }
 
 .carat__wrapper_input {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.carat__wrapper_inputItem {
     width: 185px;
     height: 30px;
-    margin-right: 10px;
     padding: 0 10px;
 }
 
@@ -68,11 +74,9 @@
 }
 
 .size__title {
-    display: inline-block;
-    margin-left: 2px;
+    display: inline-block; 
     font-weight: 600;
     font-size: 20px;
-    margin-right: 60px;
 }
 
 .size__label {
@@ -83,6 +87,7 @@
     height: 30px;
     border: 1px solid #000;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .size__label:active {
@@ -113,7 +118,6 @@
     height: 30px;
     border: 1px solid #000;
     cursor: pointer;
-    margin-left: 40px;
 }
 
 .color__label:active {
@@ -145,7 +149,6 @@
     height: 30px;
     border: 1px solid #000;
     cursor: pointer;
-    margin-left: 150px;
 }
 
 .clarity__label:active {
@@ -176,7 +179,6 @@
     height: 30px;
     border: 1px solid #000;
     cursor: pointer;
-    margin-left: 197px;
 }
 
 .fl__label:active {
@@ -207,7 +209,6 @@
     height: 30px;
     border: 1px solid #000;
     cursor: pointer;
-    margin-left: 102px;
 }
 
 .colorShade__label:active {
@@ -238,7 +239,6 @@
     height: 30px;
     border: 1px solid #000;
     cursor: pointer;
-    margin-left: 181px;
 }
 
 .lab__label:active {
@@ -255,10 +255,15 @@
 }
 .dis__wrapper_title {
     display: inline-block;
-    margin-left: 2px;
+    margin-top: 30px;
     font-weight: 600;
     font-size: 20px;
-    margin-right: 104px;
+}
+
+.dis__wrapper_title2 {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .dis__wrapper_input {
@@ -266,10 +271,16 @@
     height: 30px;
     margin-right: 10px;
     padding: 0 10px;
+    margin-top: 30px;
 }
 
 .dis__wrapper_price {
-    margin: 0 20px 0 150px;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.dis__wrapper_price2 {
     font-weight: 600;
     font-size: 20px;
 }
@@ -294,7 +305,6 @@
 }
 
 .example__wrapper_price {
-    margin: 0 20px 0 150px;
     font-weight: 600;
     font-size: 20px;
 }
@@ -308,11 +318,6 @@
     border: 1px #ffcb87 solid
 }
 
-.cutItem__wrapper {
-    display: flex;
-    align-items: center;
-}
-
 .cutItem__label {
     display: flex;
     align-items: center;
@@ -321,8 +326,6 @@
     height: 35px;
     border: 1px solid #000;
     cursor: pointer;
-    margin-left: 222px;
-    margin-top: 30px;
     font-size: 14px;
 }
 
@@ -342,8 +345,6 @@
     height: 35px;
     border: 1px solid #000;
     cursor: pointer;
-    margin-left: 10px;
-    margin-top: 30px;
     font-size: 14px;
 }
 
@@ -363,8 +364,6 @@
     height: 35px;
     border: 1px solid #000;
     cursor: pointer;
-    margin-left: 10px;
-    margin-top: 30px;
     font-size: 14px;
 }
 
@@ -384,8 +383,6 @@
     height: 35px;
     border: 1px solid #000;
     cursor: pointer;
-    margin-left: 30px;
-    margin-top: 30px;
     font-size: 14px;
 }
 
@@ -403,8 +400,7 @@
 }
 
 .cut__title {
-    display: inline-block;
-    margin-left: 2px;
+    margin-bottom: 10px;
     font-weight: 600;
     font-size: 20px;
 }
@@ -417,7 +413,7 @@
     height: 30px;
     border: 1px solid #000;
     cursor: pointer;
-    margin-left: 181px;
+    margin-bottom: 10px;
 }
 
 .cut__label:active {
@@ -430,11 +426,10 @@
 
 .cutItem1__title {
     display: inline-block;
-    margin-left: 2px;
     font-weight: 600;
     font-size: 20px;
-    margin-left: 320px;
     font-size: 17px;
+    margin-bottom: 10px;
 }
 
 .cutItem1__label {
@@ -445,8 +440,8 @@
     height: 30px;
     border: 1px solid #000;
     cursor: pointer;
-    margin-left: 10px;
     font-size: 15px;
+    margin-bottom: 10px;
 }
 
 .cutItem1__label:active {
@@ -490,10 +485,8 @@
 
 .polishItem1__title {
     display: inline-block;
-    margin-left: 2px;
     font-weight: 600;
     font-size: 20px;
-    margin-left: 311px;
     font-size: 17px;
 }
 
@@ -643,4 +636,44 @@
 
 .milkyItem1__input {
     display: none;
+}
+
+.cutItem__wrapper {
+    display: flex;
+    gap: 10px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.cutItem5__title {
+    display: inline-block;
+    width: 60px;
+    font-weight: 600;
+    font-size: 20px;
+    font-size: 17px;
+    margin-top: 22px;
+}
+
+.cutItem4__title {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 20px;
+    font-size: 17px;
+    margin-top: 16px;
+}
+
+.cutItem3__title {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 20px;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.cutItem2__title {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 20px;
+    font-size: 17px;
+    margin-top: 6px;
 }
