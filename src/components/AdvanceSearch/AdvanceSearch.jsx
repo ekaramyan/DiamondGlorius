@@ -3,8 +3,7 @@ import styles from '../AdvanceSearch/AdvanceSearch.module.css'
 
 export default function AdvanceSearch() {
   return (
-    <>
-        <div className={styles.AdvanceSearchContainer}>
+    <>     
             <h1 className={styles.AdvanceSearch__title}>Advance Search</h1>
             <p className={styles.AdvanceSearch__subtitle}>Parameter</p>
 
@@ -40,7 +39,6 @@ export default function AdvanceSearch() {
                 <input className={styles.dia__wrapper_input} placeholder='От' type="text" />
                 <input className={styles.dia__wrapper_input} placeholder='До' type="text" />
             </div>
-        </div>
     </>
   )
 }

@@ -1,27 +1,28 @@
 .Header {
-    background-color: #fd9d39;
+	background-color: #fd9d39;
 }
 
 .Header__logo {
-    display: inline-block;
-    padding-top: 7px;
+	display: inline-block;
+	padding-top: 7px;
 }
 
 .header__title {
-    display: inline-block;
-    margin-left: 20px;
-    color: #fff;
-    margin-right: 200px;
+	display: inline-block;
+	margin-left: 20px;
+	color: #fff;
+	margin-right: 200px;
 }
 
 .header__link {
-    margin-left: 20px;
+	margin-left: 20px;
 }
 
 .header__button {
-    background: url(https://www.gloriousdiamonds.net/application/public/images/diamonds/w-1.png) no-repeat center center;
-    background-color: #fff;
-    margin-top: 40px;
-    width: 85px;
-    height: 75px;
+	background: url(https://www.gloriousdiamonds.net/application/public/images/diamonds/w-1.png)
+		no-repeat center center;
+	background-color: #fff;
+	margin-top: 40px;
+	width: 85px;
+	height: 75px;
 }

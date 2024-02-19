@@ -1,21 +1,44 @@
 import styles from './Search.module.css'
 import { Row, Col, Container } from 'react-bootstrap'
+import AdvanceSearch from '../AdvanceSearch/AdvanceSearch'
+import Other from '../Other/Other'
 import CircleButton from '../UI/CircleButton'
 
 export default function Search() {
 	const menuTabs = [
-		{ id: 0, title: 'Карат' },
-		{ id: 1, title: 'Размерная группа' },
-		{ id: 2, title: 'Белый | Необычный' },
-		{ id: 3, title: 'Чистота' },
+		{ id: 0, title: 'Carat' },
+		{ id: 1, title: 'size group' },
+		{ id: 2, title: 'White | fancy' },
+		{ id: 3, title: 'clarity' },
 		{ id: 4, title: 'FL' },
-		{ id: 5, title: 'Цвет оттенка' },
+		{ id: 5, title: 'color shade' },
 		{ id: 6, title: 'LAB' },
 	]
 
+	const diamondShapes = [
+		{ id: 0, text: 'All', imageSource: '' },
+		{
+			id: 1,
+			text: 'round',
+			imageSource:
+				'https://www.gloriousdiamonds.net/application/public/images/diamonds/w-1.png',
+		},
+		{ id: 2, text: 'heart', imageSource: '' },
+		{ id: 3, text: 'pear', imageSource: '' },
+		{ id: 4, text: 'emerald', imageSource: '' },
+		{ id: 5, text: 'cushion', imageSource: '' },
+		{ id: 6, text: 'princess', imageSource: '' },
+		{ id: 7, text: 'oval', imageSource: '' },
+		{ id: 8, text: 'marquise', imageSource: '' },
+		{ id: 9, text: 'sq. emerald', imageSource: '' },
+		{ id: 7, text: 'l radiant', imageSource: '' },
+		{ id: 8, text: 'cushion mbr', imageSource: '' },
+		{ id: 9, text: 'others', imageSource: '' },
+	]
+
 	return (
-		<>
-			<Container fluid>
+		<div style={{ background: '#f1e5d2' }}>
+			<Container fluid style={{ maxWidth: '1400px' }}>
 				<Row>
 					<Col md={4}>
 						<label>
@@ -29,13 +52,14 @@ export default function Search() {
 				</Row>
 
 				<Row>
-					<Col md={4}>
-						<CircleButton
-							text={'Круг'}
-							imageSource={
-								'https://www.gloriousdiamonds.net/application/public/images/diamonds/w-1.png'
-							}
-						></CircleButton>
+					<Col md={4} style={{ width: '100%', display: 'flex' }}>
+						{diamondShapes.map(diamondShape => (
+							<CircleButton
+								key={diamondShape.id}
+								text={'Круг'}
+								imageSource={diamondShape.imageSource}
+							/>
+						))}
 					</Col>
 				</Row>
 
@@ -246,7 +270,9 @@ export default function Search() {
 						</label>
 					</Col>
 				</Row>
+				<AdvanceSearch />
+				<Other />
 			</Container>
-		</>
+		</div>
 	)
 }

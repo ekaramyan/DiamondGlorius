@@ -22,6 +22,11 @@
     background-color: #fd9d39;
     border: none;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
     cursor: pointer;
 }
 
@@ -39,6 +44,7 @@
     margin-bottom: 10px;
     font-weight: 600;
     font-size: 20px;
+    text-transform: uppercase;
 }
 
 .carat__wrapper_input {
