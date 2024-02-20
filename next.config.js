@@ -10,5 +10,4 @@ const nextConfig = {
 		CAPTCHA_KEY: process.env.CAPTCHA_KEY,
 	},
 }
-
-export default nextConfig
+module.exports = { nextConfig }
