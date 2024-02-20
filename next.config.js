@@ -1,4 +1,5 @@
-/** @type {import('next').NextConfig} */
+require('dotenv').config()
+
 const nextConfig = {
 	output: 'standalone',
 	images: {
@@ -10,4 +11,5 @@ const nextConfig = {
 		CAPTCHA_KEY: process.env.CAPTCHA_KEY,
 	},
 }
-module.exports = { nextConfig }
+
+module.exports = nextConfig

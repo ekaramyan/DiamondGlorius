@@ -1,10 +1,11 @@
-import styles from './Search.module.css'
 import { Row, Col, Container } from 'react-bootstrap'
+import styles from './Search.module.css'
 import AdvanceSearch from '../AdvanceSearch/AdvanceSearch'
 import Other from '../Other/Other'
 import CircleButton from '../UI/CircleButton'
 import FromTo from '../UI/FromTo'
 import FilterButtons from '../UI/FilterButtons'
+import round from '@/assets/img/round.png'
 
 export default function Search() {
 	const menuTabs = [
@@ -45,8 +46,7 @@ export default function Search() {
 		{
 			id: 1,
 			text: 'round',
-			imageSource:
-				'https://www.gloriousdiamonds.net/application/public/images/diamonds/w-1.png',
+			imageSource: round.src,
 		},
 		{ id: 2, text: 'heart', imageSource: '' },
 		{ id: 3, text: 'pear', imageSource: '' },
@@ -120,7 +120,9 @@ export default function Search() {
 								alignItems: 'center',
 							}}
 						>
-							<p className={styles.Title} style={{width: '11%'}}>{tab.title}</p>
+							<p className={styles.Title} style={{ width: '11%' }}>
+								{tab.title}
+							</p>
 							<FilterButtons buttons={tab.buttons} />
 						</div>
 					))}
