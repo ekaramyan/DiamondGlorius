@@ -62,7 +62,7 @@ export default function Search() {
 	]
 
 	return (
-		<div style={{ background: '#f1e5d2' }}>
+		<div className='main__bg'>
 			<Container fluid style={{ maxWidth: '1400px' }}>
 				<Row>
 					<Col md={4}>
@@ -77,11 +77,11 @@ export default function Search() {
 				</Row>
 
 				<Row>
-					<Col md={4} style={{ width: '100%', display: 'flex' }}>
+					<Col md={4} style={{ width: '100%', display: 'flex', gap: 5 }}>
 						{diamondShapes.map(diamondShape => (
 							<CircleButton
 								key={diamondShape.id}
-								text={'Круг'}
+								text={diamondShape.text}
 								imageSource={diamondShape.imageSource}
 							/>
 						))}
@@ -133,25 +133,6 @@ export default function Search() {
 					<FromTo title={'Price/Carat USD'} />
 				</Row>
 				<Row>
-					{/* <Col md={2}>
-						<p className={styles.dis__wrapper_title2}>EXAMPLE</p>
-					</Col>
-					<Col md={2}>
-						<input
-							className={styles.example__wrapper_input1}
-							placeholder='От'
-							type='text'
-							disabled
-							value='-35'
-						/>
-						<input
-							className={styles.example__wrapper_input1}
-							placeholder='До'
-							type='text'
-							disabled
-							value='-40'
-						/>
-					</Col> */}
 					<Col md={2}>
 						<p className={styles.dis__wrapper_price2}>Цена/Карат RUB</p>
 					</Col>

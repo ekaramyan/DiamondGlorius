@@ -1,7 +1,8 @@
-import React from 'react'
-import styles from '../Header/Header.module.css'
 import { Row, Col, Container } from 'react-bootstrap'
-import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import Image from 'next/image'
+import cart from '@/assets/img/cart.svg'
+import styles from './Header.module.css'
+import round from '@/assets/img/round.png'
 
 export default function Header() {
 	return (
@@ -12,36 +13,13 @@ export default function Header() {
 						<Col>
 							<>
 								<div className={styles.Header__logo}>
-									<img
-										src='https://www.gloriousdiamonds.net/application/public/images/new_design/Logo-1.png'
-										alt='headerLogo'
-									/>
+									<Image src={round.src} width={30} height={30} />
 								</div>
 
-								<h1 className={styles.header__title}>Glorius Diamond</h1>
+								<h1 className={styles.header__title}>Diamonds</h1>
+
 								<a href='#' className={styles.header__link}>
-									<img
-										src='https://www.gloriousdiamonds.net/application/public/images/2020/ic_ios.png'
-										alt=''
-									/>
-								</a>
-								<a href='#' className={styles.header__link}>
-									<img
-										src='https://www.gloriousdiamonds.net/application/public/images/2020/ic_andriod.png'
-										alt=''
-									/>
-								</a>
-								<a href='#' className={styles.header__link}>
-									<img
-										src='https://www.gloriousdiamonds.net/application/public/images/2020/ic_login.png'
-										alt=''
-									/>
-								</a>
-								<a href='#' className={styles.header__link}>
-									<img
-										src='https://www.gloriousdiamonds.net/application/public/images/2020/ic_checkprice.png'
-										alt=''
-									/>
+									<Image src={cart.src} width={25} height={25} />
 								</a>
 							</>
 						</Col>

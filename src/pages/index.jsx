@@ -10,7 +10,6 @@ export default function index() {
 		<>
 			<Header />
 			<Search />
-
 			<Footer />
 		</>
 	)
