@@ -31,4 +31,4 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
-            bash /home/diamond/bootstrap.sh nextjs
+            bash ~/diamond/bootstrap.sh nextjs
