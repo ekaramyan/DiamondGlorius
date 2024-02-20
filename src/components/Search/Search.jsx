@@ -3,16 +3,41 @@ import { Row, Col, Container } from 'react-bootstrap'
 import AdvanceSearch from '../AdvanceSearch/AdvanceSearch'
 import Other from '../Other/Other'
 import CircleButton from '../UI/CircleButton'
+import FromTo from '../UI/FromTo'
+import FilterButtons from '../UI/FilterButtons'
 
 export default function Search() {
 	const menuTabs = [
-		{ id: 0, title: 'Carat' },
-		{ id: 1, title: 'size group' },
-		{ id: 2, title: 'White | fancy' },
-		{ id: 3, title: 'clarity' },
-		{ id: 4, title: 'FL' },
-		{ id: 5, title: 'color shade' },
-		{ id: 6, title: 'LAB' },
+		{
+			id: 1,
+			title: 'size group',
+			buttons: [{ text: '30s' }, { text: '' }, { text: '' }],
+		},
+		{
+			id: 2,
+			title: 'White | fancy',
+			buttons: [{ text: 'All' }, { text: '' }, { text: '' }],
+		},
+		{
+			id: 3,
+			title: 'clarity',
+			buttons: [{ text: 'All' }, { text: '' }, { text: '' }],
+		},
+		{
+			id: 4,
+			title: 'FL',
+			buttons: [{ text: 'All' }, { text: '' }, { text: '' }],
+		},
+		{
+			id: 5,
+			title: 'color shade',
+			buttons: [{ text: 'All' }, { text: '' }, { text: '' }],
+		},
+		{
+			id: 6,
+			title: 'LAB',
+			buttons: [{ text: 'All' }, { text: '' }, { text: '' }],
+		},
 	]
 
 	const diamondShapes = [
@@ -63,16 +88,15 @@ export default function Search() {
 					</Col>
 				</Row>
 
-				<Row>
-					<Col md={4}>
-						{menuTabs.map((tab, id) => (
-							<div key={id} className={styles.Title}>
-								{tab.title}
-							</div>
-						))}
-					</Col>
-
-					<Col md={4}>
+				<Col md={4} style={{ width: '100%' }}>
+					<div
+						style={{
+							display: 'flex',
+							gap: 25,
+							alignItems: 'center',
+						}}
+					>
+						<p className={styles.Title}>Carat</p>
 						<div className={styles.carat__wrapper_input}>
 							<input
 								className={styles.carat__wrapper_inputItem}
@@ -85,73 +109,29 @@ export default function Search() {
 								type='text'
 							/>
 						</div>
+					</div>
 
-						<label className={styles.size__label}>
-							30s
-							<input className={styles.size__input} type='checkbox' />
-						</label>
-
-						<label className={styles.size__label}>
-							Все
-							<input className={styles.color__input} type='checkbox' />
-						</label>
-
-						<label className={styles.size__label}>
-							Все
-							<input className={styles.clarity__input} type='checkbox' />
-						</label>
-
-						<label className={styles.size__label}>
-							Все
-							<input className={styles.fl__input} type='checkbox' />
-						</label>
-
-						<label className={styles.size__label}>
-							Все
-							<input className={styles.colorShade__input} type='checkbox' />
-						</label>
-
-						<label className={styles.size__label}>
-							Все
-							<input className={styles.lab__input} type='checkbox' />
-						</label>
-					</Col>
-				</Row>
+					{menuTabs.map((tab, id) => (
+						<div
+							key={id}
+							style={{
+								display: 'flex',
+								gap: 25,
+								alignItems: 'center',
+							}}
+						>
+							<p className={styles.Title} style={{width: '11%'}}>{tab.title}</p>
+							<FilterButtons buttons={tab.buttons} />
+						</div>
+					))}
+				</Col>
 
 				<Row>
-					<Col md={2}>
-						<p className={styles.dis__wrapper_title}>RAP DIS (%)</p>
-					</Col>
-					<Col md={2}>
-						<input
-							className={styles.dis__wrapper_input}
-							placeholder='От'
-							type='text'
-						/>
-						<input
-							className={styles.dis__wrapper_input}
-							placeholder='До'
-							type='text'
-						/>
-					</Col>
-					<Col md={2}>
-						<p className={styles.dis__wrapper_price}>Цена/Карат RUB</p>
-					</Col>
-					<Col md={4}>
-						<input
-							className={styles.dis__wrapper_input}
-							placeholder='От'
-							type='text'
-						/>
-						<input
-							className={styles.dis__wrapper_input}
-							placeholder='До'
-							type='text'
-						/>
-					</Col>
+					<FromTo title={'RAP DIS (%)'} />
+					<FromTo title={'Price/Carat USD'} />
 				</Row>
 				<Row>
-					<Col md={2}>
+					{/* <Col md={2}>
 						<p className={styles.dis__wrapper_title2}>EXAMPLE</p>
 					</Col>
 					<Col md={2}>
@@ -169,7 +149,7 @@ export default function Search() {
 							disabled
 							value='-40'
 						/>
-					</Col>
+					</Col> */}
 					<Col md={2}>
 						<p className={styles.dis__wrapper_price2}>Цена/Карат RUB</p>
 					</Col>
