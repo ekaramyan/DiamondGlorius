@@ -1,4 +1,3 @@
-import { Col } from 'react-bootstrap'
 import styles from '../Search/Search.module.css'
 
 export default function FromTo({ title }) {
@@ -8,7 +7,7 @@ export default function FromTo({ title }) {
 				style={{
 					display: 'flex',
 					alignItems: 'center',
-					justifyContent: 'center',
+					justifyContent: 'space-between',
 					gap: 10,
 				}}
 			>

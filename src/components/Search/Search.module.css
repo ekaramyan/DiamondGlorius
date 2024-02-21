@@ -263,7 +263,6 @@
 }
 .dis__wrapper_title {
 	display: inline-block;
-	margin-top: 30px;
 	font-weight: 600;
 	font-size: 20px;
 }
@@ -279,13 +278,11 @@
 	height: 30px;
 	margin-right: 10px;
 	padding: 0 10px;
-	margin-top: 30px;
 }
 
 .dis__wrapper_price {
 	font-weight: 600;
 	font-size: 20px;
-	margin-top: 30px;
 }
 
 .dis__wrapper_price2 {

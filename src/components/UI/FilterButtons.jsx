@@ -7,7 +7,7 @@ export default function FilterButtons({ buttons }) {
 			{buttons.map((button, index) => (
 				<div key={index} className={styles.carat__wrapper_input}>
 					<label className={styles.size__label}>
-						{button.text}
+						{button.title}
 						<input className={styles.size__input} type='checkbox' />
 					</label>
 				</div>

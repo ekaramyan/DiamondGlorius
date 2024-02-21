@@ -7,7 +7,8 @@ import FromTo from '../UI/FromTo'
 import FilterButtons from '../UI/FilterButtons'
 import round from '@/assets/img/round.png'
 
-export default function Search() {
+export default function Search({ diamonds }) {
+	console.log(diamonds)
 	const menuTabs = [
 		{
 			id: 1,
@@ -17,49 +18,31 @@ export default function Search() {
 		{
 			id: 2,
 			title: 'White | fancy',
-			buttons: [{ text: 'All' }, { text: '' }, { text: '' }],
+			buttons: [{ title: 'All' }, { text: '' }, { text: '' }],
 		},
 		{
 			id: 3,
 			title: 'clarity',
-			buttons: [{ text: 'All' }, { text: '' }, { text: '' }],
+			buttons: [{ title: 'All' }, ...diamonds.clarity_types],
 		},
 		{
 			id: 4,
 			title: 'FL',
-			buttons: [{ text: 'All' }, { text: '' }, { text: '' }],
+			buttons: [{ title: 'All' }, ...diamonds.fluro_types],
 		},
 		{
 			id: 5,
 			title: 'color shade',
-			buttons: [{ text: 'All' }, { text: '' }, { text: '' }],
+			buttons: [{ title: 'All' }, ...diamonds.color_shades],
 		},
 		{
 			id: 6,
 			title: 'LAB',
-			buttons: [{ text: 'All' }, { text: '' }, { text: '' }],
+			buttons: [{ title: 'All' }, ...diamonds.labs],
 		},
 	]
 
-	const diamondShapes = [
-		{ id: 0, text: 'All', imageSource: '' },
-		{
-			id: 1,
-			text: 'round',
-			imageSource: round.src,
-		},
-		{ id: 2, text: 'heart', imageSource: '' },
-		{ id: 3, text: 'pear', imageSource: '' },
-		{ id: 4, text: 'emerald', imageSource: '' },
-		{ id: 5, text: 'cushion', imageSource: '' },
-		{ id: 6, text: 'princess', imageSource: '' },
-		{ id: 7, text: 'oval', imageSource: '' },
-		{ id: 8, text: 'marquise', imageSource: '' },
-		{ id: 9, text: 'sq. emerald', imageSource: '' },
-		{ id: 7, text: 'l radiant', imageSource: '' },
-		{ id: 8, text: 'cushion mbr', imageSource: '' },
-		{ id: 9, text: 'others', imageSource: '' },
-	]
+	const diamondShapes = diamonds?.shapes
 
 	return (
 		<div className='main__bg'>
@@ -81,7 +64,7 @@ export default function Search() {
 						{diamondShapes.map(diamondShape => (
 							<CircleButton
 								key={diamondShape.id}
-								text={diamondShape.text}
+								text={diamondShape.title}
 								imageSource={diamondShape.imageSource}
 							/>
 						))}
@@ -128,27 +111,18 @@ export default function Search() {
 					))}
 				</Col>
 
-				<Row>
+				<div
+					style={{
+						display: 'flex',
+						flexDirection: 'column',
+						alignItems: 'start',
+						justifyContent: 'center',
+						marginTop: 35,
+					}}
+				>
 					<FromTo title={'RAP DIS (%)'} />
 					<FromTo title={'Price/Carat USD'} />
-				</Row>
-				<Row>
-					<Col md={2}>
-						<p className={styles.dis__wrapper_price2}>Цена/Карат RUB</p>
-					</Col>
-					<Col md={4}>
-						<input
-							className={styles.example__wrapper_input}
-							placeholder='От'
-							type='text'
-						/>
-						<input
-							className={styles.example__wrapper_input}
-							placeholder='До'
-							type='text'
-						/>
-					</Col>
-				</Row>
+				</div>
 
 				<Row>
 					<Col md={{ span: 2, offset: 2 }}>
