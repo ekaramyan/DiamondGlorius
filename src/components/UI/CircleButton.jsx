@@ -16,12 +16,17 @@ export default function CircleButton({
 		const updatedShapeIds = transformArrayValue(shapeIds)?.includes(shape.id)
 			? transformArrayValue(shapeIds)?.filter(id => id !== shape.id)
 			: [...transformArrayValue(shapeIds), shape.id]
-		updateFormData('shape_ids', updatedShapeIds)
+		updateFormData(
+			'shape_ids',
+			updatedShapeIds.length < 1 ? null : updatedShapeIds
+		)
 	}
 	return (
 		<button
-			className={`${styles.search__btn} ${
-				transformArrayValue(shapeIds)?.includes(shape.id) && styles.selected
+			className={`${
+				transformArrayValue(shapeIds)?.includes(shape.id)
+					? styles.selected
+					: styles.search__btn
 			}`}
 			onClick={handleOptionClick}
 		>

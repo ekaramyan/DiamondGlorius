@@ -13,7 +13,7 @@ import { setFilters } from '../../redux/actions'
 
 export default function Search({ diamonds }) {
 	const formData = useSelector(state => state.filters)
-	console.log(formData)
+
 	const dispatch = useDispatch()
 	const { searchDiamonds, loading, error, success } = useSearchDiamonds()
 	const handleSetFilters = formData => {

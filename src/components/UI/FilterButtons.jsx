@@ -10,9 +10,8 @@ export default function FilterButtons({
 	formData,
 }) {
 	const [isOpen, setIsOpen] = useState(false)
-	const [selectedOptions, setSelectedOptions] = useState([])
 	const key = data.key
-
+	const [selectedOptions, setSelectedOptions] = useState(formData[key])
 	const handleToggle = () => {
 		setIsOpen(!isOpen)
 	}
@@ -26,14 +25,20 @@ export default function FilterButtons({
 
 	const handleOptionClick = optionId => {
 		if (optionId === undefined) {
-			updateFormData(key, [])
-			setSelectedOptions([])
+			setSelectedOptions(null)
+			updateFormData(key, selectedOptions)
 		} else {
-			const updatedIds = data.buttons.includes(optionId)
-				? data.buttons.filter(id => id !== optionId)
-				: [...transformArrayValue(formData[key]), optionId]
-			setSelectedOptions(updatedIds)
-			updateFormData(key, updatedIds)
+			if (selectedOptions?.includes(optionId)) {
+				const updatedIds = transformArrayValue(selectedOptions).filter(
+					id => id !== optionId
+				)
+				setSelectedOptions(updatedIds)
+				updateFormData(key, selectedOptions?.length < 1 ? null : selectedOptions)
+			} else {
+				const updatedIds = [...transformArrayValue(selectedOptions), optionId]
+				setSelectedOptions(updatedIds)
+				updateFormData(key, selectedOptions?.length < 1 ? null : selectedOptions)
+			}
 		}
 	}
 
@@ -76,7 +81,7 @@ export default function FilterButtons({
 							key={idx}
 							value={option.id}
 							onClick={() => handleOptionClick(option.id)}
-							defaultValue={selectedOptions?.includes(option.id)}
+							// defaultValue={selectedOptions?.includes(option.id)}
 							style={{
 								background: selectedOptions?.includes(option.id) && '#326fca99',
 							}}

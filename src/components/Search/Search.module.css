@@ -681,5 +681,17 @@
 }
 
 .selected {
+	margin: 10px 0 0 2px;
+	width: 85px;
+	height: 75px;
 	background: var(--selected);
+	border: none;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	cursor: pointer;
 }
