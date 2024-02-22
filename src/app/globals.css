@@ -40,7 +40,9 @@
 	--card-border-rgb: 131, 134, 135;
 	--text-color: #000;
 	--blue: #3987fd;
+	--selected: #275eb1;
 	.main__bg {
+		min-height: 100vh;
 		background: #e1e0e9;
 	}
 }
@@ -77,6 +79,7 @@
 		--card-border-rgb: 200, 200, 200;
 		--text-color: #e7e7e7;
 		--blue: #326fca;
+		--selected: #1b3e74;
 		p {
 			color: #e0e0e0;
 		}

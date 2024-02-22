@@ -6,7 +6,9 @@ import { universalServerSideProps } from '@/api/ssr'
 export default function index({ diamondData }) {
 	return (
 		<>
+			<Header />
 			<Search diamonds={diamondData.data} />
+			<Footer />
 		</>
 	)
 }

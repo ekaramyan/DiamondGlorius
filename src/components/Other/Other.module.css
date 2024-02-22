@@ -1,164 +1,165 @@
 .otherContainer {
-    width: 1800px;
-    margin: 0 auto;
+	width: 1800px;
+	margin: 0 auto;
 }
 
 .otherTitle {
-    font-weight: 700;
-    font-size: 25px;
+	font-weight: 700;
+	font-size: 25px;
 }
 
 .openTable__wrapper {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .openTable__title {
-    display: inline-block;
-    margin-left: 2px;
-    font-weight: 600;
-    font-size: 17px;
+	display: inline-block;
+	margin-left: 2px;
+	font-weight: 600;
+	font-size: 17px;
 }
 
 .openTable__label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 30px;
-    border: 1px solid #000;
-    cursor: pointer;
-    margin-left: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100px;
+	height: 30px;
+	border: 1px solid #000;
+	cursor: pointer;
+	margin-left: 50px;
 }
 
 .openTable__label:active {
-    background-color: #fd9d39;
+	background-color: #fd9d39;
 }
 
 .openTable__input {
-    display: none;
+	display: none;
 }
 
 .openCrown__wrapper {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .openCrown__title {
-    display: inline-block;
-    margin-left: 2px;
-    font-weight: 600;
-    font-size: 17px;
+	display: inline-block;
+	margin-left: 2px;
+	font-weight: 600;
+	font-size: 17px;
+	text-transform: uppercase;
 }
 
 .openCrown__label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 30px;
-    border: 1px solid #000;
-    cursor: pointer;
-    margin-left: 39px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100px;
+	height: 30px;
+	border: 1px solid #000;
+	cursor: pointer;
+	margin-left: 39px;
 }
 
 .openCrown__label:active {
-    background-color: #fd9d39;
+	background-color: #fd9d39;
 }
 
 .openCrown__input {
-    display: none;
+	display: none;
 }
 
 .openPavilion__wrapper {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .openPavilion__title {
-    display: inline-block;
-    margin-left: 2px;
-    font-weight: 600;
-    font-size: 17px;
+	display: inline-block;
+	margin-left: 2px;
+	font-weight: 600;
+	font-size: 17px;
 }
 
 .openPavilion__label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 30px;
-    border: 1px solid #000;
-    cursor: pointer;
-    margin-left: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100px;
+	height: 30px;
+	border: 1px solid #000;
+	cursor: pointer;
+	margin-left: 24px;
 }
 
 .openPavilion__label:active {
-    background-color: #fd9d39;
+	background-color: #fd9d39;
 }
 
 .openPavilion__input {
-    display: none;
+	display: none;
 }
 
 .openClean__wrapper {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .openClean__title {
-    display: inline-block;
-    margin-left: 2px;
-    font-weight: 600;
-    font-size: 17px;
+	display: inline-block;
+	margin-left: 2px;
+	font-weight: 600;
+	font-size: 17px;
 }
 
 .openClean__label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 30px;
-    border: 1px solid #000;
-    cursor: pointer;
-    margin-left: 58px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100px;
+	height: 30px;
+	border: 1px solid #000;
+	cursor: pointer;
+	margin-left: 58px;
 }
 
 .openClean__label:active {
-    background-color: #fd9d39;
+	background-color: #fd9d39;
 }
 
 .openClean__input {
-    display: none;
+	display: none;
 }
 
 .openHearth__wrapper {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .openHearth__title {
-    display: inline-block;
-    margin-left: 2px;
-    font-weight: 600;
-    font-size: 15px;
+	display: inline-block;
+	margin-left: 2px;
+	font-weight: 600;
+	font-size: 15px;
 }
 
 .openHearth__label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 30px;
-    border: 1px solid #000;
-    cursor: pointer;
-    margin-left: 26px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100px;
+	height: 30px;
+	border: 1px solid #000;
+	cursor: pointer;
+	margin-left: 26px;
 }
 
 .openHearth__label:active {
-    background-color: #fd9d39;
+	background-color: #fd9d39;
 }
 
 .openHearth__input {
-    display: none;
+	display: none;
 }
