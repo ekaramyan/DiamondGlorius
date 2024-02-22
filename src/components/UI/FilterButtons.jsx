@@ -17,6 +17,13 @@ export default function FilterButtons({
 		setIsOpen(!isOpen)
 	}
 
+	const transformArrayValue = value => {
+		if (value === null) {
+			return []
+		}
+		return value
+	}
+
 	const handleOptionClick = optionId => {
 		if (optionId === undefined) {
 			updateFormData(key, [])
@@ -24,7 +31,7 @@ export default function FilterButtons({
 		} else {
 			const updatedIds = data.buttons.includes(optionId)
 				? data.buttons.filter(id => id !== optionId)
-				: [...formData[key], optionId]
+				: [...transformArrayValue(formData[key]), optionId]
 			setSelectedOptions(updatedIds)
 			updateFormData(key, updatedIds)
 		}

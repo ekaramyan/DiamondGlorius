@@ -7,67 +7,17 @@ import CircleButton from '../UI/CircleButton'
 import FromTo from '../UI/FromTo'
 import { GenderNeuter } from 'react-bootstrap-icons'
 import FilterSelect from '../UI/FilterSelect'
+import useSearchDiamonds from '@/hooks/useSearchDiamonds'
+import {
+	initialFormData,
+	getMenuTabs,
+	getConditionTypes,
+	getOtherData,
+} from '@/initialFormData'
 
 export default function Search({ diamonds }) {
-	const [formData, setFormData] = useState({
-		shape_ids: [],
-		color_id: [],
-		stno: null,
-		clarity_id: [],
-		cert_id: [],
-		cut_type_id: [],
-		finish_type_id: [],
-		sym_type_id: [],
-		fluro_type_id: [],
-		ec_type_id: [],
-		oppv_type_id: [],
-		opta_crown_id: [],
-		opta_type_id: [],
-		color_shade_id: [],
-		milky_type_id: [],
-		bc_type_id: [],
-		bit_type_id: [],
-		wc_type_id: [],
-		wt_type_id: [],
-		price: {
-			min: null,
-			max: null,
-		},
-		carat: [
-			{
-				min: null,
-				max: null,
-			},
-		],
-		td: {
-			min: null,
-			max: null,
-		},
-		tab: {
-			min: null,
-			max: null,
-		},
-		pvAng: {
-			min: null,
-			max: null,
-		},
-		crAng: {
-			min: null,
-			max: null,
-		},
-		ratio: {
-			min: null,
-			max: null,
-		},
-		pricePerCarat: {
-			min: null,
-			max: null,
-		},
-		disc: {
-			min: null,
-			max: null,
-		},
-	})
+	const [formData, setFormData] = useState(initialFormData)
+	const { searchDiamonds, loading, error, success } = useSearchDiamonds()
 
 	const handleUpdateFormData = (key, updatedData) => {
 		console.log(key, updatedData)
@@ -87,122 +37,13 @@ export default function Search({ diamonds }) {
 		}))
 	}
 
-	const menuTabs = [
-		// {
-		// 	id: 1,
-		// 	title: 'size group',
-		// 	buttons: [{ text: '30s' }, { text: '' }, { text: '' }],
-		// },
-		{
-			id: 2,
-			title: 'White | fancy',
-			buttons: [{ title: 'All' }, ...diamonds.colors],
-			key: 'color_id',
-		},
-		{
-			id: 3,
-			title: 'clarity',
-			buttons: [{ title: 'All' }, ...diamonds.clarity_types],
-			key: 'clarity_id',
-		},
-		{
-			id: 4,
-			title: 'FL',
-			buttons: [{ title: 'All' }, ...diamonds.fluro_types],
-			key: 'fluro_type_id',
-		},
-		{
-			id: 5,
-			title: 'color shade',
-			buttons: [{ title: 'All' }, ...diamonds.color_shades],
-			key: 'color_shade_id',
-		},
-		{
-			id: 6,
-			title: 'LAB',
-			buttons: [{ title: 'All' }, ...diamonds.labs],
-			key: 'cert_id',
-		},
-	]
+	const handleSearchClick = () => {
+		searchDiamonds(formData)
+	}
 
-	const conditionTypes = [
-		{
-			id: 1,
-			title: 'cut',
-			buttons: [...diamonds.cut_types],
-			key: 'cut_type_id',
-		},
-		{
-			id: 2,
-			title: 'polish',
-			buttons: [...diamonds.finish_types],
-			key: 'finish_type_id',
-		},
-		{
-			id: 3,
-			title: 'symmetry',
-			buttons: [...diamonds.symmetry_types],
-			key: 'sym_type_id',
-		},
-		{
-			id: 4,
-			title: 'BLACK INCLUSION IN TABLE',
-			buttons: [{ title: 'All' }, ...diamonds.bit_types],
-			key: 'bit_type_id',
-		},
-		{
-			id: 5,
-			title: 'BLACK INCLUSION IN CROWN',
-			buttons: [{ title: 'All' }, ...diamonds.bic_types],
-			key: 'bc_type_id',
-		},
-		{
-			id: 6,
-			title: 'WHITE INCLUSION IN TABLE',
-			buttons: [{ title: 'All' }, ...diamonds.wit_types],
-			key: 'wt_type_id',
-		},
-		{
-			id: 7,
-			title: 'WHITE INCLUSION IN CROWN',
-			buttons: [{ title: 'All' }, ...diamonds.wic_types],
-			key: 'wc_type_id',
-		},
-		{
-			id: 8,
-			title: 'MILKY',
-			buttons: [{ title: 'All' }, ...diamonds.milky_types],
-			key: 'milky_type_id',
-		},
-	]
-
-	const otherData = [
-		{
-			id: 1,
-			title: 'open table',
-			buttons: [{ title: 'All' }, ...diamonds.open_table_types],
-			key: 'opta_type_id',
-		},
-		{
-			id: 2,
-			title: 'open crown',
-			buttons: [{ title: 'All' }, ...diamonds.open_crown_types],
-			key: 'opta_crown_id',
-		},
-		{
-			id: 3,
-			title: 'open pavilion',
-			buttons: [{ title: 'All' }, ...diamonds.open_pav_types],
-			key: 'oppv_type_id',
-		},
-		{
-			id: 4,
-			title: 'eye clean',
-			buttons: [{ title: 'All' }, ...diamonds.eye_clean_types],
-			key: 'ec_type_id',
-		},
-	]
-
+	const menuTabs = getMenuTabs(diamonds)
+	const conditionTypes = getConditionTypes(diamonds)
+	const otherData = getOtherData(diamonds)
 	const diamondShapes = diamonds?.shapes
 
 	return (
@@ -228,7 +69,7 @@ export default function Search({ diamonds }) {
 							onChange={handleInputChange}
 						/>
 					</label>
-					<Button variant='primary'>
+					<Button variant='primary' onClick={handleSearchClick}>
 						<GenderNeuter
 							color='#e0e0e0'
 							width={30}
