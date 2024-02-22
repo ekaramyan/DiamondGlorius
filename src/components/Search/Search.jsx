@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Row, Col, Container, Button } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import { Row, Col, Button } from 'react-bootstrap'
 import styles from './Search.module.css'
 import AdvanceSearch from '../AdvanceSearch/AdvanceSearch'
 import Other from '../Other/Other'
@@ -8,33 +8,33 @@ import FromTo from '../UI/FromTo'
 import { GenderNeuter } from 'react-bootstrap-icons'
 import FilterSelect from '../UI/FilterSelect'
 import useSearchDiamonds from '@/hooks/useSearchDiamonds'
-import {
-	initialFormData,
-	getMenuTabs,
-	getConditionTypes,
-	getOtherData,
-} from '@/initialFormData'
+import { getMenuTabs, getConditionTypes, getOtherData } from '@/initialFormData'
+import { setFilters } from '../../redux/actions'
 
 export default function Search({ diamonds }) {
-	const [formData, setFormData] = useState(initialFormData)
+	const formData = useSelector(state => state.filters)
+	console.log(formData)
+	const dispatch = useDispatch()
 	const { searchDiamonds, loading, error, success } = useSearchDiamonds()
+	const handleSetFilters = formData => {
+		dispatch(setFilters(formData))
+	}
 
 	const handleUpdateFormData = (key, updatedData) => {
-		console.log(key, updatedData)
-		setFormData(prevFormData => ({
-			...prevFormData,
+		const newFormData = {
+			...formData,
 			[key]: updatedData,
-		}))
-		console.log(formData)
+		}
+		handleSetFilters(newFormData)
 	}
 
 	const handleInputChange = event => {
 		const { name, value } = event.target
-		console.log(name, value)
-		setFormData(prevFormData => ({
-			...prevFormData,
+		const newFormData = {
+			...formData,
 			[name]: value,
-		}))
+		}
+		handleSetFilters(newFormData)
 	}
 
 	const handleSearchClick = () => {
@@ -135,13 +135,13 @@ export default function Search({ diamonds }) {
 				<FromTo
 					title={'RAP DIS (%)'}
 					formData={formData}
-					setFormData={setFormData}
+					setFormData={handleSetFilters}
 					objectKey={'disc'}
 				/>
 				<FromTo
 					title={'Price/Carat USD'}
 					formData={formData}
-					setFormData={setFormData}
+					setFormData={handleSetFilters}
 					objectKey={'pricePerCarat'}
 				/>
 			</div>
@@ -178,7 +178,7 @@ export default function Search({ diamonds }) {
 					/>
 				</Row>
 			</Col>
-			<AdvanceSearch formData={formData} setFormData={setFormData} />
+			<AdvanceSearch formData={formData} setFormData={handleSetFilters} />
 			<Other
 				otherData={otherData}
 				handleUpdateFormData={handleUpdateFormData}

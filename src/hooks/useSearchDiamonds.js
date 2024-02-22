@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { setFilters, setSearchResults } from '../redux/actions'
 
 const useSearchDiamonds = () => {
 	const [loading, setLoading] = useState(false)
@@ -25,6 +26,8 @@ const useSearchDiamonds = () => {
 
 			if (response.status === 200 || response.status === 201) {
 				setSuccess(true)
+				dispatch(setFilters(formData))
+				dispatch(setSearchResults(response.data))
 			} else {
 				setError(response.data.message || 'An error occurred.')
 			}

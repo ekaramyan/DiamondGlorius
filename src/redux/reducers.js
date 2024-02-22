@@ -1,7 +1,23 @@
-const initialState = {
-	searchResults: [],
-	filters: {},
+import { initialFormData } from '@/initialFormData'
+
+const getSavedState = () => {
+	try {
+		const savedState = localStorage.getItem('reduxState')
+		return savedState ? JSON.parse(savedState) : null
+	} catch (error) {
+		console.error('Error retrieving state from localStorage:', error)
+		return null
+	}
 }
+
+const savedState = getSavedState()
+
+const initialState = savedState
+	? savedState
+	: {
+			searchResults: [],
+			filters: initialFormData,
+	  }
 
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
