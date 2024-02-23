@@ -1,14 +1,14 @@
-import styles from '../SearchResults/SearchResults.module.css'
 import { Card, Button } from 'react-bootstrap'
+import Image from 'next/image'
+import styles from '../SearchResults/SearchResults.module.css'
 
 export default function CardItem({ searchResult }) {
+	const imgSrc = searchResult.img_url
+	// .replace(/^http?:\/\//, 'https://')
+	console.log(imgSrc)
 	return (
 		<Card className={styles.card} style={{ width: '18rem' }}>
-			<Card.Img
-				variant='top'
-				src={searchResult.img_url}
-				alt={searchResult.stno}
-			/>
+			<Image src={imgSrc} alt={searchResult.stno} width={150} height={150} />
 			<Card.Body>
 				<Card.Title>{searchResult.stno}</Card.Title>
 				<Card.Text>{searchResult.comment}</Card.Text>
