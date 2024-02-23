@@ -10,6 +10,10 @@ export default function SearchResults() {
 
 	return (
 		<div style={{ marginTop: 25 }}>
+			{/* TODO: 
+      1)Добавить кнопки пагинации, кнопку для возврата фильтрам
+      2) Отредактировать стили карточек, добавить поля
+      */}
 			<Row md={4} className='align-items-start' style={{ gap: 15 }}>
 				{searchResults.map(searchResult => (
 					<CardItem key={searchResult.id} searchResult={searchResult} />
