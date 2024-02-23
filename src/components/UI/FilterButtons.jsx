@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Form } from 'react-bootstrap'
 import { ChevronDown } from 'react-bootstrap-icons'
+import OptionButton from './OptionButton'
 
 export default function FilterButtons({
 	buttons,
@@ -33,11 +33,17 @@ export default function FilterButtons({
 					id => id !== optionId
 				)
 				setSelectedOptions(updatedIds)
-				updateFormData(key, selectedOptions?.length < 1 ? null : selectedOptions)
+				updateFormData(
+					key,
+					selectedOptions?.length < 1 ? null : selectedOptions
+				)
 			} else {
 				const updatedIds = [...transformArrayValue(selectedOptions), optionId]
 				setSelectedOptions(updatedIds)
-				updateFormData(key, selectedOptions?.length < 1 ? null : selectedOptions)
+				updateFormData(
+					key,
+					selectedOptions?.length < 1 ? null : selectedOptions
+				)
 			}
 		}
 	}
@@ -75,21 +81,26 @@ export default function FilterButtons({
 					transition: 'max-height 0.3s ease-in-out',
 				}}
 			>
-				<Form.Select aria-label='Default select example' multiple>
+				<div
+					aria-label='Default select example'
+					multiple
+					style={{
+						display: 'flex',
+						flexWrap: 'wrap',
+						alignItems: 'center',
+						justifyContent: 'center',
+					}}
+				>
 					{buttons.map((option, idx) => (
-						<option
+						<OptionButton
 							key={idx}
-							value={option.id}
+							option={option}
+							imageSource={null}
+							optionIds={selectedOptions}
 							onClick={() => handleOptionClick(option.id)}
-							// defaultValue={selectedOptions?.includes(option.id)}
-							style={{
-								background: selectedOptions?.includes(option.id) && '#326fca99',
-							}}
-						>
-							{option.title}
-						</option>
+						/>
 					))}
-				</Form.Select>
+				</div>
 			</div>
 		</>
 	)

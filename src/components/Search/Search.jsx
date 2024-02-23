@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, Button } from 'react-bootstrap'
 import styles from './Search.module.css'
@@ -16,6 +17,11 @@ export default function Search({ diamonds }) {
 
 	const dispatch = useDispatch()
 	const { searchDiamonds, loading, error, success } = useSearchDiamonds()
+
+	// useEffect(() => {
+	// 	dispatch(setFilters(formData))
+	// }, [formData, dispatch])
+
 	const handleSetFilters = formData => {
 		dispatch(setFilters(formData))
 	}
@@ -132,12 +138,12 @@ export default function Search({ diamonds }) {
 					marginTop: 35,
 				}}
 			>
-				<FromTo
+				{/* <FromTo
 					title={'RAP DIS (%)'}
 					formData={formData}
 					setFormData={handleSetFilters}
 					objectKey={'disc'}
-				/>
+				/> */}
 				<FromTo
 					title={'Price/Carat USD'}
 					formData={formData}
@@ -145,29 +151,6 @@ export default function Search({ diamonds }) {
 					objectKey={'pricePerCarat'}
 				/>
 			</div>
-
-			<Row>
-				<Col md={{ span: 2, offset: 2 }}>
-					<div className={styles.cutItem__wrapper}>
-						<label className={styles.cutItem__label}>
-							3 E X
-							<input className={styles.cutItem__input} type='checkbox' />
-						</label>
-						<label className={styles.cutItem2__label}>
-							2 E X
-							<input className={styles.cutItem2__input} type='checkbox' />
-						</label>
-						<label className={styles.cutItem3__label}>
-							3 V G +
-							<input className={styles.cutItem3__input} type='checkbox' />
-						</label>
-						<label className={styles.noBgm__label}>
-							NO BGM
-							<input className={styles.noBgm__input} type='checkbox' />
-						</label>
-					</div>
-				</Col>
-			</Row>
 
 			<Col>
 				<Row md={4}>

@@ -41,6 +41,7 @@
 	--text-color: #000;
 	--blue: #3987fd;
 	--selected: #275eb1;
+	--card-bg: #c2c2c5;
 	.main__bg {
 		min-height: 100vh;
 		background: #e1e0e9;
@@ -80,6 +81,7 @@
 		--text-color: #e7e7e7;
 		--blue: #326fca;
 		--selected: #1b3e74;
+		--card-bg: #4c4c50;
 		p {
 			color: #e0e0e0;
 		}

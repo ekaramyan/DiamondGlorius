@@ -1,4 +1,4 @@
-import styles from '../Search/Search.module.css'
+import OptionButton from './OptionButton'
 
 export default function CircleButton({
 	shape,
@@ -21,23 +21,13 @@ export default function CircleButton({
 			updatedShapeIds.length < 1 ? null : updatedShapeIds
 		)
 	}
+	
 	return (
-		<button
-			className={`${
-				transformArrayValue(shapeIds)?.includes(shape.id)
-					? styles.selected
-					: styles.search__btn
-			}`}
+		<OptionButton
+			option={shape}
+			imageSource={imageSource}
+			optionIds={shapeIds}
 			onClick={handleOptionClick}
-		>
-			{imageSource && (
-				<img
-					className={styles.search__img}
-					src={imageSource}
-					alt={shape.title}
-				/>
-			)}
-			<p className={styles.search__descr}>{shape.title}</p>
-		</button>
+		/>
 	)
 }
