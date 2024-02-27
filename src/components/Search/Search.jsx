@@ -1,6 +1,7 @@
+import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, Button } from 'react-bootstrap'
+import { Row, Col, Button, Spinner } from 'react-bootstrap'
 import styles from './Search.module.css'
 import AdvanceSearch from '../AdvanceSearch/AdvanceSearch'
 import Other from '../Other/Other'
@@ -17,6 +18,7 @@ export default function Search({ diamonds }) {
 
 	const dispatch = useDispatch()
 	const { searchDiamonds, loading, error, success } = useSearchDiamonds()
+	const router = useRouter()
 
 	// useEffect(() => {
 	// 	dispatch(setFilters(formData))
@@ -45,6 +47,7 @@ export default function Search({ diamonds }) {
 
 	const handleSearchClick = () => {
 		searchDiamonds(formData)
+		success && router.push('/diamonds')
 	}
 
 	const menuTabs = getMenuTabs(diamonds)
@@ -76,12 +79,22 @@ export default function Search({ diamonds }) {
 						/>
 					</label>
 					<Button variant='primary' onClick={handleSearchClick}>
-						<GenderNeuter
-							color='#e0e0e0'
-							width={30}
-							height={30}
-							style={{ transform: 'rotate(-30deg)' }}
-						/>
+						{loading ? (
+							<Spinner
+								as='span'
+								animation='border'
+								size='sm'
+								role='status'
+								aria-hidden='true'
+							/>
+						) : (
+							<GenderNeuter
+								color='#e0e0e0'
+								width={30}
+								height={30}
+								style={{ transform: 'rotate(-30deg)' }}
+							/>
+						)}
 					</Button>
 				</div>
 			</Row>

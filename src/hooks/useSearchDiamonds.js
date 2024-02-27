@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
-import { useRouter } from 'next/router'
 import { setFilters, setSearchResults } from '../redux/actions'
 
 const useSearchDiamonds = () => {
@@ -10,7 +9,6 @@ const useSearchDiamonds = () => {
 	const [success, setSuccess] = useState(false)
 	const apiUrl = process.env.API_URL
 	const dispatch = useDispatch()
-	const router = useRouter()
 
 	const searchDiamonds = async (formData, limit = 25, page = 1) => {
 		setLoading(true)
@@ -27,10 +25,9 @@ const useSearchDiamonds = () => {
 			console.log(response)
 
 			if (response.status === 200 || response.status === 201) {
-				setSuccess(true)
 				dispatch(setFilters(formData))
 				dispatch(setSearchResults(response.data))
-				router.push('/diamonds')
+				setSuccess(true)
 			} else {
 				setError(response.data.message || 'An error occurred.')
 			}
