@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Provider } from 'react-redux'
-import '@/app/globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import '@/app/globals.css'
 import IndexWrapper from '@/components/Wrappers/IndexWrapper'
 import store from '../redux/store'
 // import favicon from '@/assets/img/favicon.webp'

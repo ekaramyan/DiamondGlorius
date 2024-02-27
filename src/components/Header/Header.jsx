@@ -5,7 +5,7 @@ import { Cart } from 'react-bootstrap-icons'
 import styles from './Header.module.css'
 import round from '@/assets/img/icon-2.png'
 
-export default function Header() {
+export default function Header({ showCart }) {
 	return (
 		<>
 			<div className={styles.Header}>
@@ -24,9 +24,9 @@ export default function Header() {
 						<h1 className={styles.header__title}>Diamonds</h1>
 					</div>
 
-					<Link href='#' className={styles.header__link}>
+					<button onClick={showCart} className={styles.header__link}>
 						<Cart color={'#e0e0e0'} width={30} height={25} />
-					</Link>
+					</button>
 				</Container>
 			</div>
 		</>

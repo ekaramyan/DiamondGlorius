@@ -18,6 +18,8 @@
 
 .header__link {
 	margin-left: 20px;
+	background: none;
+	border: none;
 }
 
 .header__button {

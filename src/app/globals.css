@@ -82,6 +82,7 @@
 		--blue: #4756b3;
 		--selected: #283895;
 		--card-bg: #4c4c50;
+		--bs-body-bg: #323235;
 		p {
 			color: #e0e0e0;
 		}
@@ -93,6 +94,9 @@
 		}
 		.main__bg {
 			background: #272729;
+		}
+		.modal-content {
+			background: var(--bs-body-bg);
 		}
 	}
 }

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Row, Col } from 'react-bootstrap'
+import styles from './DiamondData.module.css'
 
 export default function DiamondData({ diamond }) {
 	console.log(diamond)
