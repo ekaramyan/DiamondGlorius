@@ -18,6 +18,14 @@ export const initialFormData = {
 	bit_type_id: null,
 	wc_type_id: null,
 	wt_type_id: null,
+	giaMN: {
+		min: null,
+		max: null,
+	},
+	giaMX: {
+		min: null,
+		max: null,
+	},
 	price: {
 		min: null,
 		max: null,

@@ -1,12 +1,14 @@
 import { Card, Button } from 'react-bootstrap'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import styles from '../SearchResults/SearchResults.module.css'
 
 export default function CardItem({ searchResult }) {
-	console.log(searchResult)
+	const router = useRouter()
 	const imgSrc = searchResult.img_url
-	
-	console.log(imgSrc)
+	const watchAll = id => {
+		router.push(`/diamonds/${id}`)
+	}
 	return (
 		<Card className={styles.card}>
 			<div className={styles.cardImage}>
@@ -20,7 +22,10 @@ export default function CardItem({ searchResult }) {
 			<Card.Body>
 				<Card.Title>{searchResult.stno}</Card.Title>
 				<Card.Text>{searchResult.comment}</Card.Text>
-				<Button variant='primary'>Go somewhere</Button>
+				<Button variant='primary'>Add to cart</Button>
+				<Button variant='primary' onClick={() => watchAll(searchResult.id)}>
+					Watch all data
+				</Button>
 			</Card.Body>
 		</Card>
 	)

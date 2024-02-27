@@ -13,7 +13,7 @@ export default function AdvanceSearch({ formData, setFormData }) {
 					title={'DIA MN'}
 					formData={formData}
 					setFormData={setFormData}
-					objectKey={'disc'}
+					objectKey={'giaMN'}
 				/>
 				<FromTo
 					title={'TAB (%)'}
@@ -42,12 +42,12 @@ export default function AdvanceSearch({ formData, setFormData }) {
 					setFormData={setFormData}
 					objectKey={'crAng'}
 				/>
-				<FromTo
+				{/* <FromTo
 					title={'GIRDLE %'}
 					formData={formData}
 					setFormData={setFormData}
 					objectKey={'disc'}
-				/>
+				/> */}
 			</div>
 
 			<div className={styles.dia__wrapper}>
@@ -55,7 +55,7 @@ export default function AdvanceSearch({ formData, setFormData }) {
 					title={'DIA MX'}
 					formData={formData}
 					setFormData={setFormData}
-					objectKey={'disc'}
+					objectKey={'giaMX'}
 				/>
 				<FromTo
 					title={'RATIO'}

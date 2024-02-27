@@ -19,7 +19,11 @@ export default function SearchResults() {
       1)Добавить кнопки пагинации, кнопку для возврата фильтрам
       2) Отредактировать стили карточек, добавить поля
       */}
-			<Row md={4} className='align-items-start' style={{ gap: 15 }}>
+			<Row
+				md={4}
+				className='align-items-start'
+				style={{ gap: 15, justifyContent: 'center' }}
+			>
 				{searchResults?.map(searchResult => (
 					<CardItem key={searchResult.id} searchResult={searchResult} />
 				))}

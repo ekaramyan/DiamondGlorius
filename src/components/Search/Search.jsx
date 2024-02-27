@@ -12,6 +12,7 @@ import FilterSelect from '../UI/FilterSelect'
 import useSearchDiamonds from '@/hooks/useSearchDiamonds'
 import { getMenuTabs, getConditionTypes, getOtherData } from '@/initialFormData'
 import { setFilters } from '../../redux/actions'
+import CaratFilterList from '../UI/CaratFilterList'
 
 export default function Search({ diamonds }) {
 	const formData = useSelector(state => state.filters)
@@ -47,7 +48,6 @@ export default function Search({ diamonds }) {
 
 	const handleSearchClick = () => {
 		searchDiamonds(formData)
-		success && router.push('/diamonds')
 	}
 
 	const menuTabs = getMenuTabs(diamonds)
@@ -114,29 +114,12 @@ export default function Search({ diamonds }) {
 			</Row>
 
 			<Col md={4} style={{ width: '100%' }}>
-				<div
-					style={{
-						display: 'flex',
-						gap: 25,
-						alignItems: 'center',
-					}}
-				>
-					<p className={styles.Title}>Carat</p>
-					<div className={styles.carat__wrapper_input}>
-						<input
-							className={styles.carat__wrapper_inputItem}
-							placeholder='From'
-							type='text'
-						/>
-						<input
-							className={styles.carat__wrapper_inputItem}
-							placeholder='To'
-							type='text'
-						/>
-					</div>
-					<button>+</button>
-					<button>-</button>
-				</div>
+				<CaratFilterList
+					carats={formData.carat}
+					formData={formData}
+					setFilters={handleSetFilters}
+					objectKey={'carat'}
+				/>
 				<FilterSelect
 					data={menuTabs}
 					handleUpdateFormData={handleUpdateFormData}
