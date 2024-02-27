@@ -135,6 +135,7 @@ export default function Search({ diamonds }) {
 						/>
 					</div>
 					<button>+</button>
+					<button>-</button>
 				</div>
 				<FilterSelect
 					data={menuTabs}
