@@ -9,12 +9,12 @@ export default function FilterButtons({
 	data,
 	formData,
 }) {
-	const [isOpen, setIsOpen] = useState(false)
+	// const [isOpen, setIsOpen] = useState(false)
 	const key = data.key
 	const [selectedOptions, setSelectedOptions] = useState(formData[key])
-	const handleToggle = () => {
-		setIsOpen(!isOpen)
-	}
+	// const handleToggle = () => {
+	// 	setIsOpen(!isOpen)
+	// }
 
 	const transformArrayValue = value => {
 		if (value === null) {
@@ -51,11 +51,10 @@ export default function FilterButtons({
 	return (
 		<>
 			<div
-				onClick={handleToggle}
+				// onClick={handleToggle}
 				style={{
 					cursor: 'pointer',
 					padding: 5,
-					background: '#326fca',
 					border: '1px solid #ddd',
 					borderRadius: 5,
 					marginBottom: 5,
@@ -65,30 +64,29 @@ export default function FilterButtons({
 				}}
 			>
 				<h5 style={{ textTransform: 'uppercase' }}>{title}</h5>
-				<ChevronDown
+				{/* <ChevronDown
 					width={30}
 					height={30}
 					style={{
 						transform: isOpen ? 'rotate(180deg)' : 'rotate(0)',
 						transition: 'transform 0.3s ease-in-out',
 					}}
-				/>
+				/> */}
 			</div>
 			<div
 				style={{
-					maxHeight: isOpen ? '300px' : '0px',
+					// maxHeight: isOpen ? '300px' : '0px',
 					overflow: 'hidden',
 					transition: 'max-height 0.3s ease-in-out',
 				}}
 			>
 				<div
-					aria-label='Default select example'
 					multiple
 					style={{
 						display: 'flex',
 						flexWrap: 'wrap',
 						alignItems: 'center',
-						justifyContent: 'center',
+						justifyContent: 'flex-start',
 					}}
 				>
 					{buttons.map((option, idx) => (
