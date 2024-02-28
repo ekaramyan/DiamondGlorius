@@ -1,5 +1,11 @@
 .cart {
+	width: 100%;
 }
 .btn-close {
 	color: var(--blue);
+}
+@media (min-width: 1025px) {
+	.h-custom {
+		height: 100vh !important;
+	}
 }

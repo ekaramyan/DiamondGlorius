@@ -10,7 +10,7 @@ export default function DiamondData({ diamond }) {
 				<Row
 					style={{
 						display: 'flex',
-						alignItems: 'center',
+						alignItems: 'flex-start',
 						justifyContent: 'center',
 						gap: 10,
 						marginLeft: 2,
@@ -19,8 +19,8 @@ export default function DiamondData({ diamond }) {
 				>
 					<div
 						style={{
-							width: 370,
-							height: 350,
+							width: 508,
+							height: 400,
 							position: 'relative',
 							borderRadius: 15,
 							overflow: 'hidden',
@@ -37,7 +37,7 @@ export default function DiamondData({ diamond }) {
 					</div>
 					<div
 						style={{
-							width: 500,
+							width: 530,
 							height: 482,
 							position: 'relative',
 							borderRadius: 15,
@@ -59,13 +59,13 @@ export default function DiamondData({ diamond }) {
 					<div
 						style={{
 							width: '100%',
-							height: 1000,
+							height: '1000px',
 							position: 'relative',
 							borderRadius: 15,
 							overflow: 'hidden',
 						}}
 					>
-						<Image src={diamond.cert_url} layout='fill' objectFit='cover' />
+						<Image src={diamond.cert_url} layout='fill' objectFit='contain' />
 					</div>
 				</Col>
 			</Col>
