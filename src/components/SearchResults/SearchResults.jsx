@@ -4,6 +4,8 @@ import { Col, Row } from 'react-bootstrap'
 
 import CardItem from '../UI/CardItem'
 
+import styles from './SearchResults.module.css'
+
 export default function SearchResults() {
 	const data = useSelector(state => state.searchResults)
 	console.log(data)
@@ -15,6 +17,7 @@ export default function SearchResults() {
 
 	return (
 		<div style={{ marginTop: 25 }}>
+		<button className={styles.returnFilters}>Return to filter</button>
 			{/* TODO: 
       1)Добавить кнопки пагинации, кнопку для возврата фильтрам
       2) Отредактировать стили карточек, добавить поля

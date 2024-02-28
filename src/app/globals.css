@@ -9,6 +9,11 @@
 	--background-start-rgb: 214, 219, 220;
 	--background-end-rgb: 255, 255, 255;
 
+	--border-main: 2px solid #696969;
+	--border-radius-10px: 10px;
+	--background-color-mainBtn: #73768c;
+	--border-active: 2px solid #6172d5;
+
 	--primary-glow: conic-gradient(
 		from 180deg at 50% 50%,
 		#16abff33 0deg,

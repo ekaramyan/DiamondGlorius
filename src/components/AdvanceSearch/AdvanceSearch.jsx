@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../AdvanceSearch/AdvanceSearch.module.css'
 import FromTo from '../UI/FromTo'
+import { Row, Col } from 'react-bootstrap'
 
 export default function AdvanceSearch({ formData, setFormData }) {
 	return (
