@@ -7,10 +7,16 @@ import AdvanceSearch from '../AdvanceSearch/AdvanceSearch'
 import Other from '../Other/Other'
 import CircleButton from '../UI/CircleButton'
 import FromTo from '../UI/FromTo'
-import { GenderNeuter } from 'react-bootstrap-icons'
+import { GenderNeuter, ArrowCounterclockwise } from 'react-bootstrap-icons'
 import FilterSelect from '../UI/FilterSelect'
 import useSearchDiamonds from '@/hooks/useSearchDiamonds'
-import { getMenuTabs, getConditionTypes, getOtherData } from '@/initialFormData'
+import {
+	initialFormData,
+	getMenuTabs,
+	getConditionTypes,
+	getOtherData,
+	diamondShapesImg,
+} from '@/initialFormData'
 import { setFilters } from '../../redux/actions'
 import CaratFilterList from '../UI/CaratFilterList'
 
@@ -48,6 +54,10 @@ export default function Search({ diamonds }) {
 
 	const handleSearchClick = () => {
 		searchDiamonds(formData)
+	}
+
+	const handleResetFormData = () => {
+		handleSetFilters(initialFormData)
 	}
 
 	const menuTabs = getMenuTabs(diamonds)
@@ -96,16 +106,19 @@ export default function Search({ diamonds }) {
 							/>
 						)}
 					</Button>
+					<Button variant='primary' onClick={handleResetFormData}>
+						<ArrowCounterclockwise color='#e0e0e0' width={30} height={30} />
+					</Button>
 				</div>
 			</Row>
 
 			<Row>
 				<Col md={4} style={{ width: '100%', display: 'flex', gap: 5 }}>
-					{diamondShapes.map(diamondShape => (
+					{diamondShapes.map((diamondShape, index) => (
 						<CircleButton
 							key={diamondShape.id}
 							shape={diamondShape}
-							imageSource={diamondShape.imageSource}
+							imageSource={diamondShapesImg[index].img}
 							updateFormData={handleUpdateFormData}
 							shapeIds={formData.shape_ids}
 						/>

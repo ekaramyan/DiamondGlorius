@@ -1,7 +1,7 @@
 import styles from '../Search/Search.module.css'
 
 export default function FromTo({ title, formData, setFormData, objectKey }) {
-	const { min, max } = formData[objectKey] ?? { min: '', max: '' }
+	const { min, max } = formData[objectKey] ?? { min: null, max: null }
 
 	const handleChange = e => {
 		const { name, value } = e.target
@@ -10,7 +10,7 @@ export default function FromTo({ title, formData, setFormData, objectKey }) {
 			...formData,
 			[objectKey]: {
 				...formData[objectKey],
-				[name]: value,
+				[name]: Number(value),
 			},
 		})
 	}
@@ -38,7 +38,7 @@ export default function FromTo({ title, formData, setFormData, objectKey }) {
 					<input
 						className={styles.dis__wrapper_input}
 						placeholder='From'
-						type='text'
+						type='number'
 						name='min'
 						value={min}
 						onChange={handleChange}
@@ -46,7 +46,7 @@ export default function FromTo({ title, formData, setFormData, objectKey }) {
 					<input
 						className={styles.dis__wrapper_input}
 						placeholder='To'
-						type='text'
+						type='number'
 						name='max'
 						value={max}
 						onChange={handleChange}

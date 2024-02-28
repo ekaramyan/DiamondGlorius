@@ -1,3 +1,16 @@
+import icon1 from '@/assets/img/icon-1.webp'
+import icon2 from '@/assets/img/icon-2.webp'
+import icon3 from '@/assets/img/icon-3.webp'
+import icon4 from '@/assets/img/icon-4.webp'
+import icon5 from '@/assets/img/icon-5.webp'
+import icon6 from '@/assets/img/icon-6.webp'
+import icon7 from '@/assets/img/icon-7.webp'
+import icon8 from '@/assets/img/icon-8.webp'
+import icon9 from '@/assets/img/icon-9.webp'
+import icon10 from '@/assets/img/icon-10.webp'
+import icon11 from '@/assets/img/icon-11.webp'
+import icon12 from '@/assets/img/icon-12.webp'
+
 export const initialFormData = {
 	shape_ids: null,
 	color_id: null,
@@ -187,3 +200,18 @@ export const getOtherData = diamonds => {
 		},
 	]
 }
+
+export const diamondShapesImg = [
+	{ id: 1, img: icon1.src },
+	{ id: 2, img: icon2.src },
+	{ id: 3, img: icon3.src },
+	{ id: 4, img: icon4.src },
+	{ id: 5, img: icon5.src },
+	{ id: 6, img: icon6.src },
+	{ id: 7, img: icon7.src },
+	{ id: 8, img: icon8.src },
+	{ id: 9, img: icon9.src },
+	{ id: 10, img: icon10.src },
+	{ id: 11, img: icon11.src },
+	{ id: 12, img: icon12.src },
+]

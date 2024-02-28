@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Cart } from 'react-bootstrap-icons'
 import styles from './Header.module.css'
-import round from '@/assets/img/icon-2.png'
+import round from '@/assets/img/icon-2.webp'
 
 export default function Header({ showCart }) {
 	return (

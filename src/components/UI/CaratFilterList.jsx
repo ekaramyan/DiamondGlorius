@@ -27,10 +27,11 @@ export default function CaratFilterList({
 
 	const handleChange = (e, index) => {
 		const { name, value } = e.target
+		const newValue = value === '' ? null : Math.max(0, Number(value))
 		const newCarats = [...carats]
 		newCarats[index] = {
 			...newCarats[index],
-			[name]: Number(value),
+			[name]: newValue,
 		}
 		updateFilters(newCarats)
 	}
@@ -53,7 +54,7 @@ export default function CaratFilterList({
 							placeholder='From'
 							type='number'
 							name='min'
-							value={carat.min}
+							value={carat.min !== null ? carat.min : ''}
 							onChange={e => handleChange(e, index)}
 						/>
 						<input
@@ -61,7 +62,7 @@ export default function CaratFilterList({
 							placeholder='To'
 							type='number'
 							name='max'
-							value={carat.max}
+							value={carat.max !== null ? carat.max : ''}
 							onChange={e => handleChange(e, index)}
 						/>
 					</div>

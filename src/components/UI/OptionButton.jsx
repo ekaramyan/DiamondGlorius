@@ -15,11 +15,19 @@ export default function OptionButton({
 	}
 	const [optionStyle, setOptionStyle] = useState(styles.search__btn)
 	useEffect(() => {
-		setOptionStyle(
-			transformArrayValue(optionIds)?.includes(option.id)
-				? styles.selected
-				: styles.search__btn
-		)
+		if (imageSource) {
+			setOptionStyle(
+				transformArrayValue(optionIds)?.includes(option.id)
+					? styles.selected_option
+					: styles.option__btn_highlight
+			)
+		} else {
+			setOptionStyle(
+				transformArrayValue(optionIds)?.includes(option.id)
+					? styles.selected
+					: styles.search__btn
+			)
+		}
 	}, [optionIds])
 
 	return (

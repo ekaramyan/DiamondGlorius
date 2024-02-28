@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux'
 import { Col, Row } from 'react-bootstrap'
 
@@ -14,10 +15,17 @@ export default function SearchResults() {
 		setSearchResults(data?.data?.data)
 	}, [data])
 	const pagination = data.data
+	const router = useRouter()
+
+	const backToFilters = () => {
+		router.push('/')
+	}
 
 	return (
 		<div style={{ marginTop: 25 }}>
-		<button className={styles.returnFilters}>Return to filter</button>
+			<button className={styles.returnFilters} onClick={backToFilters}>
+				Return to filter
+			</button>
 			{/* TODO: 
       1)Добавить кнопки пагинации, кнопку для возврата фильтрам
       2) Отредактировать стили карточек, добавить поля
