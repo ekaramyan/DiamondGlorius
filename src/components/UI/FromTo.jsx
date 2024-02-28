@@ -1,10 +1,33 @@
 import styles from '../Search/Search.module.css'
+import { useState } from 'react'
 
 export default function FromTo({ title, formData, setFormData, objectKey }) {
-	const { min, max } = formData[objectKey] ?? { min: null, max: null }
+	const { min: initialMin, max: initialMax } = formData[objectKey] ?? {
+		min: null,
+		max: null,
+	}
+	const [min, setMin] = useState(initialMin)
+	const [max, setMax] = useState(initialMax)
 
 	const handleChange = e => {
 		const { name, value } = e.target
+		let newMin = min
+		let newMax = max
+
+		if (name === 'min') {
+			newMin = value === '' ? null : Number(value)
+		} else {
+			newMax = value === '' ? null : Number(value)
+		}
+
+		if (newMin !== null && newMax !== null && newMin > newMax) {
+			const temp = newMin
+			newMin = newMax
+			newMax = temp
+		}
+
+		setMin(newMin)
+		setMax(newMax)
 
 		setFormData({
 			...formData,
@@ -40,7 +63,7 @@ export default function FromTo({ title, formData, setFormData, objectKey }) {
 						placeholder='From'
 						type='number'
 						name='min'
-						value={min}
+						value={min !== null ? min : ''}
 						onChange={handleChange}
 					/>
 					<input
@@ -48,7 +71,7 @@ export default function FromTo({ title, formData, setFormData, objectKey }) {
 						placeholder='To'
 						type='number'
 						name='max'
-						value={max}
+						value={max !== null ? max : ''}
 						onChange={handleChange}
 					/>
 				</div>

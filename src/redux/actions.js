@@ -7,3 +7,4 @@ export const setFilters = filters => ({
 	type: 'SET_FILTERS',
 	payload: filters,
 })
+export const toggleTheme = () => ({ type: 'TOGGLE_THEME' })

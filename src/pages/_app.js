@@ -1,7 +1,8 @@
 import Head from 'next/head'
+import { useEffect } from 'react'
 import { Provider } from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import '@/app/globals.css'
+import '@/app/globals.scss'
 import IndexWrapper from '@/components/Wrappers/IndexWrapper'
 import store from '../redux/store'
 // import favicon from '@/assets/img/favicon.webp'
@@ -12,11 +13,11 @@ function MyApp({ Component, pageProps }) {
 			<Head>
 				<title>Diamond Glorius</title>
 			</Head>
-			<IndexWrapper>
-				<Provider store={store}>
+			<Provider store={store}>
+				<IndexWrapper>
 					<Component {...pageProps} />
-				</Provider>
-			</IndexWrapper>
+				</IndexWrapper>
+			</Provider>
 		</>
 	)
 }

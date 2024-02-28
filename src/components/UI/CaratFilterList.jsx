@@ -33,6 +33,17 @@ export default function CaratFilterList({
 			...newCarats[index],
 			[name]: newValue,
 		}
+
+		if (
+			newCarats[index].min !== null &&
+			newCarats[index].max !== null &&
+			newCarats[index].min > newCarats[index].max
+		) {
+			const temp = newCarats[index].min
+			newCarats[index].min = newCarats[index].max
+			newCarats[index].max = temp
+		}
+
 		updateFilters(newCarats)
 	}
 

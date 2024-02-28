@@ -17,6 +17,7 @@ const initialState = savedState
 	: {
 			searchResults: [],
 			filters: initialFormData,
+			theme: 'light',
 	  }
 
 const reducer = (state = initialState, action) => {
@@ -30,6 +31,11 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				filters: action.payload,
+			}
+		case 'TOGGLE_THEME':
+			return {
+				...state,
+				theme: state.theme === 'light' ? 'dark' : 'light',
 			}
 		default:
 			return state

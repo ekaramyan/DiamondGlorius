@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { Container } from 'react-bootstrap'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
@@ -9,6 +10,17 @@ export default function IndexWrapper({ children, ...props }) {
 
 	const handleClose = () => setShow(false)
 	const handleShow = () => setShow(true)
+
+	const theme = useSelector(state => state.theme)
+	useEffect(() => {
+		const root = document.documentElement
+		if (theme === 'dark') {
+			root.classList.add('dark-theme')
+		} else {
+			root.classList.remove('dark-theme')
+		}
+	}, [theme])
+
 	return (
 		<div className='main__bg' {...props}>
 			<Header showCart={handleShow} />
