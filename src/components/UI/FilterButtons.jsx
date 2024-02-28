@@ -55,7 +55,7 @@ export default function FilterButtons({
 				style={{
 					cursor: 'pointer',
 					padding: 5,
-					border: '1px solid #ddd',
+					border: '1px solid #326fca',
 					borderRadius: 5,
 					marginBottom: 5,
 					display: 'flex',
