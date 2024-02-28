@@ -23,6 +23,7 @@ export default function FromTo({ title, formData, setFormData, objectKey }) {
 					alignItems: 'center',
 					justifyContent: 'space-between',
 					gap: 10,
+					maxWidth: '80%',
 				}}
 			>
 				<p className={styles.dis__wrapper_price}>{title}</p>

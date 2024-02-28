@@ -5,11 +5,11 @@ import { Row, Col } from 'react-bootstrap'
 
 export default function AdvanceSearch({ formData, setFormData }) {
 	return (
-		<>
+		<Row>
 			<h1 className={styles.AdvanceSearch__title}>Advance Search</h1>
 			<p className={styles.AdvanceSearch__subtitle}>Parameter</p>
 
-			<div className={styles.td__wrapper}>
+			<Col>
 				<FromTo
 					title={'DIA MN'}
 					formData={formData}
@@ -28,9 +28,9 @@ export default function AdvanceSearch({ formData, setFormData }) {
 					setFormData={setFormData}
 					objectKey={'td'}
 				/>
-			</div>
+			</Col>
 
-			<div className={styles.ang__wrapper}>
+			<Col>
 				<FromTo
 					title={'PV ANG'}
 					formData={formData}
@@ -49,9 +49,9 @@ export default function AdvanceSearch({ formData, setFormData }) {
 					setFormData={setFormData}
 					objectKey={'disc'}
 				/> */}
-			</div>
+			</Col>
 
-			<div className={styles.dia__wrapper}>
+			<Col>
 				<FromTo
 					title={'DIA MX'}
 					formData={formData}
@@ -64,7 +64,7 @@ export default function AdvanceSearch({ formData, setFormData }) {
 					setFormData={setFormData}
 					objectKey={'ratio'}
 				/>
-			</div>
-		</>
+			</Col>
+		</Row>
 	)
 }
