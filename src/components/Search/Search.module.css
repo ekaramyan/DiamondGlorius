@@ -20,7 +20,7 @@
 	margin: 10px 0 0 2px;
 	width: 50px;
 	height: 25px;
-	background-color: var(--background-color-mainBtn);
+	background-color: var(--main-bg-color);
 	border: none;
 	border-radius: 5px;
 	margin-bottom: 10px;
@@ -35,11 +35,15 @@
 	cursor: pointer;
 }
 
+.search__btn:hover {
+	border: 2px solid var(--main-hover-color);
+}
+
 .option__btn_highlight {
 	margin: 10px 0 0 2px;
 	width: 85px;
 	height: 75px;
-	background-color: var(--blue);
+	background-color: var(--main-bg-color);
 	border: none;
 	border-radius: 5px;
 	margin-bottom: 10px;
@@ -52,6 +56,10 @@
 	cursor: pointer;
 }
 
+.option__btn_highlight:hover {
+	border: 2px solid var(--main-hover-color);
+}
+
 .search__img {
 	margin-top: 4px;
 	width: 35px;
@@ -59,8 +67,10 @@
 }
 
 .search__descr {
-	color: #fff;
+	color: var(--main-text-color);
 	text-transform: uppercase;
+	font-size: 13px;
+	font-weight: 700;
 }
 
 .Title {
@@ -710,8 +720,8 @@
 	margin: 10px 0 0 2px;
 	width: 50px;
 	height: 25px;
-	background: var(--selected);
-	border: none;
+	background: #eff1fb;
+	border: 2px solid #6172d5;
 	border-radius: 5px;
 	margin-bottom: 10px;
 	display: flex;
@@ -751,4 +761,10 @@
 	width: 30px;
 	height: 30px;
 	border-radius: 20px;
+	background-color: var(--blue);
+	border: none;
+}
+
+.btnCarat:hover {
+	background-color: var(--blue);
 }

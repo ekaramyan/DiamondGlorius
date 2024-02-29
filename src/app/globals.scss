@@ -11,8 +11,11 @@
 
 	--border-main: 2px solid #696969;
 	--border-radius-10px: 10px;
-	--background-color-mainBtn: #73768c;
+	--main-bg-color: #f6f6f8;
+	--main-text-color: #73768c;
+	--main-hover-color: #6172d5;
 	--border-active: 2px solid #6172d5;
+	--title-bg-color: #eff1fb;
 
 	--primary-glow: conic-gradient(
 		from 180deg at 50% 50%,
@@ -43,13 +46,13 @@
 	--callout-border-rgb: 172, 175, 176;
 	--card-rgb: 180, 185, 188;
 	--card-border-rgb: 131, 134, 135;
-	--text-color: #000;
+	--text-color: red;
 	--blue: #4756b3;
 	--selected: #283895;
 	--card-bg: #c2c2c5;
 	.main__bg {
 		min-height: 100vh;
-		background: #e1e0e9;
+		background: #fff;
 	}
 }
 

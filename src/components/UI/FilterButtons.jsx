@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { ChevronDown } from 'react-bootstrap-icons'
 import OptionButton from './OptionButton'
+import styles from './../../app/page.module.css'
 
 export default function FilterButtons({
 	buttons,
@@ -50,12 +51,11 @@ export default function FilterButtons({
 
 	return (
 		<>
-			<div
+			<div className={styles.mainBgColor}
 				// onClick={handleToggle}
 				style={{
 					cursor: 'pointer',
 					padding: 5,
-					border: '1px solid #326fca',
 					borderRadius: 5,
 					marginBottom: 5,
 					display: 'flex',
@@ -63,7 +63,7 @@ export default function FilterButtons({
 					justifyContent: 'space-between',
 				}}
 			>
-				<h5 style={{ textTransform: 'uppercase' }}>{title}</h5>
+				<h5 className={styles.mainTitle}>{title}</h5>
 				{/* <ChevronDown
 					width={30}
 					height={30}

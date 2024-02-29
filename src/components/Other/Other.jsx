@@ -8,7 +8,7 @@ export default function Other({ otherData, handleUpdateFormData, formData }) {
 			<div className={styles.otherContainer}>
 				<h1 className={styles.otherTitle}>Other</h1>
 
-				<Col>
+				<Col md={10}>
 					<Row md={4}>
 						<FilterSelect
 							data={otherData}

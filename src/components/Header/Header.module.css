@@ -1,5 +1,5 @@
 .Header {
-	background-color: #3987fd;
+	background-color: var(--blue);
 }
 
 .Header__logo {
