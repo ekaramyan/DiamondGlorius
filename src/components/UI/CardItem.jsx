@@ -10,14 +10,7 @@ export default function CardItem({ searchResult }) {
 	}
 	return (
 		<Card className='card'>
-			<div className='cardImage'>
-				<Image
-					src={imgSrc}
-					alt={searchResult.stno}
-					layout='fill'
-					objectFit='cover'
-				/>
-			</div>
+
 			<Card.Body>
 				<Card.Title>{searchResult.stno}</Card.Title>
 				<Card.Text>{searchResult.comment}</Card.Text>
