@@ -52,7 +52,7 @@
 	--card-bg: #c2c2c5;
 	.main__bg {
 		min-height: 100vh;
-		background: #fff;
+		background: #e3ebee;
 	}
 }
 
@@ -60,6 +60,14 @@
 	--foreground-rgb: 255, 255, 255;
 	--background-start-rgb: 0, 0, 0;
 	--background-end-rgb: 0, 0, 0;
+
+	--border-main: 2px solid #696969;
+	--border-radius-10px: 10px;
+	--main-bg-color: #383838;
+	--main-text-color: #bbc0e6;
+	--main-hover-color: #6172d5;
+	--border-active: 2px solid #6172d5;
+	--title-bg-color: #3b3b3b;
 
 	--primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
 	--secondary-glow: linear-gradient(

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
 import { toggleTheme } from '@/redux/actions'
 import { Cart, Moon, Sun } from 'react-bootstrap-icons'
-import styles from './Header.module.css'
+import styles from './Header.module.scss'
 import round from '@/assets/img/icon-2.webp'
 
 export default function Header({ showCart }) {
@@ -41,9 +41,9 @@ export default function Header({ showCart }) {
 								className={styles.header__link}
 							>
 								{theme === 'dark' ? (
-									<Moon width={20} height={25} />
-								) : (
 									<Sun width={20} height={25} />
+								) : (
+									<Moon width={20} height={25} />
 								)}
 							</button>
 							<button onClick={showCart} className={styles.header__link}>

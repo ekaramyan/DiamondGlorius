@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { ChevronDown } from 'react-bootstrap-icons'
 import OptionButton from './OptionButton'
-import styles from './../../app/page.module.css'
+import styles from './../../app/page.module.scss'
 
 export default function FilterButtons({
 	buttons,
@@ -51,11 +51,13 @@ export default function FilterButtons({
 
 	return (
 		<>
-			<div className={styles.mainBgColor}
+			<div
+				className={styles.mainBgColor}
 				// onClick={handleToggle}
 				style={{
 					cursor: 'pointer',
 					padding: 5,
+					border: '1px 0px 0px 0px solid #326fca',
 					borderRadius: 5,
 					marginBottom: 5,
 					display: 'flex',

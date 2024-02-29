@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import styles from '../Search/Search.module.css'
+import styles from '../Search/Search.module.scss'
 
 export default function OptionButton({
 	option,

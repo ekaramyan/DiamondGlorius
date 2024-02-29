@@ -1,5 +1,5 @@
 import { Button, Col } from 'react-bootstrap'
-import styles from '../Search/Search.module.css'
+import styles from '../Search/Search.module.scss'
 
 export default function CaratFilterList({
 	setFilters,
@@ -50,7 +50,6 @@ export default function CaratFilterList({
 	return (
 		<div
 			style={{
-
 				display: 'flex',
 				gap: 25,
 			}}
@@ -78,8 +77,16 @@ export default function CaratFilterList({
 					</div>
 				))}
 			</Col>
-			{carats.length < 3 && <Button className={styles.btnCarat} onClick={addCarat}>+</Button>}
-			{carats.length > 1 && <Button className={styles.btnCarat} onClick={reduceCarat}>-</Button>}
+			{carats.length < 3 && (
+				<Button className={styles.btnCarat} onClick={addCarat}>
+					+
+				</Button>
+			)}
+			{carats.length > 1 && (
+				<Button className={styles.btnCarat} onClick={reduceCarat}>
+					-
+				</Button>
+			)}
 		</div>
 	)
 }

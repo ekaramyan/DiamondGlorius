@@ -12,6 +12,7 @@
 	height: 40px;
 	padding: 0 10px;
 	padding-left: 15px;
+	background: var(--main-bg-color);
 	border: var(--border-main);
 	border-radius: var(--border-radius-10px);
 }
@@ -90,6 +91,7 @@
 	height: 30px;
 	padding: 0 10px;
 	border: var(--border-main);
+	background: var(--main-bg-color);
 	border-radius: var(--border-radius-10px);
 }
 
@@ -309,6 +311,7 @@
 	height: 30px;
 	margin-right: 10px;
 	padding: 0 10px;
+	background: var(--main-bg-color);
 	border: var(--border-main);
 	border-radius: var(--border-radius-10px);
 }

@@ -24,7 +24,7 @@ export default function SearchResults() {
 	return (
 		<div style={{ marginTop: 25 }}>
 			<button className={styles.returnFilters} onClick={backToFilters}>
-				Return to filter
+				Return to filters
 			</button>
 			{/* TODO: 
       1)Добавить кнопки пагинации, кнопку для возврата фильтрам

@@ -1,4 +1,4 @@
-import styles from '../Search/Search.module.css'
+import styles from '../Search/Search.module.scss'
 import { useState } from 'react'
 
 export default function FromTo({ title, formData, setFormData, objectKey }) {
