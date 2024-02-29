@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux'
-import { Table, Button } from 'react-bootstrap'
-
+import { Table, Row } from 'react-bootstrap'
+import { FilterCircle } from 'react-bootstrap-icons'
+import useSearchDiamonds from '@/hooks/useSearchDiamonds'
 import TableItem from './UI/TableItem'
+import PaginationButtons from './UI/PaginationButtons'
 
 export default function SearchResults() {
 	const data = useSelector(state => state.searchResults)
@@ -14,16 +16,33 @@ export default function SearchResults() {
 	}, [data])
 	const pagination = data.data
 	const router = useRouter()
+	const { searchDiamonds, loading, error, success } = useSearchDiamonds()
 
 	const backToFilters = () => {
 		router.push('/')
 	}
 
+	console.log(pagination)
 	return (
 		<div style={{ marginTop: 25 }}>
-			<button className='returnFilters' onClick={backToFilters}>
-				Return to filters
-			</button>
+			<div
+				style={{
+					display: 'flex',
+					alignItems: 'flex-start',
+					justifyContent: 'center',
+					gap: 25,
+					marginBottom: 30,
+				}}
+			>
+				<button className='returnFilters' onClick={backToFilters}>
+					<FilterCircle width={30} height={30} />
+				</button>
+				<PaginationButtons
+					totalPages={pagination.total_pages}
+					currentPage={pagination.current_page}
+					onPageChange={searchDiamonds}
+				/>
+			</div>
 			{/* TODO: 
       1)Добавить кнопки пагинации, кнопку для возврата фильтрам
       2) Отредактировать стили карточек, добавить поля

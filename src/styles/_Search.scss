@@ -1,3 +1,20 @@
+.btn-primary {
+	background: var(--blue);
+	border-color: var(--blue);
+	&:hover {
+		background: var(--main-hover-color);
+		border-color: var(--main-hover-color);
+	}
+	&:checked + .btn,
+	&.active,
+	&.show,
+	&:first-child:active,
+	:not(.btn-check) + &:active {
+		background: var(--main-hover-color);
+		border-color: var(--main-hover-color);
+	}
+}
+
 .SearchContainer {
 	display: flex;
 	align-items: center;
@@ -746,7 +763,7 @@
 	margin: 10px 0 0 2px;
 	width: 85px;
 	height: 75px;
-	background: var(--selected);
+	background: var(--main-hover-color);
 	border: none;
 	border-radius: 5px;
 	margin-bottom: 10px;

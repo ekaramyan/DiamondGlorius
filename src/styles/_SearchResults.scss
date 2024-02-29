@@ -24,11 +24,11 @@
 	}
 }
 .returnFilters {
-	width: 150px;
-	height: 30px;
-	margin: 0 0 30px 150px;
-	border-radius: 10px;
-	background-color: #3987fd;
+	border-radius: 50%;
+	background-color: var(--blue);
 	border: none;
 	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
