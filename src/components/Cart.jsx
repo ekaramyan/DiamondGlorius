@@ -11,7 +11,6 @@ import {
 	FormGroup,
 } from 'react-bootstrap'
 import { Dash, Plus } from 'react-bootstrap-icons'
-import styles from './Cart.module.css'
 
 export default function Cart({ show, close }) {
 	const items = [
@@ -66,7 +65,7 @@ export default function Cart({ show, close }) {
 		},
 	]
 	return (
-		<Modal show={show} size='xl' onHide={close} className={styles.cart}>
+		<Modal show={show} size='xl' onHide={close} className='cart'>
 			<Modal.Header closeButton>
 				<Modal.Title>Shopping Cart</Modal.Title>
 			</Modal.Header>

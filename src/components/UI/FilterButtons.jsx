@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { ChevronDown } from 'react-bootstrap-icons'
 import OptionButton from './OptionButton'
-import styles from '../Search/Search.module.scss'
 
 export default function FilterButtons({
 	buttons,
@@ -52,7 +51,7 @@ export default function FilterButtons({
 	return (
 		<>
 			<div
-				className={styles.option_button__wrapper}
+				className='option_button__wrapper'
 				// onClick={handleToggle}
 			>
 				<h5>{title}</h5>

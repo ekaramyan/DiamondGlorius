@@ -1,5 +1,4 @@
 import { Button, Col } from 'react-bootstrap'
-import styles from '../Search/Search.module.scss'
 
 export default function CaratFilterList({
 	setFilters,
@@ -54,12 +53,12 @@ export default function CaratFilterList({
 				gap: 25,
 			}}
 		>
-			<p className={styles.Title}>Carat</p>
+			<p className='Title'>Carat</p>
 			<Col md={2}>
 				{carats.map((carat, index) => (
-					<div key={index} className={styles.carat__wrapper_input}>
+					<div key={index} className='carat__wrapper_input'>
 						<input
-							className={styles.carat__wrapper_inputItem}
+							className='carat__wrapper_inputItem'
 							placeholder='From'
 							type='number'
 							name='min'
@@ -67,7 +66,7 @@ export default function CaratFilterList({
 							onChange={e => handleChange(e, index)}
 						/>
 						<input
-							className={styles.carat__wrapper_inputItem}
+							className='carat__wrapper_inputItem'
 							placeholder='To'
 							type='number'
 							name='max'
@@ -78,12 +77,12 @@ export default function CaratFilterList({
 				))}
 			</Col>
 			{carats.length < 3 && (
-				<Button className={styles.btnCarat} onClick={addCarat}>
+				<Button className='btnCarat' onClick={addCarat}>
 					+
 				</Button>
 			)}
 			{carats.length > 1 && (
-				<Button className={styles.btnCarat} onClick={reduceCarat}>
+				<Button className='btnCarat' onClick={reduceCarat}>
 					-
 				</Button>
 			)}

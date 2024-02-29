@@ -1,13 +1,12 @@
 import React from 'react'
-import styles from '../AdvanceSearch/AdvanceSearch.module.scss'
-import FromTo from '../UI/FromTo'
+import FromTo from './UI/FromTo'
 import { Row, Col } from 'react-bootstrap'
 
 export default function AdvanceSearch({ formData, setFormData }) {
 	return (
 		<Row>
-			<h1 className={styles.AdvanceSearch__title}>Advance Search</h1>
-			<p className={styles.AdvanceSearch__subtitle}>Parameter</p>
+			<h1 className='AdvanceSearch__title'>Advance Search</h1>
+			<p className='AdvanceSearch__subtitle'>Parameter</p>
 
 			<Col>
 				<FromTo

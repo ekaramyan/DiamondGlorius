@@ -1,4 +1,3 @@
-import styles from '../Search/Search.module.scss'
 import { useState } from 'react'
 
 export default function FromTo({ title, formData, setFormData, objectKey }) {
@@ -49,7 +48,7 @@ export default function FromTo({ title, formData, setFormData, objectKey }) {
 					maxWidth: '80%',
 				}}
 			>
-				<p className={styles.dis__wrapper_price}>{title}</p>
+				<p className='dis__wrapper_price'>{title}</p>
 				<div
 					md={2}
 					style={{
@@ -59,7 +58,7 @@ export default function FromTo({ title, formData, setFormData, objectKey }) {
 					}}
 				>
 					<input
-						className={styles.dis__wrapper_input}
+						className='dis__wrapper_input'
 						placeholder='From'
 						type='number'
 						name='min'
@@ -67,7 +66,7 @@ export default function FromTo({ title, formData, setFormData, objectKey }) {
 						onChange={handleChange}
 					/>
 					<input
-						className={styles.dis__wrapper_input}
+						className='dis__wrapper_input'
 						placeholder='To'
 						type='number'
 						name='max'

@@ -1,5 +1,5 @@
 import { universalServerSideProps } from '@/api/ssr'
-import DiamondData from '@/components/DiamondData/DiamondData'
+import DiamondData from '@/components/DiamondData'
 
 export default function DiamondId({ diamondData }) {
 	return <DiamondData diamond={diamondData.data} />

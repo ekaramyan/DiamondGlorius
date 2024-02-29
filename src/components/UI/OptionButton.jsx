@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import styles from '../Search/Search.module.scss'
 
 export default function OptionButton({
 	option,
@@ -13,19 +12,19 @@ export default function OptionButton({
 		}
 		return value
 	}
-	const [optionStyle, setOptionStyle] = useState(styles.search__btn)
+	const [optionStyle, setOptionStyle] = useState('search__btn')
 	useEffect(() => {
 		if (imageSource) {
 			setOptionStyle(
 				transformArrayValue(optionIds)?.includes(option.id)
-					? styles.selected_option
-					: styles.option__btn_highlight
+					? 'selected_option'
+					: 'option__btn_highlight'
 			)
 		} else {
 			setOptionStyle(
 				transformArrayValue(optionIds)?.includes(option.id)
-					? styles.selected
-					: styles.search__btn
+					? 'selected'
+					: 'search__btn'
 			)
 		}
 	}, [optionIds])
@@ -34,12 +33,12 @@ export default function OptionButton({
 		<button className={optionStyle} value={option.id} onClick={onClick}>
 			{imageSource && (
 				<img
-					className={styles.search__img}
+					className='search__img'
 					src={imageSource}
 					alt={option.title}
 				/>
 			)}
-			<p className={styles.search__descr}>{option.title}</p>
+			<p className='search__descr'>{option.title}</p>
 		</button>
 	)
 }

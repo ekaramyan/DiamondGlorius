@@ -3,9 +3,8 @@ import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux'
 import { Col, Row } from 'react-bootstrap'
 
-import CardItem from '../UI/CardItem'
+import CardItem from './UI/CardItem'
 
-import styles from './SearchResults.module.css'
 
 export default function SearchResults() {
 	const data = useSelector(state => state.searchResults)
@@ -23,7 +22,7 @@ export default function SearchResults() {
 
 	return (
 		<div style={{ marginTop: 25 }}>
-			<button className={styles.returnFilters} onClick={backToFilters}>
+			<button className='returnFilters' onClick={backToFilters}>
 				Return to filters
 			</button>
 			{/* TODO: 

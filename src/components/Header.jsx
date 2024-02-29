@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
 import { toggleTheme } from '@/redux/actions'
 import { Cart, Moon, Sun } from 'react-bootstrap-icons'
-import styles from './Header.module.scss'
 import round from '@/assets/img/icon-2.webp'
 
 export default function Header({ showCart }) {
@@ -12,7 +11,7 @@ export default function Header({ showCart }) {
 	const dispatch = useDispatch()
 	return (
 		<>
-			<div className={styles.Header}>
+			<div className='Header'>
 				<Container
 					fluid
 					style={{
@@ -31,14 +30,14 @@ export default function Header({ showCart }) {
 							width: '100%',
 						}}
 					>
-						<div className={styles.Header__logo}>
+						<div className='Header__logo'>
 							<Image src={round.src} width={40} height={40} />
-							<h1 className={styles.header__title}>Diamonds</h1>
+							<h1 className='header__title'>Diamonds</h1>
 						</div>
 						<div>
 							<button
 								onClick={() => dispatch(toggleTheme())}
-								className={styles.header__link}
+								className='header__link'
 							>
 								{theme === 'dark' ? (
 									<Sun width={20} height={25} />
@@ -46,7 +45,7 @@ export default function Header({ showCart }) {
 									<Moon width={20} height={25} />
 								)}
 							</button>
-							<button onClick={showCart} className={styles.header__link}>
+							<button onClick={showCart} className='header__link'>
 								<Cart color={'#e0e0e0'} width={30} height={25} />
 							</button>
 						</div>

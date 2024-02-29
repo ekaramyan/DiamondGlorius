@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Container } from 'react-bootstrap'
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
-import Cart from '../Cart/Cart'
+import Header from '../Header'
+import Footer from '../Footer'
+import Cart from '../Cart'
 
 export default function IndexWrapper({ children, ...props }) {
 	const [show, setShow] = useState(false)

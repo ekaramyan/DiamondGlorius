@@ -2,13 +2,12 @@ import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, Button, Spinner } from 'react-bootstrap'
-import styles from './Search.module.scss'
-import AdvanceSearch from '../AdvanceSearch/AdvanceSearch'
-import Other from '../Other/Other'
-import CircleButton from '../UI/CircleButton'
-import FromTo from '../UI/FromTo'
+import AdvanceSearch from './AdvanceSearch'
+import Other from './Other'
+import CircleButton from './UI/CircleButton'
+import FromTo from './UI/FromTo'
 import { GenderNeuter, ArrowCounterclockwise } from 'react-bootstrap-icons'
-import FilterSelect from '../UI/FilterSelect'
+import FilterSelect from './UI/FilterSelect'
 import useSearchDiamonds from '@/hooks/useSearchDiamonds'
 import {
 	initialFormData,
@@ -17,8 +16,8 @@ import {
 	getOtherData,
 	diamondShapesImg,
 } from '@/initialFormData'
-import { setFilters } from '../../redux/actions'
-import CaratFilterList from '../UI/CaratFilterList'
+import { setFilters } from '../redux/actions'
+import CaratFilterList from './UI/CaratFilterList'
 
 export default function Search({ diamonds }) {
 	const formData = useSelector(state => state.filters)
@@ -80,7 +79,7 @@ export default function Search({ diamonds }) {
 				>
 					<label>
 						<input
-							className={styles.search__input}
+							className='search__input'
 							placeholder='Search'
 							type='search'
 							name='stno'
@@ -89,7 +88,7 @@ export default function Search({ diamonds }) {
 						/>
 					</label>
 					<Button
-						className={styles.button__primary}
+						className='button__primary'
 						variant='primary'
 						onClick={handleSearchClick}
 					>
@@ -111,7 +110,7 @@ export default function Search({ diamonds }) {
 						)}
 					</Button>
 					<Button
-						className={styles.button__primary}
+						className='button__primary'
 						variant='primary'
 						onClick={handleResetFormData}
 					>
