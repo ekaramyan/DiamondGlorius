@@ -14,6 +14,7 @@
   --main-hover-color: #6172d5;
   --border-active: 2px solid #6172d5;
   --title-bg-color: #eff1fb;
+  --headers_color: #73768c;
   --primary-glow: conic-gradient(
   	from 180deg at 50% 50%,
   	#16abff33 0deg,
@@ -50,6 +51,9 @@
   min-height: 100vh;
   background: #e3ebee;
 }
+:root input {
+  color: #000;
+}
 
 .dark-theme {
   --foreground-rgb: 255, 255, 255;
@@ -62,6 +66,7 @@
   --main-hover-color: #6172d5;
   --border-active: 2px solid #6172d5;
   --title-bg-color: #3b3b3b;
+  --headers_color: #454755;
   --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
   --secondary-glow: linear-gradient(
   	to bottom right,

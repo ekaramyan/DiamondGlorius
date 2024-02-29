@@ -88,7 +88,11 @@ export default function Search({ diamonds }) {
 							onChange={handleInputChange}
 						/>
 					</label>
-					<Button variant='primary' onClick={handleSearchClick}>
+					<Button
+						className={styles.button__primary}
+						variant='primary'
+						onClick={handleSearchClick}
+					>
 						{loading ? (
 							<Spinner
 								as='span'
@@ -106,7 +110,11 @@ export default function Search({ diamonds }) {
 							/>
 						)}
 					</Button>
-					<Button variant='primary' onClick={handleResetFormData}>
+					<Button
+						className={styles.button__primary}
+						variant='primary'
+						onClick={handleResetFormData}
+					>
 						<ArrowCounterclockwise color='#e0e0e0' width={30} height={30} />
 					</Button>
 				</div>
