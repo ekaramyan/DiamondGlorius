@@ -110,13 +110,19 @@
 	--card-bg: #4c4c50;
 	--bs-body-bg: #323235;
 	p {
-		color: #e0e0e0;
+		color: var(--text-color);
 	}
 	h1 {
-		color: #e0e0e0;
+		color: var(--text-color);
 	}
 	div {
-		color: #e0e0e0;
+		color: var(--text-color);
+	}
+	th {
+		color: var(--text-color);
+	}
+	td {
+		color: var(--text-color);
 	}
 	.main__bg {
 		background: #272729;
