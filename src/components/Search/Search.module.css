@@ -743,3 +743,12 @@
 	padding-top: 15px;
 	font-size: 12px;
 }
+
+.btnCarat {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	border-radius: 20px;
+}
