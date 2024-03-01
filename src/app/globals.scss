@@ -58,7 +58,7 @@
 		background: #e3ebee;
 	}
 	input {
-		color: #000;
+		color: var(--main-text-color);
 	}
 	font-family: var(--font-family);
 	* {

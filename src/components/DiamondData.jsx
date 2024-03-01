@@ -64,7 +64,12 @@ export default function DiamondData({ diamond }) {
 							overflow: 'hidden',
 						}}
 					>
-						<Image src={diamond.cert_url} layout='fill' objectFit='contain' />
+						<Image
+							src={diamond.cert_url}
+							alt='certificate'
+							layout='fill'
+							objectFit='contain'
+						/>
 					</div>
 				</Col>
 			</Col>

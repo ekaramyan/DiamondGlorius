@@ -31,7 +31,7 @@ export default function Header({ showCart }) {
 						}}
 					>
 						<div className='Header__logo'>
-							<Image src={round.src} width={40} height={40} />
+							<Image src={round.src} alt='logo' width={40} height={40} />
 							<h1 className='header__title'>Diamonds</h1>
 						</div>
 						<div>

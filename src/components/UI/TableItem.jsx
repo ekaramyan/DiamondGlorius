@@ -106,24 +106,6 @@ export default function TableItem({ searchResult }) {
 								height={120}
 							/>
 						</div>
-						<div
-							style={{
-								width: 180,
-								height: 150,
-								position: 'relative',
-								borderRadius: 15,
-								overflow: 'hidden',
-							}}
-						>
-							<iframe
-								src={searchResult.vido_url}
-								width='100%'
-								height='145'
-								frameBorder='0'
-								scrolling='no'
-								style={{ borderRadius: 15 }}
-							></iframe>
-						</div>
 					</Card.Body>
 				</td>
 			</tr>

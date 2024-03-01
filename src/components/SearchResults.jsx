@@ -9,20 +9,18 @@ import PaginationButtons from './UI/PaginationButtons'
 
 export default function SearchResults() {
 	const data = useSelector(state => state.searchResults)
-	console.log(data)
+
 	const [searchResults, setSearchResults] = useState([])
 	useEffect(() => {
-		setSearchResults(data?.data?.data)
+		setSearchResults(data?.data)
 	}, [data])
-	const pagination = data.data
 	const router = useRouter()
 	const { searchDiamonds, loading, error, success } = useSearchDiamonds()
 
 	const backToFilters = () => {
 		router.push('/')
 	}
-
-	console.log(pagination)
+	console.log(searchResults)
 	return (
 		<div style={{ marginTop: 25 }}>
 			<div
@@ -38,15 +36,11 @@ export default function SearchResults() {
 					<FilterCircle width={30} height={30} />
 				</button>
 				<PaginationButtons
-					totalPages={pagination.total_pages}
-					currentPage={pagination.current_page}
+					totalPages={searchResults.total_pages}
+					currentPage={searchResults.current_page}
 					onPageChange={searchDiamonds}
 				/>
 			</div>
-			{/* TODO: 
-      1)Добавить кнопки пагинации, кнопку для возврата фильтрам
-      2) Отредактировать стили карточек, добавить поля
-      */}
 			<Table striped bordered hover>
 				<thead>
 					<tr>
@@ -74,7 +68,7 @@ export default function SearchResults() {
 					</tr>
 				</thead>
 				<tbody>
-					{searchResults?.map((searchResult, index) => (
+					{searchResults?.data?.map((searchResult, index) => (
 						<TableItem key={searchResult.id} searchResult={searchResult} />
 					))}
 				</tbody>

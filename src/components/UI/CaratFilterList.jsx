@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Button, Col } from 'react-bootstrap'
 
 export default function CaratFilterList({
@@ -47,16 +48,14 @@ export default function CaratFilterList({
 	}
 
 	return (
-		<div
-			style={{
-				display: 'flex',
-				gap: 25,
-			}}
-		>
-			<p className='Title'>Carat</p>
+		<div style={{ display: 'flex', gap: 25 }}>
+			<p className='wrapper_price'>Carat</p>
 			<Col md={2}>
 				{carats.map((carat, index) => (
-					<div key={index} className='carat__wrapper_input'>
+					<div
+						key={`${carat.min}-${carat.max}`}
+						className='carat__wrapper_input'
+					>
 						<input
 							className='carat__wrapper_inputItem'
 							placeholder='From'

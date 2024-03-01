@@ -109,6 +109,7 @@
 	width: 90px;
 	height: 30px;
 	padding: 0 10px;
+	color: var(--text-color);
 	border: var(--border-main);
 	background: var(--main-bg-color);
 	border-radius: var(--border-radius-10px);
@@ -307,42 +308,6 @@
 
 .lab__input {
 	display: none;
-}
-
-.dis__wrapper {
-	display: flex;
-	align-items: center;
-}
-.dis__wrapper_title {
-	display: inline-block;
-	font-weight: 600;
-	font-size: 20px;
-}
-
-.dis__wrapper_title2 {
-	display: inline-block;
-	font-weight: 600;
-	font-size: 20px;
-}
-
-.dis__wrapper_input {
-	width: 115px;
-	height: 30px;
-	margin-right: 10px;
-	padding: 0 10px;
-	background: var(--main-bg-color);
-	border: var(--border-main);
-	border-radius: var(--border-radius-10px);
-}
-
-.dis__wrapper_price {
-	font-weight: 600;
-	font-size: 20px;
-}
-
-.dis__wrapper_price2 {
-	font-weight: 600;
-	font-size: 20px;
 }
 
 .example__wrapper {
@@ -744,7 +709,7 @@
 	min-width: 25px;
 	height: 35px;
 	padding: 0 15px;
-	background: #eff1fb;
+	background: var(--main-hover-color);
 	border: 2px solid #6172d5;
 	border-radius: 5px;
 	margin-bottom: 10px;
@@ -757,6 +722,9 @@
 
 	padding-top: 15px;
 	font-size: 12px;
+	.search__descr {
+		color: #fff;
+	}
 }
 
 .selected_option {

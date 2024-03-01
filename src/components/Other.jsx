@@ -5,7 +5,7 @@ export default function Other({ otherData, handleUpdateFormData, formData }) {
 	return (
 		<>
 			<div className='otherContainer'>
-				<h1 className='otherTitle'>Other</h1>
+				<h1 className='AdvanceSearch__title'>Other</h1>
 
 				<Col md={10}>
 					<Row md={4}>

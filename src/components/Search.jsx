@@ -1,13 +1,9 @@
 import { useRouter } from 'next/router'
+import dynamic from 'next/dynamic'
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, Button, Spinner } from 'react-bootstrap'
-import AdvanceSearch from './AdvanceSearch'
-import Other from './Other'
-import CircleButton from './UI/CircleButton'
-import FromTo from './UI/FromTo'
 import { GenderNeuter, ArrowCounterclockwise } from 'react-bootstrap-icons'
-import FilterSelect from './UI/FilterSelect'
 import useSearchDiamonds from '@/hooks/useSearchDiamonds'
 import {
 	initialFormData,
@@ -17,7 +13,16 @@ import {
 	diamondShapesImg,
 } from '@/initialFormData'
 import { setFilters } from '../redux/actions'
-import CaratFilterList from './UI/CaratFilterList'
+
+import AdvanceSearch from './AdvanceSearch'
+import Other from './Other'
+import FromTo from './UI/FromTo'
+import CircleButton from './UI/CircleButton'
+import FilterSelect from './UI/FilterSelect'
+
+const CaratFilterList = dynamic(() => import('./UI/CaratFilterList'), {
+	ssr: false,
+})
 
 export default function Search({ diamonds }) {
 	const formData = useSelector(state => state.filters)
@@ -58,7 +63,7 @@ export default function Search({ diamonds }) {
 	const handleResetFormData = () => {
 		handleSetFilters(initialFormData)
 	}
-
+	
 	const menuTabs = getMenuTabs(diamonds)
 	const conditionTypes = getConditionTypes(diamonds)
 	const otherData = getOtherData(diamonds)

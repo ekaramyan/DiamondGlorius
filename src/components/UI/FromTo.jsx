@@ -37,6 +37,7 @@ export default function FromTo({ title, formData, setFormData, objectKey }) {
 		})
 	}
 
+	console.log(formData)
 	return (
 		<>
 			<div
@@ -46,9 +47,10 @@ export default function FromTo({ title, formData, setFormData, objectKey }) {
 					justifyContent: 'space-between',
 					gap: 10,
 					maxWidth: '80%',
+					marginBottom: 20,
 				}}
 			>
-				<p className='dis__wrapper_price'>{title}</p>
+				<p className='wrapper_price'>{title}</p>
 				<div
 					md={2}
 					style={{
@@ -58,7 +60,7 @@ export default function FromTo({ title, formData, setFormData, objectKey }) {
 					}}
 				>
 					<input
-						className='dis__wrapper_input'
+						className='wrapper_input'
 						placeholder='From'
 						type='number'
 						name='min'
@@ -66,7 +68,7 @@ export default function FromTo({ title, formData, setFormData, objectKey }) {
 						onChange={handleChange}
 					/>
 					<input
-						className='dis__wrapper_input'
+						className='wrapper_input'
 						placeholder='To'
 						type='number'
 						name='max'
