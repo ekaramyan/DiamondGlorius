@@ -9,3 +9,11 @@
 		height: 100vh !important;
 	}
 }
+.input-group {
+	input {
+		color: var(--main-text-color);
+	}
+	.form-control::placeholder {
+		color: var(--main-text-color);
+	}
+}

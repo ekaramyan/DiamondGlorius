@@ -1,6 +1,5 @@
-import { Row, Col, Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
 import { toggleTheme } from '@/redux/actions'
 import { Cart, Moon, Sun } from 'react-bootstrap-icons'
@@ -34,7 +33,14 @@ export default function Header({ showCart }) {
 							<Image src={round.src} alt='logo' width={40} height={40} />
 							<h1 className='header__title'>Diamonds</h1>
 						</div>
-						<div>
+						<div
+							style={{
+								display: 'flex',
+								justifyContent: 'center',
+								alignItems: 'center',
+								gap: 15,
+							}}
+						>
 							<button
 								onClick={() => dispatch(toggleTheme())}
 								className='header__link'

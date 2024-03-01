@@ -1,6 +1,6 @@
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
-import Search from '@/components/Search'
+import Search from '@/containers/Search'
 import { universalServerSideProps } from '@/api/ssr'
 
 export default function index({ diamondData }) {

@@ -1,14 +1,18 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux'
-import { Table, Row } from 'react-bootstrap'
 import { FilterCircle } from 'react-bootstrap-icons'
+import { useMediaQuery } from 'react-responsive'
+import dynamic from 'next/dynamic'
+
 import useSearchDiamonds from '@/hooks/useSearchDiamonds'
-import TableItem from './UI/TableItem'
-import PaginationButtons from './UI/PaginationButtons'
+import PaginationButtons from '../components/UI/PaginationButtons'
+import TableComponent from '../components/TableComponent'
+import Cards from '../components/Cards'
 
 export default function SearchResults() {
 	const data = useSelector(state => state.searchResults)
+	const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
 
 	const [searchResults, setSearchResults] = useState([])
 	useEffect(() => {
@@ -20,7 +24,7 @@ export default function SearchResults() {
 	const backToFilters = () => {
 		router.push('/')
 	}
-	console.log(searchResults)
+
 	return (
 		<div style={{ marginTop: 25 }}>
 			<div
@@ -41,38 +45,11 @@ export default function SearchResults() {
 					onPageChange={searchDiamonds}
 				/>
 			</div>
-			<Table striped bordered hover>
-				<thead>
-					<tr>
-						<th>Stack №</th>
-						<th>Shape</th>
-						<th>Carat</th>
-						<th>Col</th>
-						<th>Clarity</th>
-						<th>Cs</th>
-						<th>Cut</th>
-						<th>Pol</th>
-						<th>Sym</th>
-						<th>Fl</th>
-						<th>Lab</th>
-						<th>Table%</th>
-						<th>TD%</th>
-						<th>Measurement</th>
-						<th>Bit</th>
-						<th>Bc</th>
-						<th>Wt</th>
-						<th>Wc</th>
-						<th>Milky</th>
-						<th>L/W Ratio</th>
-						<th>Additional</th>
-					</tr>
-				</thead>
-				<tbody>
-					{searchResults?.data?.map((searchResult, index) => (
-						<TableItem key={searchResult.id} searchResult={searchResult} />
-					))}
-				</tbody>
-			</Table>
+			{isMobile ? (
+				<Cards data={searchResults.data} />
+			) : (
+				<TableComponent data={searchResults.data} />
+			)}
 		</div>
 	)
 }

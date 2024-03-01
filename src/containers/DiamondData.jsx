@@ -37,7 +37,7 @@ export default function DiamondData({ diamond }) {
 					<div
 						style={{
 							width: 530,
-							height: 482,
+							height: '100%',
 							position: 'relative',
 							borderRadius: 15,
 							overflow: 'hidden',

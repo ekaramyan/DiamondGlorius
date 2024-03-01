@@ -14,15 +14,18 @@ import {
 } from '@/initialFormData'
 import { setFilters } from '../redux/actions'
 
-import AdvanceSearch from './AdvanceSearch'
-import Other from './Other'
-import FromTo from './UI/FromTo'
-import CircleButton from './UI/CircleButton'
-import FilterSelect from './UI/FilterSelect'
+import AdvanceSearch from '../components/AdvanceSearch'
+import Other from '../components/Other'
+import FromTo from '../components/UI/FromTo'
+import CircleButton from '../components/UI/CircleButton'
+import FilterSelect from '../components/UI/FilterSelect'
 
-const CaratFilterList = dynamic(() => import('./UI/CaratFilterList'), {
-	ssr: false,
-})
+const CaratFilterList = dynamic(
+	() => import('../components/UI/CaratFilterList'),
+	{
+		ssr: false,
+	}
+)
 
 export default function Search({ diamonds }) {
 	const formData = useSelector(state => state.filters)
@@ -63,7 +66,7 @@ export default function Search({ diamonds }) {
 	const handleResetFormData = () => {
 		handleSetFilters(initialFormData)
 	}
-	
+
 	const menuTabs = getMenuTabs(diamonds)
 	const conditionTypes = getConditionTypes(diamonds)
 	const otherData = getOtherData(diamonds)

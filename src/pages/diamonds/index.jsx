@@ -1,5 +1,5 @@
 import { universalServerSideProps } from '@/api/ssr'
-import SearchResults from '@/components/SearchResults'
+import SearchResults from '@/containers/SearchResults'
 
 export default function index({ diamondData }) {
 	return (
