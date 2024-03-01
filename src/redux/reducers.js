@@ -9,7 +9,6 @@ const getSavedState = () => {
 		return null
 	}
 }
-
 const savedState = getSavedState()
 
 const initialState = savedState
@@ -18,6 +17,7 @@ const initialState = savedState
 			searchResults: [],
 			filters: initialFormData,
 			theme: 'light',
+			viewMode: 'table',
 	  }
 
 const reducer = (state = initialState, action) => {
@@ -36,6 +36,11 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				theme: state.theme === 'light' ? 'dark' : 'light',
+			}
+		case 'TOGGLE_VIEW_MODE':
+			return {
+				...state,
+				viewMode: state.viewMode === 'table' ? 'cards' : 'table',
 			}
 		default:
 			return state

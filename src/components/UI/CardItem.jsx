@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 import { Eye, Cart } from 'react-bootstrap-icons'
 
 export default function CardItem({ searchResult }) {
-	console.log(searchResult)
 	const router = useRouter()
 	const imgSrc = searchResult.img_url
 	const watchAll = id => {

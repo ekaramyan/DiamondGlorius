@@ -3,7 +3,7 @@ import TableItem from './UI/TableItem'
 
 export default function TableComponent({ data }) {
 	return (
-		<Table striped bordered hover>
+		<Table striped bordered hover style={{ overflowX: 'auto' }}>
 			<thead>
 				<tr>
 					<th>Stack №</th>

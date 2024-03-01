@@ -1,0 +1,16 @@
+.pagination {
+	--bs-pagination-color: var(--main-hover-color);
+	--bs-pagination-focus-color: var(--text-color);
+	--bs-pagination-active-bg: var(--blue);
+	--bs-pagination-active-border-color: var(--blue);
+	--bs-pagination-active-color: var(--text-color);
+	--bs-pagination-hover-color: var(--text-color);
+	--bs-pagination-border-color: var(--card-bg);
+	--bs-pagination-disabled-bg: var(--title-bg-color);
+	--bs-pagination-disabled-color: var(--disabled-text);
+	--bs-pagination-disabled-border-color: var(--title-bg-color);
+	--bs-pagination-focus-bg: var(--blue);
+	--bs-pagination-active-color: var(--text-color);
+	--bs-pagination-hover-bg: var(--blue);
+	--bs-pagination-hover-border-color: var(--blue);
+}

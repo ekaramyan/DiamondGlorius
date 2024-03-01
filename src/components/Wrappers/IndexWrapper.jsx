@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Container } from 'react-bootstrap'
-import Header from '../Header'
+import dynamic from 'next/dynamic'
+const Header = dynamic(() => import('../Header'), { ssr: false })
 import Footer from '../Footer'
 import Cart from '../Cart'
 
@@ -26,7 +27,7 @@ export default function IndexWrapper({ children, ...props }) {
 			<Header showCart={handleShow} />
 			<Container
 				fluid
-				style={{ maxWidth: '1400px', overflow: show ? 'hidden' : 'visible' }}
+				style={{ maxWidth: '1400px', overflow: show ? 'auto' : 'visible' }}
 			>
 				{children}
 				<Cart show={show} close={handleClose} />

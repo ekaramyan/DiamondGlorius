@@ -1,12 +1,17 @@
-import { Container } from 'react-bootstrap'
+'use client'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import { useSelector, useDispatch } from 'react-redux'
+import { Container } from 'react-bootstrap'
+import { Cart, Moon, Sun, CardHeading, Table } from 'react-bootstrap-icons'
 import { toggleTheme } from '@/redux/actions'
-import { Cart, Moon, Sun } from 'react-bootstrap-icons'
+import { toggleViewMode } from '@/redux/actions'
 import round from '@/assets/img/icon-2.webp'
 
 export default function Header({ showCart }) {
+	const router = useRouter()
 	const theme = useSelector(state => state.theme)
+	const viewMode = useSelector(state => state.viewMode)
 	const dispatch = useDispatch()
 	return (
 		<>
@@ -41,6 +46,18 @@ export default function Header({ showCart }) {
 								gap: 15,
 							}}
 						>
+							{router.route === '/diamonds' && (
+								<button
+									onClick={() => dispatch(toggleViewMode())}
+									className='header__link'
+								>
+									{viewMode === 'cards' ? (
+										<Table width={20} height={25} />
+									) : (
+										<CardHeading width={20} height={25} />
+									)}
+								</button>
+							)}
 							<button
 								onClick={() => dispatch(toggleTheme())}
 								className='header__link'

@@ -49,10 +49,11 @@
 	--callout-border-rgb: 172, 175, 176;
 	--card-rgb: 180, 185, 188;
 	--card-border-rgb: 131, 134, 135;
-	--text-color: red;
+	--text-color: #cacaca;
 	--blue: #4756b3;
 	--selected: #283895;
 	--card-bg: #c2c2c5;
+	--disabled-text: #c8d2d6;
 	.main__bg {
 		min-height: 100vh;
 		background: #e3ebee;
@@ -80,6 +81,7 @@
 	--title-bg-color: #3b3b3b;
 	--headers_color: #8e8f97;
 	--bs-body-color: #fff;
+	--disabled-text: #515155;
 
 	--primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
 	--secondary-glow: linear-gradient(
