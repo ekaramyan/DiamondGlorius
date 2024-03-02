@@ -43,6 +43,7 @@ export default function FromTo({ title, formData, setFormData, objectKey }) {
 			<div
 				style={{
 					display: 'flex',
+					flexWrap: 'wrap',
 					alignItems: 'center',
 					justifyContent: 'space-between',
 					gap: 10,

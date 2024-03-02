@@ -128,7 +128,10 @@ export default function Search({ diamonds }) {
 			</Row>
 
 			<Row>
-				<Col md={4} style={{ width: '100%', display: 'flex', gap: 5 }}>
+				<Col
+					md={4}
+					style={{ width: '100%', display: 'flex', flexWrap: 'wrap', gap: 5 }}
+				>
 					{diamondShapes.map((diamondShape, index) => (
 						<CircleButton
 							key={diamondShape.id}
@@ -161,6 +164,7 @@ export default function Search({ diamonds }) {
 					flexDirection: 'column',
 					alignItems: 'start',
 					justifyContent: 'center',
+					flexWrap: 'wrap',
 					marginTop: 35,
 				}}
 			>
