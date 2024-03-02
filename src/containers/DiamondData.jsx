@@ -5,6 +5,7 @@ import { useMediaQuery } from 'react-responsive'
 
 import ImageModal from '@/components/UI/ImageModal'
 import { diamondTable } from '@/initialFormData'
+import ImageWrapper from '@/components/Wrappers/ImageWrapper'
 
 export default function DiamondData({ diamond }) {
 	const [modalSrc, setModalSrc] = useState(null)
@@ -45,25 +46,10 @@ export default function DiamondData({ diamond }) {
 				<Col>
 					<Row>
 						<Col className='data-column'>
-							<div
-								style={{
-									width: 508,
-									height: 400,
-									position: 'relative',
-									borderRadius: 15,
-									overflow: 'hidden',
-									cursor: 'pointer',
-								}}
-								onClick={() => handleOpenModal(diamond.img_url)}
-							>
-								<Image
-									src={diamond.img_url}
-									alt={diamond.comment}
-									layout='fill'
-									objectFit='cover'
-									style={{ borderRadius: 15 }}
-								/>
-							</div>
+							<ImageWrapper
+								source={diamond.img_url}
+								handleOpenModal={handleOpenModal}
+							/>
 							<div className='data-column__text'>
 								<p>stone id: {diamond.id}</p>
 								<h6>

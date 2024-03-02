@@ -7,20 +7,13 @@
 	cursor: pointer;
 	position: relative;
 	overflow: hidden;
-	height: 150px;
-	width: 150px;
-	transition: height 0.3s ease;
+	height: auto;
+	width: 100%;
 	border-radius: 15px;
-	aspect-ratio: 256∶203;
+	aspect-ratio: 6/5;
+	transition: height 0.3s ease;
 	img {
 		border-radius: 15px;
-	}
-	.show {
-		height: 150px;
-	}
-
-	.hide {
-		height: 0;
 	}
 }
 .returnFilters {
@@ -31,4 +24,22 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+.additional-data {
+	display: flex;
+	gap: 15px;
+	overflow: hidden;
+	transition: max-height 0.3s ease;
+	.cardImage {
+		height: 150px;
+		width: auto;
+	}
+}
+
+.card {
+	.cardImage {
+		cursor: default;
+		width: 100%;
+		height: 250px;
+	}
 }

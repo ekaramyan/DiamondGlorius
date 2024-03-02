@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { Eye, Cart, ChevronDown } from 'react-bootstrap-icons'
 import ImageModal from './ImageModal'
+import ImageWrapper from '../Wrappers/ImageWrapper'
 
 export default function TableItem({ searchResult }) {
 	const router = useRouter()
@@ -76,36 +77,19 @@ export default function TableItem({ searchResult }) {
 					style={{ visibility: showDetails ? 'visible' : 'hidden' }}
 				>
 					<Card.Body
+						className='additional-data'
 						style={{
-							display: 'flex',
-							gap: 15,
 							maxHeight: showDetails ? '150px' : '0',
-							overflow: 'hidden',
-							transition: 'max-height 0.3s ease',
 						}}
 					>
-						<div
-							className='cardImage'
-							onClick={() => handleOpenModal(searchResult.img_url)}
-						>
-							<Image
-								src={searchResult.img_url}
-								alt={searchResult.stno}
-								width={150}
-								height={120}
-							/>
-						</div>
-						<div
-							className='cardImage'
-							onClick={() => handleOpenModal(searchResult.cert_url)}
-						>
-							<Image
-								src={searchResult.cert_url}
-								alt={searchResult.stno}
-								width={150}
-								height={120}
-							/>
-						</div>
+						<ImageWrapper
+							source={searchResult.img_url}
+							handleOpenModal={handleOpenModal}
+						/>
+						<ImageWrapper
+							source={searchResult.cert_url}
+							handleOpenModal={handleOpenModal}
+						/>
 					</Card.Body>
 				</td>
 			</tr>

@@ -2,6 +2,7 @@ import { Card, Button, Row, Col } from 'react-bootstrap'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { Eye, Cart } from 'react-bootstrap-icons'
+import ImageWrapper from '../Wrappers/ImageWrapper'
 
 export default function CardItem({ searchResult }) {
 	const router = useRouter()
@@ -14,14 +15,7 @@ export default function CardItem({ searchResult }) {
 			<Card.Body>
 				<Row>
 					<Col>
-						<div className='cardImage'>
-							<Image
-								src={imgSrc}
-								alt={searchResult.stno}
-								layout='fill'
-								objectFit='cover'
-							/>
-						</div>
+						<ImageWrapper source={imgSrc} handleOpenModal={null} />
 					</Col>
 					<Col>
 						<Card.Title>{searchResult.shape.title}</Card.Title>
