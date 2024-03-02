@@ -1,40 +1,25 @@
 import Image from 'next/image'
+import { useState } from 'react'
 import { Row, Col, Table } from 'react-bootstrap'
+import { useMediaQuery } from 'react-responsive'
+
+import ImageModal from '@/components/UI/ImageModal'
+import { diamondTable } from '@/initialFormData'
 
 export default function DiamondData({ diamond }) {
-	console.log(diamond)
+	const [modalSrc, setModalSrc] = useState(null)
+	const tableData = diamondTable(diamond)
 
-	const diamondTable = [
-		{ title: 'stone id', value: diamond.id },
-		{ title: 'shape', value: diamond.shape.title },
-		{ title: 'carat', value: diamond.carat },
-		{ title: 'color', value: diamond.color.title },
-		{ title: 'clarity', value: diamond.clarity.title },
-		{ title: 'color shade', value: diamond.color_shade.title },
-		{ title: 'Rapaport', value: diamond.rap_price },
-		{ title: 'cut', value: diamond.cut_type.title },
-		{ title: 'polish', value: diamond.finish_type.title },
-		{ title: 'symmetry', value: diamond.sym_type.title },
-		{ title: 'Fluorescence', value: diamond.fluro_type.title },
-		{ title: 'lab', value: diamond.cert.title },
-		{ title: 'table%', value: `${diamond.table_per}%` },
-		// { title: 'total depth%', value: `${diamond.table_per}%` },
-		{ title: 'Measurements', value: diamond.measure },
-		{ title: 'gridle', value: diamond.gridle },
-		// { title: 'gridle%', value: diamond.id },
-		{ title: 'bit', value: diamond.bit_type.title },
-		{ title: 'bc', value: diamond.bc_type.title },
-		{ title: 'wc', value: diamond.wc_type.title },
-		{ title: 'h&a', value: diamond.ha },
-		{ title: 'milky', value: diamond.milky_type.title },
-		{ title: 'eye clean', value: diamond.ec_type.title },
-		{ title: 'oppv', value: diamond.oppv_type.title },
-		{ title: 'opta', value: diamond.opta_type.title },
-		{ title: 'opcr', value: diamond.opta_crown.title },
-		{ title: 'l/w ratio', value: diamond.l_w_ratio },
-		{ title: 'Comment GIA', value: diamond.comment },
-		// { title: 'FancyColorDescription', value: diamond.id },
-	]
+	const handleOpenModal = src => {
+		setModalSrc(src)
+	}
+
+	const handleCloseModal = () => {
+		setModalSrc(false)
+	}
+
+	const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
+
 	return (
 		<>
 			<Row
@@ -49,7 +34,7 @@ export default function DiamondData({ diamond }) {
 			>
 				<Table striped bordered hover style={{ maxWidth: 300 }}>
 					<tbody>
-						{diamondTable.map((_, index) => (
+						{tableData.map((_, index) => (
 							<tr key={index}>
 								<td style={{ textTransform: 'uppercase' }}>{_.title}</td>
 								<td>{_.value}</td>
@@ -67,7 +52,9 @@ export default function DiamondData({ diamond }) {
 									position: 'relative',
 									borderRadius: 15,
 									overflow: 'hidden',
+									cursor: 'pointer',
 								}}
+								onClick={() => handleOpenModal(diamond.img_url)}
 							>
 								<Image
 									src={diamond.img_url}
@@ -106,12 +93,14 @@ export default function DiamondData({ diamond }) {
 					<Col>
 						<div
 							style={{
-								width: '100%',
-								height: '1000px',
 								position: 'relative',
+								width: '100%',
+								height: isMobile ? 300 : 700,
 								borderRadius: 15,
 								overflow: 'hidden',
+								cursor: 'pointer',
 							}}
+							onClick={() => handleOpenModal(diamond.cert_url)}
 						>
 							<Image
 								src={diamond.cert_url}
@@ -123,6 +112,11 @@ export default function DiamondData({ diamond }) {
 					</Col>
 				</Col>
 			</Row>
+			<ImageModal
+				modalSrc={modalSrc}
+				handleCloseModal={handleCloseModal}
+				imageData={diamond}
+			/>
 		</>
 	)
 }
