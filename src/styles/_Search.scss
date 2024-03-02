@@ -749,8 +749,13 @@
 		color: #fff;
 	}
 }
-
-.btnCarat {
+.carat-filter-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 25px;
+	margin: 15px 0;
+}
+.carat__button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -759,9 +764,13 @@
 	border-radius: 20px;
 	background-color: var(--blue);
 	border: none;
+	&__wrapper {
+		display: flex;
+		gap: 10px;
+	}
 }
 
-.btnCarat:hover {
+.carat__button:hover {
 	background-color: var(--blue);
 }
 

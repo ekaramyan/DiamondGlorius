@@ -1,0 +1,16 @@
+.from-to {
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+		max-width: 80%;
+		margin-bottom: 20px;
+	}
+	&__inputs {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}

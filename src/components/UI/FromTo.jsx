@@ -40,26 +40,9 @@ export default function FromTo({ title, formData, setFormData, objectKey }) {
 	console.log(formData)
 	return (
 		<>
-			<div
-				style={{
-					display: 'flex',
-					flexWrap: 'wrap',
-					alignItems: 'center',
-					justifyContent: 'space-between',
-					gap: 10,
-					maxWidth: '80%',
-					marginBottom: 20,
-				}}
-			>
+			<div className='from-to__wrapper'>
 				<p className='wrapper_price'>{title}</p>
-				<div
-					md={2}
-					style={{
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'center',
-					}}
-				>
+				<div md={2} className='from-to__inputs'>
 					<input
 						className='wrapper_input'
 						placeholder='From'

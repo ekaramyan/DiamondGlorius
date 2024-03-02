@@ -48,7 +48,7 @@ export default function CaratFilterList({
 	}
 
 	return (
-		<div style={{ display: 'flex', gap: 25 }}>
+		<div className='carat-filter-list'>
 			<p className='wrapper_price'>Carat</p>
 			<Col md={2}>
 				{carats.map((carat, index) => (
@@ -75,16 +75,18 @@ export default function CaratFilterList({
 					</div>
 				))}
 			</Col>
-			{carats.length < 3 && (
-				<Button className='btnCarat' onClick={addCarat}>
-					+
-				</Button>
-			)}
-			{carats.length > 1 && (
-				<Button className='btnCarat' onClick={reduceCarat}>
-					-
-				</Button>
-			)}
+			<div className='carat__button__wrapper'>
+				{carats.length < 3 && (
+					<Button className='carat__button' onClick={addCarat}>
+						+
+					</Button>
+				)}
+				{carats.length > 1 && (
+					<Button className='carat__button' onClick={reduceCarat}>
+						-
+					</Button>
+				)}
+			</div>
 		</div>
 	)
 }
