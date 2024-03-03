@@ -190,7 +190,7 @@ export default function Search({ diamonds }) {
 			</div>
 
 			<Col>
-				<Row md={4} style={{ gap: 15 }}>
+				<Row md={4} className='filter-cols'>
 					<FilterSelect
 						data={conditionTypes}
 						handleUpdateFormData={handleUpdateFormData}

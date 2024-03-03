@@ -4,7 +4,7 @@ import { Row, Col } from 'react-bootstrap'
 
 export default function AdvanceSearch({ formData, setFormData }) {
 	return (
-		<Row style={{ marginTop: 25 }}>
+		<Row style={{ marginTop: 45 }}>
 			<h1 className='AdvanceSearch__title'>Advanced Search</h1>
 			<p className='AdvanceSearch__subtitle'>Parameter</p>
 
