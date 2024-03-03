@@ -51,7 +51,7 @@ export default function FilterButtons({
 	return (
 		<>
 			<div
-				className='option_button__wrapper'
+				className='option__title'
 				// onClick={handleToggle}
 			>
 				<h5>{title}</h5>
@@ -73,12 +73,7 @@ export default function FilterButtons({
 			>
 				<div
 					multiple
-					style={{
-						display: 'flex',
-						flexWrap: 'wrap',
-						alignItems: 'center',
-						justifyContent: 'flex-start',
-					}}
+className="option__list"
 				>
 					{buttons.map((option, idx) => (
 						<OptionButton

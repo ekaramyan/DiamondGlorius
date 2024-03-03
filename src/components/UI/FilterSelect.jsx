@@ -6,8 +6,8 @@ export default function FilterSelect({ data, handleUpdateFormData, formData }) {
 	return (
 		<>
 			{data.map((value, id) => (
-				<Row key={id} className='align-items-start'>
-					<Col>
+				<Row key={id} className='align-items-start filter-list'>
+					<Col className='option__wrapper'>
 						<FilterButtons
 							buttons={value.buttons}
 							title={value.title}

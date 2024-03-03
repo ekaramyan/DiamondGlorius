@@ -130,7 +130,14 @@ export default function Search({ diamonds }) {
 			<Row>
 				<Col
 					md={4}
-					style={{ width: '100%', display: 'flex', flexWrap: 'wrap', gap: 5 }}
+					style={{
+						width: '100%',
+						display: 'flex',
+						// flexWrap: 'wrap',
+						gap: 5,
+						marginTop: 20,
+						overflowX: 'auto',
+					}}
 				>
 					{diamondShapes.map((diamondShape, index) => (
 						<CircleButton
@@ -183,7 +190,7 @@ export default function Search({ diamonds }) {
 			</div>
 
 			<Col>
-				<Row md={4}>
+				<Row md={4} style={{ gap: 15 }}>
 					<FilterSelect
 						data={conditionTypes}
 						handleUpdateFormData={handleUpdateFormData}

@@ -8,7 +8,7 @@ export default function Other({ otherData, handleUpdateFormData, formData }) {
 				<h1 className='AdvanceSearch__title'>Other</h1>
 
 				<Col md={10}>
-					<Row md={4}>
+					<Row md={4} style={{ gap: 15 }}>
 						<FilterSelect
 							data={otherData}
 							handleUpdateFormData={handleUpdateFormData}

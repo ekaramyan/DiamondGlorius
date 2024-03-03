@@ -21,7 +21,7 @@ export default function CircleButton({
 			updatedShapeIds.length < 1 ? null : updatedShapeIds
 		)
 	}
-	
+
 	return (
 		<OptionButton
 			option={shape}
