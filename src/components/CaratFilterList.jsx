@@ -1,7 +1,6 @@
-import { useState } from 'react'
 import { Button, Col, Row } from 'react-bootstrap'
-import FromTo from './FromTo'
-import FromToWrapper from '../Wrappers/FromToWrapper'
+import FromTo from './UI/FromTo'
+import FromToWrapper from './Wrappers/FromToWrapper'
 
 export default function CaratFilterList({
 	setFilters,
@@ -52,7 +51,7 @@ export default function CaratFilterList({
 	return (
 		<FromToWrapper title='Carat'>
 			<Row md={6}>
-				<Col md={8}>
+				<Col md={8} className='carat__inputs'>
 					{carats.map((carat, index) => (
 						<FromTo
 							key={`${carat.min}-${carat.max}`}

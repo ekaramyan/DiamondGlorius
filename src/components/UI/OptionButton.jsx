@@ -18,7 +18,7 @@ export default function OptionButton({
 		const selectedStyle = isSelected ? 'selected' : ''
 		setSelected(selectedStyle)
 		setOptionStyle(newOptionStyle)
-	}, [optionIds])
+	}, [optionIds, option.id, imageSource])
 
 	return (
 		<>

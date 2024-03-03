@@ -13,3 +13,13 @@ export const toggleTheme = () => ({ type: 'TOGGLE_THEME' })
 export const toggleViewMode = () => ({
 	type: 'TOGGLE_VIEW_MODE',
 })
+
+export const setSorting = sort => ({
+	type: 'SET_SORTING',
+	payload: sort,
+})
+
+export const setPage = page => ({
+	type: 'SET_PAGE',
+	payload: page,
+})

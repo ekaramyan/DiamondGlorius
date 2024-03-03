@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
-import { setFilters, setSearchResults } from '../redux/actions'
+import { setFilters, setSearchResults, setPage } from '../redux/actions'
 
 const useSearchDiamonds = () => {
 	const [loading, setLoading] = useState(false)
@@ -12,25 +12,33 @@ const useSearchDiamonds = () => {
 	const dispatch = useDispatch()
 	const router = useRouter()
 
-	const searchDiamonds = async (formData, limit = 25, page = 1) => {
+	const searchDiamonds = async (
+		formData,
+		limit = 25,
+		page = 1,
+		sort_by,
+		sort_type
+	) => {
 		setLoading(true)
 		try {
-			const response = await axios.post(
-				`${apiUrl}/diamonds?limit=${limit}&page=${page}`,
-				formData,
-				{
-					headers: {
-						'Content-Type': 'application/json',
-					},
-				}
-			)
-			console.log(response)
+			const url =
+				`${apiUrl}/diamonds?limit=${limit}&page=${page}` +
+				(sort_by && sort_type
+					? `&sort_by=${sort_by}&sort_type=${sort_type}`
+					: '')
+
+			const response = await axios.post(url, formData, {
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			})
 
 			if (response.status === 200 || response.status === 201) {
 				dispatch(setFilters(formData))
 				dispatch(setSearchResults(response.data))
 				response.data.isSuccess && router.push('/diamonds')
 				setSuccess(response.data.isSuccess)
+				dispatch(setPage(page))
 			} else {
 				setError(response.data.message || 'An error occurred.')
 			}

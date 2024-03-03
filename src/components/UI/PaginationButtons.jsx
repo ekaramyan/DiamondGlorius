@@ -29,7 +29,7 @@ export default function PaginationButtons({
 			<Pagination.Item
 				key={i}
 				active={i === currentPage}
-				onClick={() => onPageChange(formData, 25, i)}
+				onClick={() => onPageChange(formData, limit, i)}
 			>
 				{i}
 			</Pagination.Item>

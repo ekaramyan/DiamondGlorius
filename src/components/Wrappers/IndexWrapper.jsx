@@ -25,10 +25,7 @@ export default function IndexWrapper({ children, ...props }) {
 	return (
 		<div className='main__bg' {...props}>
 			<Header showCart={handleShow} />
-			<Container
-				fluid
-				style={{ maxWidth: '1400px', overflow: show ? 'auto' : 'visible' }}
-			>
+			<Container fluid='md' style={{ overflow: show ? 'auto' : 'visible' }}>
 				{children}
 				<Cart show={show} close={handleClose} />
 			</Container>

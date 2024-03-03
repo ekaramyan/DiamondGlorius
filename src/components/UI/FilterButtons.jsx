@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ChevronDown } from 'react-bootstrap-icons'
 import OptionButton from './OptionButton'
 
@@ -11,6 +11,7 @@ export default function FilterButtons({
 }) {
 	// const [isOpen, setIsOpen] = useState(false)
 	const key = data.key
+
 	const [selectedOptions, setSelectedOptions] = useState(formData[key])
 	// const handleToggle = () => {
 	// 	setIsOpen(!isOpen)
@@ -49,7 +50,7 @@ export default function FilterButtons({
 	}
 
 	return (
-		<>
+		<div className='option__wrapper'>
 			<div
 				className='option__title'
 				// onClick={handleToggle}
@@ -71,10 +72,7 @@ export default function FilterButtons({
 					transition: 'max-height 0.3s ease-in-out',
 				}}
 			>
-				<div
-					multiple
-className="option__list"
-				>
+				<div multiple className='option__list'>
 					{buttons.map((option, idx) => (
 						<OptionButton
 							key={idx}
@@ -86,6 +84,6 @@ className="option__list"
 					))}
 				</div>
 			</div>
-		</>
+		</div>
 	)
 }

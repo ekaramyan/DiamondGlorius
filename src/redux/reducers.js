@@ -18,6 +18,8 @@ const initialState = savedState
 			filters: initialFormData,
 			theme: 'light',
 			viewMode: 'table',
+			sorting: { sort_by: '', sort_type: null },
+			page: 1,
 	  }
 
 const reducer = (state = initialState, action) => {
@@ -41,6 +43,16 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				viewMode: state.viewMode === 'table' ? 'cards' : 'table',
+			}
+		case 'SET_SORTING':
+			return {
+				...state,
+				sorting: action.payload,
+			}
+		case 'SET_PAGE':
+			return {
+				...state,
+				page: action.payload,
 			}
 		default:
 			return state

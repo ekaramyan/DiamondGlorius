@@ -27,12 +27,9 @@ import CircleButton from '../components/UI/CircleButton'
 import FilterSelect from '../components/UI/FilterSelect'
 import FromToComponent from '@/components/FromToComponent'
 
-const CaratFilterList = dynamic(
-	() => import('../components/UI/CaratFilterList'),
-	{
-		ssr: false,
-	}
-)
+const CaratFilterList = dynamic(() => import('../components/CaratFilterList'), {
+	ssr: false,
+})
 
 export default function Search({ diamonds }) {
 	const formData = useSelector(state => state.filters)

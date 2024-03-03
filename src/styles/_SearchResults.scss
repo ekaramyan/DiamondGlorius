@@ -43,3 +43,19 @@
 		height: 250px;
 	}
 }
+
+.table {
+	&__heading {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 5px;
+	}
+	&__sort {
+		transition: transform 0.3s ease-in-out;
+	}
+	&__sort.rotate {
+		transform: rotate(180deg);
+	}
+}

@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Card, Button } from 'react-bootstrap'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { Eye, Cart, ChevronDown } from 'react-bootstrap-icons'
 import ImageModal from './ImageModal'
