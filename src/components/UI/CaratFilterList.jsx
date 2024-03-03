@@ -1,5 +1,7 @@
 import { useState } from 'react'
-import { Button, Col } from 'react-bootstrap'
+import { Button, Col, Row } from 'react-bootstrap'
+import FromTo from './FromTo'
+import FromToWrapper from '../Wrappers/FromToWrapper'
 
 export default function CaratFilterList({
 	setFilters,
@@ -48,45 +50,31 @@ export default function CaratFilterList({
 	}
 
 	return (
-		<div className='carat-filter-list'>
-			<p className='wrapper_price'>Carat</p>
-			<Col md={2}>
-				{carats.map((carat, index) => (
-					<div
-						key={`${carat.min}-${carat.max}`}
-						className='carat__wrapper_input'
-					>
-						<input
-							className='carat__wrapper_inputItem'
-							placeholder='From'
-							type='number'
-							name='min'
-							value={carat.min !== null ? carat.min : ''}
-							onChange={e => handleChange(e, index)}
+		<FromToWrapper title='Carat'>
+			<Row md={6}>
+				<Col md={8}>
+					{carats.map((carat, index) => (
+						<FromTo
+							key={`${carat.min}-${carat.max}`}
+							handleChange={e => handleChange(e, index)}
+							min={carat.min !== null ? carat.min : ''}
+							max={carat.max !== null ? carat.max : ''}
 						/>
-						<input
-							className='carat__wrapper_inputItem'
-							placeholder='To'
-							type='number'
-							name='max'
-							value={carat.max !== null ? carat.max : ''}
-							onChange={e => handleChange(e, index)}
-						/>
-					</div>
-				))}
-			</Col>
-			<div className='carat__button__wrapper'>
-				{carats.length < 3 && (
-					<Button className='carat__button' onClick={addCarat}>
-						+
-					</Button>
-				)}
-				{carats.length > 1 && (
-					<Button className='carat__button' onClick={reduceCarat}>
-						-
-					</Button>
-				)}
-			</div>
-		</div>
+					))}
+				</Col>
+				<div className='carat__button__wrapper'>
+					{carats.length < 3 && (
+						<Button className='carat__button' onClick={addCarat}>
+							+
+						</Button>
+					)}
+					{carats.length > 1 && (
+						<Button className='carat__button' onClick={reduceCarat}>
+							-
+						</Button>
+					)}
+				</div>
+			</Row>
+		</FromToWrapper>
 	)
 }

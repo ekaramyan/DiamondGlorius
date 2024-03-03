@@ -1,6 +1,6 @@
 import React from 'react'
-import FromTo from './UI/FromTo'
 import { Row, Col } from 'react-bootstrap'
+import FromToComponent from './FromToComponent'
 
 export default function AdvanceSearch({ formData, setFormData }) {
 	return (
@@ -9,19 +9,19 @@ export default function AdvanceSearch({ formData, setFormData }) {
 			<p className='AdvanceSearch__subtitle'>Parameter</p>
 
 			<Col>
-				<FromTo
+				<FromToComponent
 					title={'DIA MN'}
 					formData={formData}
 					setFormData={setFormData}
 					objectKey={'giaMN'}
 				/>
-				<FromTo
+				<FromToComponent
 					title={'TAB (%)'}
 					formData={formData}
 					setFormData={setFormData}
 					objectKey={'tab'}
 				/>
-				<FromTo
+				<FromToComponent
 					title={'TD (%)'}
 					formData={formData}
 					setFormData={setFormData}
@@ -30,19 +30,19 @@ export default function AdvanceSearch({ formData, setFormData }) {
 			</Col>
 
 			<Col>
-				<FromTo
+				<FromToComponent
 					title={'PV ANG'}
 					formData={formData}
 					setFormData={setFormData}
 					objectKey={'pvAng'}
 				/>
-				<FromTo
+				<FromToComponent
 					title={'CR ANG'}
 					formData={formData}
 					setFormData={setFormData}
 					objectKey={'crAng'}
 				/>
-				{/* <FromTo
+				{/* <FromToComponent
 					title={'GIRDLE %'}
 					formData={formData}
 					setFormData={setFormData}
@@ -51,13 +51,13 @@ export default function AdvanceSearch({ formData, setFormData }) {
 			</Col>
 
 			<Col>
-				<FromTo
+				<FromToComponent
 					title={'DIA MX'}
 					formData={formData}
 					setFormData={setFormData}
 					objectKey={'giaMX'}
 				/>
-				<FromTo
+				<FromToComponent
 					title={'RATIO'}
 					formData={formData}
 					setFormData={setFormData}

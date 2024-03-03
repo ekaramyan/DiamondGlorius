@@ -2,7 +2,14 @@ import { useRouter } from 'next/router'
 import dynamic from 'next/dynamic'
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, Button, Spinner } from 'react-bootstrap'
+import {
+	Row,
+	Col,
+	Button,
+	Spinner,
+	FormControl,
+	InputGroup,
+} from 'react-bootstrap'
 import { GenderNeuter, ArrowCounterclockwise } from 'react-bootstrap-icons'
 import useSearchDiamonds from '@/hooks/useSearchDiamonds'
 import {
@@ -16,9 +23,9 @@ import { setFilters } from '../redux/actions'
 
 import AdvanceSearch from '../components/AdvanceSearch'
 import Other from '../components/Other'
-import FromTo from '../components/UI/FromTo'
 import CircleButton from '../components/UI/CircleButton'
 import FilterSelect from '../components/UI/FilterSelect'
+import FromToComponent from '@/components/FromToComponent'
 
 const CaratFilterList = dynamic(
 	() => import('../components/UI/CaratFilterList'),
@@ -75,7 +82,7 @@ export default function Search({ diamonds }) {
 	return (
 		<>
 			<Row>
-				<div
+				<InputGroup
 					style={{
 						display: 'flex',
 						alignItems: 'center',
@@ -85,16 +92,15 @@ export default function Search({ diamonds }) {
 						marginTop: 10,
 					}}
 				>
-					<label>
-						<input
-							className='search__input'
-							placeholder='Search'
-							type='search'
-							name='stno'
-							value={formData.stno}
-							onChange={handleInputChange}
-						/>
-					</label>
+					<FormControl
+						className='search__input'
+						placeholder='Search'
+						type='search'
+						name='stno'
+						value={formData.stno}
+						onChange={handleInputChange}
+					/>
+
 					<Button
 						className='button__primary'
 						variant='primary'
@@ -124,7 +130,7 @@ export default function Search({ diamonds }) {
 					>
 						<ArrowCounterclockwise color='#e0e0e0' width={30} height={30} />
 					</Button>
-				</div>
+				</InputGroup>
 			</Row>
 
 			<Row>
@@ -181,7 +187,7 @@ export default function Search({ diamonds }) {
 					setFormData={handleSetFilters}
 					objectKey={'disc'}
 				/> */}
-				<FromTo
+				<FromToComponent
 					title={'Price/Carat USD'}
 					formData={formData}
 					setFormData={handleSetFilters}
