@@ -17,14 +17,14 @@ export default function CardItem({ searchResult }) {
 					<Col className='card__image-small'>
 						<ImageWrapper source={imgSrc} handleOpenModal={null} />
 					</Col>
-					<Col>
+					<Col className='card__titles'>
 						<Card.Title>{searchResult.shape.title}</Card.Title>
 						<Card.Text>#{searchResult.stno}</Card.Text>
 						<Card.Text>
 							{searchResult.cert.title} {searchResult.cert_no}
 						</Card.Text>
 					</Col>
-					<Col>
+					<Col className='card__titles'>
 						<Card.Text>Rap Price: {searchResult.rap_price}</Card.Text>
 						<Card.Text>DIS: {searchResult.disc}</Card.Text>
 						<Card.Text>AMT$: {searchResult.amt}</Card.Text>
@@ -40,15 +40,7 @@ export default function CardItem({ searchResult }) {
 				</div>
 			</Card.Body>
 			<Card.Footer>
-				<div
-					style={{
-						display: 'flex',
-						alignItems: 'center',
-						flexWrap: 'wrap',
-						justifyContent: 'space-between',
-						gap: 15,
-					}}
-				>
+				<div className='card__text'>
 					<p>{searchResult.carat}</p>
 					<p>{searchResult.color.title}</p>
 					<p>{searchResult.clarity.title}</p>
@@ -60,32 +52,13 @@ export default function CardItem({ searchResult }) {
 				</div>
 			</Card.Footer>
 			<Card.Footer>
-				<div
-					style={{
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'space-between',
-					}}
-				>
-					<div
-						style={{
-							display: 'flex',
-							flexWrap: 'wrap',
-
-							alignItems: 'center',
-							gap: 15,
-						}}
-					>
-						<p>INC:</p>
-						<p>{searchResult.bit_type.title}</p>
-						<p>{searchResult.bc_type.title}</p>
-						<p>{searchResult.wt_type.title}</p>
-						<p>{searchResult.wc_type.title}</p>
-					</div>
-
-					<p>
-						<span>MILKY:</span> {searchResult.fluro_type.title}
-					</p>
+				<div className='card__text'>
+					<p>INC:</p>
+					<p>{searchResult.bit_type.title}</p>
+					<p>{searchResult.bc_type.title}</p>
+					<p>{searchResult.wt_type.title}</p>
+					<p>{searchResult.wc_type.title}</p>
+					<p>MILKY: {searchResult.fluro_type.title}</p>
 				</div>
 			</Card.Footer>
 		</Card>
