@@ -50,7 +50,7 @@ export default function CaratFilterList({
 
 	return (
 		<FromToWrapper title='Carat'>
-			<Row md={6}>
+			<Row md={6} style={{ gap: 10 }}>
 				<Col md={8} className='carat__inputs'>
 					{carats.map((carat, index) => (
 						<FromTo

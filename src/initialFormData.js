@@ -14,7 +14,7 @@ import icon12 from '@/assets/img/icon-12.webp'
 export const initialFormData = {
 	shape_ids: null,
 	color_id: null,
-	stno: null,
+	stno: '',
 	clarity_id: null,
 	cert_id: null,
 	cut_type_id: null,
@@ -248,8 +248,7 @@ export const diamondTable = diamond => [
 	// { title: 'FancyColorDescription', value: diamond.id },
 ]
 
-
-export 	const sortHeadings = [
+export const sortHeadings = [
 	{ title: 'Stack №', objectKey: 'id' },
 	{ title: 'shape', objectKey: 'shape' },
 	{ title: 'carat', objectKey: 'carat' },

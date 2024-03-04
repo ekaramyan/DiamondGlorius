@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { ChevronDown } from 'react-bootstrap-icons'
 import OptionButton from './OptionButton'
 
 export default function FilterButtons({
@@ -9,80 +8,47 @@ export default function FilterButtons({
 	data,
 	formData,
 }) {
-	// const [isOpen, setIsOpen] = useState(false)
 	const key = data.key
 
 	const [selectedOptions, setSelectedOptions] = useState(formData[key])
-	// const handleToggle = () => {
-	// 	setIsOpen(!isOpen)
-	// }
 
-	const transformArrayValue = value => {
-		if (value === null) {
-			return []
-		}
-		return value
-	}
+	useEffect(() => {
+		setSelectedOptions(formData[key])
+	}, [formData[key]])
 
 	const handleOptionClick = optionId => {
 		if (optionId === undefined) {
 			setSelectedOptions(null)
-			updateFormData(key, selectedOptions)
+			updateFormData(key, null)
 		} else {
+			const updatedOptions = selectedOptions ? [...selectedOptions] : []
 			if (selectedOptions?.includes(optionId)) {
-				const updatedIds = transformArrayValue(selectedOptions).filter(
-					id => id !== optionId
-				)
+				const updatedIds = updatedOptions.filter(id => id !== optionId)
 				setSelectedOptions(updatedIds)
-				updateFormData(
-					key,
-					selectedOptions?.length < 1 ? null : selectedOptions
-				)
+				updateFormData(key, updatedIds.length < 1 ? null : updatedIds)
 			} else {
-				const updatedIds = [...transformArrayValue(selectedOptions), optionId]
-				setSelectedOptions(updatedIds)
-				updateFormData(
-					key,
-					selectedOptions?.length < 1 ? null : selectedOptions
-				)
+				updatedOptions.push(optionId)
+				setSelectedOptions(updatedOptions)
+				updateFormData(key, updatedOptions)
 			}
 		}
 	}
 
 	return (
 		<div className='option__wrapper'>
-			<div
-				className='option__title'
-				// onClick={handleToggle}
-			>
+			<div className='option__title'>
 				<h5>{title}</h5>
-				{/* <ChevronDown
-					width={30}
-					height={30}
-					style={{
-						transform: isOpen ? 'rotate(180deg)' : 'rotate(0)',
-						transition: 'transform 0.3s ease-in-out',
-					}}
-				/> */}
 			</div>
-			<div
-				style={{
-					// maxHeight: isOpen ? '300px' : '0px',
-					overflow: 'hidden',
-					transition: 'max-height 0.3s ease-in-out',
-				}}
-			>
-				<div multiple className='option__list'>
-					{buttons.map((option, idx) => (
-						<OptionButton
-							key={idx}
-							option={option}
-							imageSource={null}
-							optionIds={selectedOptions}
-							onClick={() => handleOptionClick(option.id)}
-						/>
-					))}
-				</div>
+			<div className='option__list'>
+				{buttons.map((option, idx) => (
+					<OptionButton
+						key={idx}
+						option={option}
+						imageSource={null}
+						optionIds={selectedOptions}
+						onClick={() => handleOptionClick(option.id)}
+					/>
+				))}
 			</div>
 		</div>
 	)
