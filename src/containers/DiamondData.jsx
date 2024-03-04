@@ -37,8 +37,12 @@ export default function DiamondData({ diamond }) {
 					<tbody>
 						{tableData.map((_, index) => (
 							<tr key={index}>
-								<td style={{ textTransform: 'uppercase' }}>{_.title}</td>
-								<td>{_.value}</td>
+								<td>
+									<p className='table__text table__title'>{_.title}</p>
+								</td>
+								<td>
+									<p className='table__text'>{_.value}</p>
+								</td>
 							</tr>
 						))}
 					</tbody>

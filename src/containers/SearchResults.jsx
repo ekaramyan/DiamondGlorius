@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
-import { FilterCircle } from 'react-bootstrap-icons'
+import { Button } from 'react-bootstrap'
+import { FilterCircle, FileEarmarkExcel } from 'react-bootstrap-icons'
 import { useMediaQuery } from 'react-responsive'
 
 import useSearchDiamonds from '@/hooks/useSearchDiamonds'
 import { useLoaded } from '@/hooks/useLoaded'
+import useDownloadExcel from '@/hooks/useDownloadExcel'
 import PaginationButtons from '../components/UI/PaginationButtons'
 import TableComponent from '../components/TableComponent'
 import Cards from '../components/Cards'
+import SortList from '@/components/SortList'
 
 export default function SearchResults() {
 	const data = useSelector(state => state.searchResults)
@@ -26,7 +29,7 @@ export default function SearchResults() {
 	const backToFilters = () => {
 		router.push('/')
 	}
-
+	const { downloadExcel, load, err, succ } = useDownloadExcel()
 	return (
 		<div style={{ marginTop: 25 }}>
 			<div
@@ -34,13 +37,18 @@ export default function SearchResults() {
 					display: 'flex',
 					alignItems: 'flex-start',
 					justifyContent: 'center',
+					flexWrap: 'wrap',
 					gap: 25,
 					marginBottom: 30,
 				}}
 			>
-				<button className='returnFilters' onClick={backToFilters}>
+				<Button onClick={backToFilters}>
 					<FilterCircle width={30} height={30} />
-				</button>
+				</Button>
+				<Button onClick={() => downloadExcel(2000, 1)}>
+					<FileEarmarkExcel width={30} height={30} />
+				</Button>
+				{loaded && viewMode === 'cards' && <SortList />}
 				<PaginationButtons
 					totalPages={searchResults.total_pages}
 					currentPage={searchResults.current_page}

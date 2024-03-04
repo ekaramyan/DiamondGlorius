@@ -18,3 +18,12 @@
 		}
 	}
 }
+.table {
+	&__text {
+		text-transform: uppercase;
+	}
+	&__title {
+		font-weight: 700;
+		color: var(--blue) !important;
+	}
+}

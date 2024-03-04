@@ -3,9 +3,9 @@ require('dotenv').config()
 const nextConfig = {
 	output: 'standalone',
 	images: {
-		domains: [
-			process.env.API_URL.slice(0, -4),
-			'd3at7kzws0mw3g.cloudfront.net',
+		remotePatterns: [
+			{ hostname: process.env.API_URL.slice(0, -4) },
+			{ hostname: 'd3at7kzws0mw3g.cloudfront.net' },
 		],
 	},
 	env: {

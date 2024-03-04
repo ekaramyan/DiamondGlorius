@@ -16,15 +16,7 @@
 		border-radius: 15px;
 	}
 }
-.returnFilters {
-	border-radius: 50%;
-	background-color: var(--blue);
-	border: none;
-	color: #fff;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+
 .additional-data {
 	display: flex;
 	gap: 15px;
@@ -51,11 +43,39 @@
 		align-items: center;
 		justify-content: center;
 		gap: 5px;
+		p {
+			font-size: 14px;
+			text-transform: uppercase;
+			color: var(--blue);
+		}
 	}
 	&__sort {
 		transition: transform 0.3s ease-in-out;
 	}
 	&__sort.rotate {
 		transform: rotate(180deg);
+	}
+	&-body__text {
+		td {
+			font-size: 13px;
+		}
+	}
+}
+
+.sort {
+	&__button {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 5px;
+		width: 100%;
+		p {
+			padding: 0;
+			margin: 0;
+		}
+	}
+	.dropdown-toggle.btn.btn-primary {
+		height: 100%;
+		padding: 9px 12px;
 	}
 }

@@ -28,7 +28,7 @@ export default function TableItem({ searchResult }) {
 
 	return (
 		<>
-			<tr>
+			<tr className='table-body__text'>
 				<td>{searchResult.stno}</td>
 				<td>{searchResult.shape.title}</td>
 				<td>{searchResult.carat}</td>
@@ -50,7 +50,7 @@ export default function TableItem({ searchResult }) {
 				<td>{searchResult.milky_type.title}</td>
 				<td>{searchResult.l_w_ratio}</td>
 				<td>
-					<div style={{ display: 'flex', gap: 5 }}>
+					<div style={{ display: 'flex', flexWarp: 'wrap', gap: 5 }}>
 						<Button variant='primary'>
 							<Cart />
 						</Button>

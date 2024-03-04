@@ -247,3 +247,28 @@ export const diamondTable = diamond => [
 	{ title: 'Comment GIA', value: diamond.comment },
 	// { title: 'FancyColorDescription', value: diamond.id },
 ]
+
+
+export 	const sortHeadings = [
+	{ title: 'Stack №', objectKey: 'id' },
+	{ title: 'shape', objectKey: 'shape' },
+	{ title: 'carat', objectKey: 'carat' },
+	{ title: 'color', objectKey: 'color' },
+	{ title: 'clarity', objectKey: 'clarity' },
+	{ title: 'cs', objectKey: 'color_shade' },
+	{ title: 'cut', objectKey: 'cut' },
+	{ title: 'pol', objectKey: 'pol' },
+	{ title: 'sym', objectKey: 'sym' },
+	{ title: 'fl', objectKey: 'fluro' },
+	{ title: 'lab', objectKey: 'lab' },
+	{ title: 'Table%', objectKey: 'table' },
+	{ title: 'TD%', objectKey: 'table_depth' },
+	{ title: 'Measure', objectKey: 'measurement' },
+	{ title: 'bit', objectKey: 'bit' },
+	{ title: 'bc', objectKey: 'bc' },
+	{ title: 'wt', objectKey: 'wt' },
+	{ title: 'wc', objectKey: 'wc' },
+	{ title: 'milky', objectKey: 'milky' },
+	{ title: 'L/W Ratio', objectKey: 'l_w_ratio' },
+	{ title: 'Additional', objectKey: null },
+]

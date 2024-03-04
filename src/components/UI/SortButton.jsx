@@ -1,7 +1,9 @@
-import useSorting from '@/hooks/useSorting'
+import { Button } from 'react-bootstrap'
+import { useState } from 'react'
 import { ChevronDown } from 'react-bootstrap-icons'
+import useSorting from '@/hooks/useSorting'
 
-export default function TableHead({ title, objectKey }) {
+export default function SortButton({ title, objectKey }) {
 	const { sortResults, setSort, sorting, loading, error, success } =
 		useSorting()
 
@@ -16,11 +18,16 @@ export default function TableHead({ title, objectKey }) {
 	}`
 
 	return (
-		<th>
-			<div className='table__heading' onClick={() => toggleSorting(objectKey)}>
-				<p>{title}</p>
-				{objectKey && <ChevronDown className={chevronClassName} />}
-			</div>
-		</th>
+		<>
+			{objectKey && (
+				<Button
+					className='sort__button'
+					onClick={() => toggleSorting(objectKey)}
+				>
+					<p>{title}</p>
+					{objectKey && <ChevronDown className={chevronClassName} />}
+				</Button>
+			)}
+		</>
 	)
 }
