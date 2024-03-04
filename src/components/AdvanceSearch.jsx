@@ -5,8 +5,8 @@ import FromToComponent from './FromToComponent'
 export default function AdvanceSearch({ formData, setFormData }) {
 	return (
 		<Row style={{ marginTop: 45 }}>
-			<h1 className='AdvanceSearch__title'>Advanced Search</h1>
-			<p className='AdvanceSearch__subtitle'>Parameter</p>
+			<h1 className='Advance__search_title'>Advanced Search</h1>
+			<p className='Advance__search_subtitle'>Parameter</p>
 
 			<Col>
 				<FromToComponent

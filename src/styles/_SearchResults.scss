@@ -3,7 +3,7 @@
 	padding: 0;
 	border-radius: 15px;
 }
-.cardImage {
+.card__image {
 	cursor: pointer;
 	position: relative;
 	overflow: hidden;
@@ -17,19 +17,19 @@
 	}
 }
 
-.additional-data {
+.additional__data {
 	display: flex;
 	gap: 15px;
 	overflow: hidden;
 	transition: max-height 0.3s ease;
-	.cardImage {
+	.card__image {
 		height: 150px;
 		width: auto;
 	}
 }
 
 .card {
-	.cardImage {
+	.card__image {
 		cursor: default;
 		width: 100%;
 		height: 250px;

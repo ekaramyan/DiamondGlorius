@@ -76,7 +76,7 @@ export default function TableItem({ searchResult }) {
 					style={{ visibility: showDetails ? 'visible' : 'hidden' }}
 				>
 					<Card.Body
-						className='additional-data'
+						className='additional__data'
 						style={{
 							maxHeight: showDetails ? '150px' : '0',
 						}}
