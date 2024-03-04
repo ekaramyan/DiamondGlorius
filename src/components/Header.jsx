@@ -52,9 +52,9 @@ export default function Header({ showCart }) {
 									className='header__link'
 								>
 									{viewMode === 'cards' ? (
-										<Table width={20} height={25} />
+										<Table color={'#e0e0e0'} width={20} height={25} />
 									) : (
-										<CardHeading width={20} height={25} />
+										<CardHeading color={'#e0e0e0'} width={20} height={25} />
 									)}
 								</button>
 							)}
@@ -63,9 +63,9 @@ export default function Header({ showCart }) {
 								className='header__link'
 							>
 								{theme === 'dark' ? (
-									<Sun width={20} height={25} />
+									<Sun color={'#e0e0e0'} width={20} height={25} />
 								) : (
-									<Moon width={20} height={25} />
+									<Moon color={'#e0e0e0'} width={20} height={25} />
 								)}
 							</button>
 							<button onClick={showCart} className='header__link'>

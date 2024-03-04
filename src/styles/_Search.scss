@@ -39,6 +39,7 @@
 	height: 100%;
 	width: 100%;
 	display: flex;
+	gap: 15px;
 }
 
 .filter-cols {
@@ -664,7 +665,6 @@
 	font-size: 17px;
 	margin-top: 6px;
 }
-
 
 .carat__button {
 	display: flex;

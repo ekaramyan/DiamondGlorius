@@ -2,18 +2,32 @@
 	background: var(--card-bg);
 	padding: 0;
 	border-radius: 15px;
-}
-.card__image {
-	cursor: pointer;
-	position: relative;
-	overflow: hidden;
-	height: auto;
-	width: 100%;
-	border-radius: 15px;
-	aspect-ratio: 6/5;
-	transition: height 0.3s ease;
-	img {
+	&__image {
+		cursor: pointer;
+		position: relative;
+		overflow: hidden;
+		height: auto;
+		width: 100%;
 		border-radius: 15px;
+		aspect-ratio: 6/5;
+		transition: height 0.3s ease;
+		img {
+			border-radius: 15px;
+		}
+	}
+	// &-body {
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	align-items: center;
+	// 	justify-content: center;
+	// 	gap: 15px;
+	// }
+	&__buttons {
+		display: flex;
+		flex-direction: row-reverse;
+		gap: 15px;
+		align-self: flex-end;
+		margin-right: 15px;
 	}
 }
 
@@ -77,5 +91,15 @@
 	.dropdown-toggle.btn.btn-primary {
 		height: 100%;
 		padding: 9px 12px;
+	}
+}
+
+@media (max-width: 720px) {
+	.card__image {
+		&-small {
+			.card__image {
+				height: 100px;
+			}
+		}
 	}
 }

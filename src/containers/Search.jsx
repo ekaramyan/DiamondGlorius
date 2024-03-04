@@ -154,7 +154,18 @@ export default function Search({ diamonds }) {
 				</Col>
 			</Row>
 
-			<Col md={4} style={{ width: '100%' }}>
+			<Col
+				md={4}
+				style={{
+					width: '100%',
+					display: 'flex',
+					flexDirection: 'column',
+					// flexWrap: 'wrap',
+					gap: 15,
+					marginTop: 20,
+					overflowX: 'auto',
+				}}
+			>
 				<CaratFilterList
 					carats={formData.carat}
 					formData={formData}

@@ -14,7 +14,7 @@ export default function CardItem({ searchResult }) {
 		<Card className='card'>
 			<Card.Body>
 				<Row>
-					<Col>
+					<Col className='card__image-small'>
 						<ImageWrapper source={imgSrc} handleOpenModal={null} />
 					</Col>
 					<Col>
@@ -30,7 +30,7 @@ export default function CardItem({ searchResult }) {
 						<Card.Text>AMT$: {searchResult.amt}</Card.Text>
 					</Col>
 				</Row>
-				<div style={{ display: 'flex', flexDirection: 'row-reverse', gap: 15 }}>
+				<div className='card__buttons'>
 					<Button variant='primary'>
 						<Cart />
 					</Button>
@@ -44,6 +44,7 @@ export default function CardItem({ searchResult }) {
 					style={{
 						display: 'flex',
 						alignItems: 'center',
+						flexWrap: 'wrap',
 						justifyContent: 'space-between',
 						gap: 15,
 					}}
@@ -69,6 +70,8 @@ export default function CardItem({ searchResult }) {
 					<div
 						style={{
 							display: 'flex',
+							flexWrap: 'wrap',
+
 							alignItems: 'center',
 							gap: 15,
 						}}
