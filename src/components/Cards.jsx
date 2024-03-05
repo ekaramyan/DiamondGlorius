@@ -4,9 +4,13 @@ import CardItem from './UI/CardItem'
 export default function Cards({ data }) {
 	return (
 		<Row
-			md={4}
+			xxl={4}
+			xl={4}
+			l={4}
+			md={3}
+			sm={2}
 			className='align-items-start'
-			style={{ gap: 15, justifyContent: 'center' }}
+			style={{ gap: 10, justifyContent: 'center' }}
 		>
 			{data?.map((searchResult, index) => (
 				<CardItem key={searchResult.id} searchResult={searchResult} />

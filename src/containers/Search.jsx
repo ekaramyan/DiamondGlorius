@@ -63,8 +63,11 @@ export default function Search({ diamonds }) {
 		handleSetFilters(newFormData)
 	}
 
+	const limit = useSelector(state => state.limit)
+	const page = 1
+
 	const handleSearchClick = () => {
-		searchDiamonds(formData)
+		searchDiamonds(formData, page, limit)
 	}
 
 	const handleResetFormData = () => {

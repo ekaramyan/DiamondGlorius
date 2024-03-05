@@ -23,3 +23,8 @@ export const setPage = page => ({
 	type: 'SET_PAGE',
 	payload: page,
 })
+
+export const setLimit = limit => ({
+	type: 'SET_LIMIT',
+	payload: limit,
+})

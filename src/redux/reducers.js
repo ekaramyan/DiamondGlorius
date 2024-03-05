@@ -1,4 +1,4 @@
-import { initialFormData } from '@/initialFormData'
+import { defaultState } from '@/initialFormData'
 
 const getSavedState = () => {
 	try {
@@ -11,16 +11,7 @@ const getSavedState = () => {
 }
 const savedState = getSavedState()
 
-const initialState = savedState
-	? savedState
-	: {
-			searchResults: [],
-			filters: initialFormData,
-			theme: 'light',
-			viewMode: 'table',
-			sorting: { sort_by: '', sort_type: null },
-			page: 1,
-	  }
+const initialState = savedState ? savedState : defaultState
 
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
@@ -53,6 +44,11 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				page: action.payload,
+			}
+		case 'SET_LIMIT':
+			return {
+				...state,
+				limit: action.payload,
 			}
 		default:
 			return state

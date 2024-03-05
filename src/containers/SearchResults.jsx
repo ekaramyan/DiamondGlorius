@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
-import { Button } from 'react-bootstrap'
+import { Button, Spinner } from 'react-bootstrap'
 import { FilterCircle, FileEarmarkExcel } from 'react-bootstrap-icons'
 import { useMediaQuery } from 'react-responsive'
 
@@ -12,10 +12,14 @@ import PaginationButtons from '../components/UI/PaginationButtons'
 import TableComponent from '../components/TableComponent'
 import Cards from '../components/Cards'
 import SortList from '@/components/SortList'
+import LimitList from '@/components/UI/LimitList'
 
 export default function SearchResults() {
 	const data = useSelector(state => state.searchResults)
 	const viewMode = useSelector(state => state.viewMode)
+	const formData = useSelector(state => state.filters)
+	const page = useSelector(state => state.page)
+	const limit = useSelector(state => state.limit)
 	const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
 	const loaded = useLoaded()
 
@@ -45,15 +49,30 @@ export default function SearchResults() {
 				<Button onClick={backToFilters}>
 					<FilterCircle width={30} height={30} />
 				</Button>
-				<Button onClick={() => downloadExcel(2000, 1)}>
-					<FileEarmarkExcel width={30} height={30} />
+				<Button onClick={() => downloadExcel(limit, page)}>
+					{load ? (
+						<Spinner width={30} height={30} />
+					) : (
+						<FileEarmarkExcel width={30} height={30} />
+					)}
 				</Button>
 				{loaded && viewMode === 'cards' && <SortList />}
-				<PaginationButtons
-					totalPages={searchResults.total_pages}
-					currentPage={searchResults.current_page}
-					onPageChange={searchDiamonds}
-				/>
+				{loaded && (
+					<LimitList
+						page={page}
+						formData={formData}
+						onPageChange={searchDiamonds}
+					/>
+				)}
+				{loaded && (
+					<PaginationButtons
+						formData={formData}
+						limit={limit}
+						totalPages={searchResults?.total_pages}
+						currentPage={page}
+						onPageChange={searchDiamonds}
+					/>
+				)}
 			</div>
 			<div
 				style={{
@@ -61,9 +80,9 @@ export default function SearchResults() {
 				}}
 			>
 				{loaded && viewMode === 'cards' ? (
-					<Cards data={searchResults.data} />
+					<Cards data={searchResults?.data} />
 				) : (
-					<TableComponent data={searchResults.data} />
+					<TableComponent data={searchResults?.data} />
 				)}
 			</div>
 		</div>

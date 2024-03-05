@@ -10,10 +10,10 @@ const useDownloadExcel = () => {
 
 	const sorting = useSelector(state => state.sorting)
 	const formData = useSelector(state => state.filters)
-	const sort_type = sorting.sort_type ? 'asc' : 'desc'
 
 	const downloadExcel = async (limit = 2000, page = 1) => {
 		setLoading(true)
+		const sort_type = sorting.sort_type ? 'asc' : 'desc'
 		try {
 			const url =
 				`${apiUrl}/diamonds/excel?limit=${limit}&page=${page}` +

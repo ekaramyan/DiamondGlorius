@@ -271,3 +271,13 @@ export const sortHeadings = [
 	{ title: 'L/W Ratio', objectKey: 'l_w_ratio' },
 	{ title: 'Additional', objectKey: null },
 ]
+
+export const defaultState = {
+	searchResults: [],
+	filters: initialFormData,
+	theme: 'light',
+	viewMode: 'table',
+	sorting: { sort_by: '', sort_type: null },
+	page: 1,
+	limit: 25,
+}

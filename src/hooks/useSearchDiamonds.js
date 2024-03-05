@@ -12,13 +12,7 @@ const useSearchDiamonds = () => {
 	const dispatch = useDispatch()
 	const router = useRouter()
 
-	const searchDiamonds = async (
-		formData,
-		limit = 25,
-		page = 1,
-		sort_by,
-		sort_type
-	) => {
+	const searchDiamonds = async (formData, page, limit, sort_by, sort_type) => {
 		setLoading(true)
 		try {
 			const url =

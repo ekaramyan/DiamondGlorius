@@ -15,3 +15,20 @@ export default function Custom500() {
 		</div>
 	)
 }
+
+Custom500.getInitialProps = ({ res, err }) => {
+	if (res && res.statusCode === 500) {
+		return {}
+	}
+
+	if (err && err.statusCode === 500) {
+		if (typeof window === 'undefined') {
+			res.writeHead(302, { Location: '/' })
+			res.end()
+		} else {
+			router.push('/')
+		}
+	}
+
+	return {}
+}
