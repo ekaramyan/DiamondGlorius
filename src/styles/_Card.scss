@@ -8,5 +8,28 @@
 		img {
 			border-radius: 15px;
 		}
+	};
+
+	&__btn-primary {
+		display: flex;
+		flex-direction: row-reverse;
+		gap: 15;
+	}
+
+	&__footer1 {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 15;
+		&_two {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+		&_three {
+			display: flex;
+			align-items: center;
+			gap: 15
+		}
 	}
 }

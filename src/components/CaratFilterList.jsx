@@ -61,7 +61,7 @@ export default function CaratFilterList({
 						/>
 					))}
 				</Col>
-				<div className='carat__button__wrapper'>
+				<div className='carat__button_wrapper'>
 					{carats.length < 3 && (
 						<Button className='carat__button' onClick={addCarat}>
 							+

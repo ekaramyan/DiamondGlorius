@@ -3,18 +3,22 @@
 	margin: 0 auto;
 }
 
-.Advance__search_title {
+.advance__search_title {
 	color: var(--main-text-color);
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 25px;
 }
 
-.Advance__search_subtitle {
+.advance__search_subtitle {
 	color: var(--main-text-color);
 	text-transform: uppercase;
 	font-weight: 500;
 	font-size: 20px;
+}
+
+.advance__search_main-row {
+	margin-top: 45px;
 }
 
 .wrapper {

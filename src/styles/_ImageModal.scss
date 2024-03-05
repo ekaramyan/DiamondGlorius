@@ -1,0 +1,10 @@
+.modal__body {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    border-radius: 15;
+    overflow: hidden;
+    &_img {
+        border-radius: 15px;
+    }
+}

@@ -6,21 +6,12 @@ export default function ImageModal({ modalSrc, handleCloseModal, imageData }) {
 		<Modal show={modalSrc} onHide={handleCloseModal} size='xl'>
 			<Modal.Header closeButton />
 			<Modal.Body>
-				<div
-					style={{
-						width: '100%',
-						height: '80vh',
-						position: 'relative',
-						borderRadius: 15,
-						overflow: 'hidden',
-					}}
-				>
-					<Image
+				<div className='modal__body'>
+					<Image className='modal__body_img'
 						src={modalSrc}
 						alt={imageData.stno}
 						layout='fill'
 						objectFit='contain'
-						style={{ borderRadius: 15 }}
 					/>
 				</div>
 			</Modal.Body>

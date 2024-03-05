@@ -30,7 +30,7 @@ export default function CardItem({ searchResult }) {
 						<Card.Text>AMT$: {searchResult.amt}</Card.Text>
 					</Col>
 				</Row>
-				<div style={{ display: 'flex', flexDirection: 'row-reverse', gap: 15 }}>
+				<div className='card__btn-primary'>
 					<Button variant='primary'>
 						<Cart />
 					</Button>
@@ -40,14 +40,7 @@ export default function CardItem({ searchResult }) {
 				</div>
 			</Card.Body>
 			<Card.Footer>
-				<div
-					style={{
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'space-between',
-						gap: 15,
-					}}
-				>
+				<div className='card__footer'>
 					<p>{searchResult.carat}</p>
 					<p>{searchResult.color.title}</p>
 					<p>{searchResult.clarity.title}</p>
@@ -59,20 +52,8 @@ export default function CardItem({ searchResult }) {
 				</div>
 			</Card.Footer>
 			<Card.Footer>
-				<div
-					style={{
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'space-between',
-					}}
-				>
-					<div
-						style={{
-							display: 'flex',
-							alignItems: 'center',
-							gap: 15,
-						}}
-					>
+				<div className='card__footer_two'>
+					<div className='card__footer_three'>
 						<p>INC:</p>
 						<p>{searchResult.bit_type.title}</p>
 						<p>{searchResult.bc_type.title}</p>

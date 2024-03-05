@@ -50,7 +50,7 @@ export default function TableItem({ searchResult }) {
 				<td>{searchResult.milky_type.title}</td>
 				<td>{searchResult.l_w_ratio}</td>
 				<td>
-					<div style={{ display: 'flex', flexWarp: 'wrap', gap: 5 }}>
+					<div className='table-body__btn'>
 						<Button variant='primary'>
 							<Cart />
 						</Button>
