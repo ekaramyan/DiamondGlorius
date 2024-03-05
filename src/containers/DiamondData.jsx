@@ -48,7 +48,7 @@ export default function DiamondData({ diamond }) {
 					</tbody>
 				</Table>
 				<Col>
-					<Row>
+					<Row xxl={2} xl={2} lg={2} md={1} sm={1}>
 						<Col className='data-column'>
 							<ImageWrapper
 								source={diamond.img_url}
@@ -61,15 +61,7 @@ export default function DiamondData({ diamond }) {
 								</h6>
 							</div>
 						</Col>
-						<div
-							style={{
-								width: 530,
-								height: '100%',
-								position: 'relative',
-								borderRadius: 15,
-								overflow: 'hidden',
-							}}
-						>
+						<div className='data-column__iframe'>
 							<iframe
 								src={diamond.vido_url}
 								width='100%'

@@ -77,12 +77,22 @@ export default function SearchResults() {
 			<div
 				style={{
 					overflowX: isMobile && viewMode === 'table' ? 'auto' : 'hidden',
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
+					justifyContent: 'center',
 				}}
 			>
-				{loaded && viewMode === 'cards' ? (
-					<Cards data={searchResults?.data} />
+				{loading ? (
+					<Spinner width={50} height={50} />
 				) : (
-					<TableComponent data={searchResults?.data} />
+					<>
+						{loaded && viewMode === 'cards' ? (
+							<Cards data={searchResults?.data} />
+						) : (
+							<TableComponent data={searchResults?.data} />
+						)}
+					</>
 				)}
 			</div>
 		</div>

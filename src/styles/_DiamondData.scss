@@ -17,6 +17,16 @@
 			text-transform: uppercase;
 		}
 	}
+	.card__image {
+		height: 100%;
+	}
+	&__iframwe {
+		width: 50%;
+		height: 100%;
+		position: relative;
+		border-radius: 15;
+		overflow: hidden;
+	}
 }
 .table {
 	&__text {
