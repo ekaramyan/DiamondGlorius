@@ -11,7 +11,7 @@ export default function SortButton({ title, objectKey }) {
 		const newSortType =
 			sorting.sort_by === sort_by && sorting.sort_type === true ? false : true
 		setSort(sort_by, newSortType)
-		sortResults(25)
+		sortResults()
 	}
 	const chevronClassName = `table__sort ${
 		objectKey === sorting?.sort_by && sorting.sort_type && 'rotate'

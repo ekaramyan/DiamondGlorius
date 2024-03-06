@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 export default function Custom500() {
-	// const router = useRouter()
-	// useEffect(() => {
-	// 	localStorage.clear()
-	// 	router.push('/')
-	// }, [])
+	const router = useRouter()
+	useEffect(() => {
+		localStorage.clear()
+		router.push('/')
+	}, [])
 
 	return (
 		<div>
@@ -15,20 +15,3 @@ export default function Custom500() {
 		</div>
 	)
 }
-
-// Custom500.getInitialProps = ({ res, err }) => {
-// 	if (res && res.statusCode === 500) {
-// 		return {}
-// 	}
-
-// 	if (err && err.statusCode === 500) {
-// 		if (typeof window === 'undefined') {
-// 			res.writeHead(302, { Location: '/' })
-// 			res.end()
-// 		} else {
-// 			router.push('/')
-// 		}
-// 	}
-
-// 	return {}
-// }

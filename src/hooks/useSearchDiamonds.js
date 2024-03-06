@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { setFilters, setSearchResults, setPage } from '../redux/actions'
+import { validateState } from '@/redux/validateState'
 
 const useSearchDiamonds = () => {
 	const [loading, setLoading] = useState(false)
@@ -38,6 +39,7 @@ const useSearchDiamonds = () => {
 			}
 		} catch (err) {
 			setError(err.response?.data?.message || 'An error occurred.')
+			validateState(localStorage.getItem('reduxState'))
 		} finally {
 			setLoading(false)
 		}

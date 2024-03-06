@@ -15,16 +15,17 @@ const useSorting = () => {
 	const sorting = useSelector(state => state.sorting)
 	const formData = useSelector(state => state.filters)
 	const page = useSelector(state => state.page)
+	const limit = useSelector(state => state.limit)
 	const { searchDiamonds, load, err, suc } = useSearchDiamonds()
 
-	const sortResults = async (limit = 25) => {
+	const sortResults = async () => {
 		setLoading(true)
 		try {
 			console.log(sorting)
 			const response = searchDiamonds(
 				formData,
-				limit,
 				page,
+				limit,
 				sorting.sort_by,
 				sorting.sort_type ? 'asc' : 'desc'
 			)

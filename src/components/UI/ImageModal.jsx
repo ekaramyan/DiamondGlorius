@@ -2,6 +2,11 @@ import { Modal, Button } from 'react-bootstrap'
 import Image from 'next/image'
 
 export default function ImageModal({ modalSrc, handleCloseModal, imageData }) {
+	let baseUrl = null
+	if (modalSrc) {
+		const url = new URL(modalSrc)
+		baseUrl = url.origin + url.pathname
+	}
 	return (
 		<Modal show={modalSrc} onHide={handleCloseModal} size='xl'>
 			<Modal.Header closeButton />
@@ -16,7 +21,7 @@ export default function ImageModal({ modalSrc, handleCloseModal, imageData }) {
 					}}
 				>
 					<Image
-						src={modalSrc}
+						src={baseUrl || modalSrc}
 						alt={imageData.stno}
 						layout='fill'
 						objectFit='contain'
