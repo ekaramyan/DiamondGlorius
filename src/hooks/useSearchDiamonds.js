@@ -17,7 +17,7 @@ const useSearchDiamonds = () => {
 		setLoading(true)
 		try {
 			const url =
-				`${apiUrl}/diamonds?limit=${limit}&page=${page}` +
+				`${apiUrl}/diamonds?limit=${limit ? limit : 25}&page=${page}` +
 				(sort_by && sort_type
 					? `&sort_by=${sort_by}&sort_type=${sort_type}`
 					: '')
@@ -38,7 +38,8 @@ const useSearchDiamonds = () => {
 				setError(response.data.message || 'An error occurred.')
 			}
 		} catch (err) {
-			setError(err.response?.data?.message || 'An error occurred.')
+			console.log()
+			setError(err.response?.data?.msg || 'An error occurred.')
 			validateState(localStorage.getItem('reduxState'))
 		} finally {
 			setLoading(false)

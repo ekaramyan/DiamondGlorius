@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {
+	Alert,
 	Row,
 	Col,
 	Button,
@@ -131,6 +132,11 @@ export default function Search({ diamonds }) {
 						<ArrowCounterclockwise color='#e0e0e0' width={30} height={30} />
 					</Button>
 				</InputGroup>
+				{error && (
+					<Alert variant='primary' style={{ marginTop: 15 }}>
+						{error}
+					</Alert>
+				)}
 			</Row>
 
 			<Row>
