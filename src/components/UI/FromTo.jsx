@@ -11,7 +11,6 @@ export default function FromTo({ handleChange, min, max }) {
 					value={min !== null ? min : ''}
 					onChange={handleChange}
 					inputMode='numeric'
-					autoFocus
 				/>
 				<FormControl
 					placeholder='To'
@@ -20,7 +19,6 @@ export default function FromTo({ handleChange, min, max }) {
 					value={max !== null ? max : ''}
 					onChange={handleChange}
 					inputMode='numeric'
-					autoFocus
 				/>
 			</InputGroup>
 		</>
