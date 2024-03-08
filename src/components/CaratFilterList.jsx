@@ -8,6 +8,7 @@ export default function CaratFilterList({
 	formData,
 	objectKey,
 }) {
+	const maxCaratsLength = 3
 	const updateFilters = newCarats => {
 		const newFormData = {
 			...formData,
@@ -17,7 +18,7 @@ export default function CaratFilterList({
 	}
 
 	const addCarat = () => {
-		if (carats.length < 3) {
+		if (carats.length < maxCaratsLength) {
 			const newCarats = [...carats, { min: null, max: null }]
 			updateFilters(newCarats)
 		}
@@ -39,7 +40,6 @@ export default function CaratFilterList({
 			[name]: newValue,
 		}
 
-
 		if (
 			newCarats[index].min !== null &&
 			newCarats[index].max !== null &&
@@ -59,17 +59,15 @@ export default function CaratFilterList({
 				<Col md={8} className='carat__inputs'>
 					{carats.map((carat, index) => (
 						<FromTo
-							key={`${carat.min}-${carat.max}`}
+							key={index}
 							handleChange={e => handleChange(e, index)}
 							min={carat.min !== null ? carat.min : ''}
 							max={carat.max !== null ? carat.max : ''}
-							index={index}
-							length={carats.length}
 						/>
 					))}
 				</Col>
 				<div className='carat__button__wrapper'>
-					{carats.length < 3 && (
+					{carats.length < maxCaratsLength && (
 						<Button className='carat__button' onClick={addCarat}>
 							+
 						</Button>

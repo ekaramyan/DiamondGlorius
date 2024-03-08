@@ -1,7 +1,6 @@
 import { InputGroup, FormControl } from 'react-bootstrap'
 
-export default function FromTo({ handleChange, min, max, index, length }) {
-
+export default function FromTo({ handleChange, min, max }) {
 	return (
 		<>
 			<InputGroup md={2}>
@@ -12,6 +11,7 @@ export default function FromTo({ handleChange, min, max, index, length }) {
 					value={min !== null ? min : ''}
 					onChange={handleChange}
 					inputMode='numeric'
+					autoFocus
 				/>
 				<FormControl
 					placeholder='To'
@@ -20,6 +20,7 @@ export default function FromTo({ handleChange, min, max, index, length }) {
 					value={max !== null ? max : ''}
 					onChange={handleChange}
 					inputMode='numeric'
+					autoFocus
 				/>
 			</InputGroup>
 		</>
