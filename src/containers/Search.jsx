@@ -133,7 +133,10 @@ export default function Search({ diamonds }) {
 					</Button>
 				</InputGroup>
 				{error && (
-					<Alert variant='primary' style={{ marginTop: 15 }}>
+					<Alert
+						variant='danger'
+						style={{ marginTop: 15, color: '#212529', fontWeight: 700 }}
+					>
 						{error}
 					</Alert>
 				)}
