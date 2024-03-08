@@ -17,13 +17,17 @@ export default function CaratFilterList({
 	}
 
 	const addCarat = () => {
-		const newCarats = [...carats, { min: null, max: null }]
-		updateFilters(newCarats)
+		if (carats.length < 3) {
+			const newCarats = [...carats, { min: null, max: null }]
+			updateFilters(newCarats)
+		}
 	}
 
 	const reduceCarat = () => {
-		const newCarats = carats.slice(0, -1)
-		updateFilters(newCarats)
+		if (carats.length > 1) {
+			const newCarats = carats.slice(0, -1)
+			updateFilters(newCarats)
+		}
 	}
 
 	const handleChange = (e, index) => {
@@ -34,6 +38,7 @@ export default function CaratFilterList({
 			...newCarats[index],
 			[name]: newValue,
 		}
+
 
 		if (
 			newCarats[index].min !== null &&
@@ -58,6 +63,8 @@ export default function CaratFilterList({
 							handleChange={e => handleChange(e, index)}
 							min={carat.min !== null ? carat.min : ''}
 							max={carat.max !== null ? carat.max : ''}
+							index={index}
+							length={carats.length}
 						/>
 					))}
 				</Col>
