@@ -158,7 +158,7 @@ export default function Search({ diamonds }) {
 						<CircleButton
 							key={diamondShape.id}
 							shape={diamondShape}
-							imageSource={diamondShapesImg[index].img}
+							images={diamondShapesImg}
 							updateFormData={handleUpdateFormData}
 							shapeIds={formData.shape_ids}
 						/>

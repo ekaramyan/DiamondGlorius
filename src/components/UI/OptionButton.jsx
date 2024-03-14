@@ -20,7 +20,6 @@ export default function OptionButton({
 		setOptionStyle(newOptionStyle)
 
 		if (option.title.toLowerCase() === 'all' && optionIds < 1) {
-			console.log(option)
 			setSelected('selected')
 		}
 	}, [optionIds, option.id, imageSource])

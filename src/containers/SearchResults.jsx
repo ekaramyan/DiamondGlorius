@@ -29,7 +29,6 @@ export default function SearchResults() {
 	}, [data])
 	const router = useRouter()
 	const { searchDiamonds, loading, error, success } = useSearchDiamonds()
-	console.log(searchResults)
 	const backToFilters = () => {
 		router.push('/')
 	}

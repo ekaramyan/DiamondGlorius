@@ -21,7 +21,6 @@ const useSorting = () => {
 	const sortResults = async () => {
 		setLoading(true)
 		try {
-			console.log(sorting)
 			const response = searchDiamonds(
 				formData,
 				page,

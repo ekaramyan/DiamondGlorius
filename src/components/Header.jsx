@@ -6,7 +6,7 @@ import { Container } from 'react-bootstrap'
 import { Cart, Moon, Sun, CardHeading, Table } from 'react-bootstrap-icons'
 import { toggleTheme } from '@/redux/actions'
 import { toggleViewMode } from '@/redux/actions'
-import round from '@/assets/img/icon-2.webp'
+import heart from '@/assets/img/heart.webp'
 
 export default function Header({ showCart }) {
 	const router = useRouter()
@@ -35,7 +35,7 @@ export default function Header({ showCart }) {
 						}}
 					>
 						<div className='Header__logo'>
-							<Image src={round.src} alt='logo' width={40} height={40} />
+							<Image src={heart.src} alt='logo' width={40} height={40} />
 							<h1 className='header__title'>Diamonds</h1>
 						</div>
 						<div

@@ -1,15 +1,15 @@
-import icon1 from '@/assets/img/icon-1.webp'
-import icon2 from '@/assets/img/icon-2.webp'
-import icon3 from '@/assets/img/icon-3.webp'
-import icon4 from '@/assets/img/icon-4.webp'
-import icon5 from '@/assets/img/icon-5.webp'
-import icon6 from '@/assets/img/icon-6.webp'
-import icon7 from '@/assets/img/icon-7.webp'
-import icon8 from '@/assets/img/icon-8.webp'
-import icon9 from '@/assets/img/icon-9.webp'
-import icon10 from '@/assets/img/icon-10.webp'
-import icon11 from '@/assets/img/icon-11.webp'
-import icon12 from '@/assets/img/icon-12.webp'
+import round from '@/assets/img/round.webp'
+import heart from '@/assets/img/heart.webp'
+import pear from '@/assets/img/pear.webp'
+import emerald from '@/assets/img/emerald.webp'
+import cushion from '@/assets/img/cushion.webp'
+import princess from '@/assets/img/princess.webp'
+import oval from '@/assets/img/oval.webp'
+import marquise from '@/assets/img/marquise.webp'
+import sqEmerald from '@/assets/img/sqEmerald.webp'
+import lRadiant from '@/assets/img/lRadiant.webp'
+import cushionMBR from '@/assets/img/cushionMBR.webp'
+import other from '@/assets/img/other.webp'
 
 export const initialFormData = {
 	shape_ids: null,
@@ -202,18 +202,18 @@ export const getOtherData = diamonds => {
 }
 
 export const diamondShapesImg = [
-	{ id: 1, img: icon1.src },
-	{ id: 2, img: icon2.src },
-	{ id: 3, img: icon3.src },
-	{ id: 4, img: icon4.src },
-	{ id: 5, img: icon5.src },
-	{ id: 6, img: icon6.src },
-	{ id: 7, img: icon7.src },
-	{ id: 8, img: icon8.src },
-	{ id: 9, img: icon9.src },
-	{ id: 10, img: icon10.src },
-	{ id: 11, img: icon11.src },
-	{ id: 12, img: icon12.src },
+	{ id: 1, name: 'oval', img: oval.src },
+	{ id: 2, name: 'l radiant', img: lRadiant.src },
+	{ id: 3, name: 'pear', img: pear.src },
+	{ id: 4, name: 'emerald', img: emerald.src },
+	{ id: 5, name: 'cushion', img: cushion.src },
+	{ id: 6, name: 'princess', img: princess.src },
+	{ id: 7, name: 'round', img: round.src },
+	{ id: 8, name: 'marquise', img: marquise.src },
+	{ id: 9, name: 'sq radiant', img: sqEmerald.src },
+	{ id: 10, name: 'heart', img: heart.src },
+	{ id: 11, name: 'cushion b', img: cushionMBR.src },
+	{ id: 12, name: 'other', img: other.src },
 ]
 
 export const diamondTable = diamond => [

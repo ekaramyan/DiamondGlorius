@@ -2,7 +2,7 @@ import OptionButton from './OptionButton'
 
 export default function CircleButton({
 	shape,
-	imageSource,
+	images,
 	updateFormData,
 	shapeIds,
 }) {
@@ -21,6 +21,8 @@ export default function CircleButton({
 			updatedShapeIds.length < 1 ? null : updatedShapeIds
 		)
 	}
+	const matchedImg = images.find(img => img.name === shape.title.toLowerCase())
+	const imageSource = matchedImg ? matchedImg.img : null
 
 	return (
 		<OptionButton
