@@ -213,6 +213,8 @@ export const diamondShapesImg = [
 	{ id: 9, name: 'sq radiant', img: sqEmerald.src },
 	{ id: 10, name: 'heart', img: heart.src },
 	{ id: 11, name: 'cushion b', img: cushionMBR.src },
+	{ id: 10, name: 'sq emerald', img: sqEmerald.src },
+	{ id: 11, name: 'cushion mbr', img: cushionMBR.src },
 	{ id: 12, name: 'other', img: other.src },
 ]
 

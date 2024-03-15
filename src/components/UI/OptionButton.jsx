@@ -13,6 +13,7 @@ export default function OptionButton({
 	const [selected, setSelected] = useState('')
 
 	useEffect(() => {
+		console.log(option)
 		const isSelected = transformArrayValue(optionIds).includes(option.id)
 		const newOptionStyle = imageSource ? 'option__btn__big' : ''
 		const selectedStyle = isSelected ? 'selected' : ''
@@ -26,7 +27,7 @@ export default function OptionButton({
 
 	return (
 		<>
-			{option.title && (
+			{option.title && option.visible !== false && (
 				<button
 					className={`option__btn ${optionStyle} ${selected}`}
 					value={option.id}

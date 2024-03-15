@@ -154,15 +154,17 @@ export default function Search({ diamonds }) {
 						overflowX: 'auto',
 					}}
 				>
-					{diamondShapes.map((diamondShape, index) => (
-						<CircleButton
-							key={diamondShape.id}
-							shape={diamondShape}
-							images={diamondShapesImg}
-							updateFormData={handleUpdateFormData}
-							shapeIds={formData.shape_ids}
-						/>
-					))}
+					{diamondShapes
+						.sort((a, b) => a.position - b.position)
+						.map((diamondShape, index) => (
+							<CircleButton
+								key={diamondShape.id}
+								shape={diamondShape}
+								images={diamondShapesImg}
+								updateFormData={handleUpdateFormData}
+								shapeIds={formData.shape_ids}
+							/>
+						))}
 				</Col>
 			</Row>
 

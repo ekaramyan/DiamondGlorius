@@ -34,22 +34,23 @@ export default function FilterButtons({
 		}
 	}
 
-
 	return (
 		<div className='option__wrapper'>
 			<div className='option__title'>
 				<h5>{title}</h5>
 			</div>
 			<div className='option__list'>
-				{buttons.map((option, idx) => (
-					<OptionButton
-						key={idx}
-						option={option}
-						imageSource={null}
-						optionIds={selectedOptions}
-						onClick={() => handleOptionClick(option.id)}
-					/>
-				))}
+				{buttons
+					.sort((a, b) => a.position - b.position)
+					.map((option, idx) => (
+						<OptionButton
+							key={idx}
+							option={option}
+							imageSource={null}
+							optionIds={selectedOptions}
+							onClick={() => handleOptionClick(option.id)}
+						/>
+					))}
 			</div>
 		</div>
 	)
