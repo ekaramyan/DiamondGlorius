@@ -87,6 +87,7 @@ export default function Search({ diamonds }) {
 		...diamonds?.shapes,
 		{ title: 'other', id: otherShapeIds },
 	]
+	const isUnique = (id, shapes) => shapes.filter(shape => shape.id !== id)
 
 	return (
 		<>
@@ -164,15 +165,27 @@ export default function Search({ diamonds }) {
 				>
 					{diamondShapes
 						.sort((a, b) => a.position - b.position)
-						.map((diamondShape, index) => (
-							<CircleButton
-								key={diamondShape.id}
-								shape={diamondShape}
-								images={diamondShapesImg}
-								updateFormData={handleUpdateFormData}
-								shapeIds={formData.shape_ids}
-							/>
-						))}
+						.map((diamondShape, index) => {
+							if (
+								diamondShape.id === 99 ||
+								!isUnique(diamondShape.id, diamondShapes)
+							) {
+								const randomNumber = Math.floor(
+									Math.random() * (10000 - 100) + 100
+								)
+								diamondShape.id = randomNumber
+							}
+
+							return (
+								<CircleButton
+									key={diamondShape.id}
+									shape={diamondShape}
+									images={diamondShapesImg}
+									updateFormData={handleUpdateFormData}
+									shapeIds={formData.shape_ids}
+								/>
+							)
+						})}
 				</Col>
 			</Row>
 
