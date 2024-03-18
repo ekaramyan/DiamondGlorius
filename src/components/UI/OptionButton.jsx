@@ -13,7 +13,6 @@ export default function OptionButton({
 	const [selected, setSelected] = useState('')
 
 	useEffect(() => {
-		console.log(option)
 		const isSelected = transformArrayValue(optionIds).includes(option.id)
 		const newOptionStyle = imageSource ? 'option__btn__big' : ''
 		const selectedStyle = isSelected ? 'selected' : ''
@@ -22,6 +21,12 @@ export default function OptionButton({
 
 		if (option.title.toLowerCase() === 'all' && optionIds < 1) {
 			setSelected('selected')
+		}
+		if (option.title.toLowerCase() === 'other') {
+			const containsAnyOtherId = option.id.some(id =>
+				transformArrayValue(optionIds).includes(id)
+			)
+			containsAnyOtherId ? setSelected('selected') : setSelected('')
 		}
 	}, [optionIds, option.id, imageSource])
 

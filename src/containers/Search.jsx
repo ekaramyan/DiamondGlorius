@@ -78,7 +78,15 @@ export default function Search({ diamonds }) {
 	const menuTabs = getMenuTabs(diamonds)
 	const conditionTypes = getConditionTypes(diamonds)
 	const otherData = getOtherData(diamonds)
-	const diamondShapes = diamonds?.shapes
+	const unfilteredDiamondShapes = diamonds?.shapes
+	const otherShapeIds = unfilteredDiamondShapes
+		.filter(shape => !shape.visible)
+		.map(shape => shape.id)
+
+	const diamondShapes = [
+		...diamonds?.shapes,
+		{ title: 'other', id: otherShapeIds },
+	]
 
 	return (
 		<>
