@@ -9,10 +9,11 @@ import ImageWrapper from '@/components/Wrappers/ImageWrapper'
 
 export default function DiamondData({ diamond }) {
 	const [modalSrc, setModalSrc] = useState(null)
+	const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
 	if (!diamond) {
 		return <>no data found</>
 	}
-
+	console.log(diamond)
 	const tableData = diamondTable(diamond)
 
 	const handleOpenModal = src => {
@@ -22,8 +23,6 @@ export default function DiamondData({ diamond }) {
 	const handleCloseModal = () => {
 		setModalSrc(false)
 	}
-
-	const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
 
 	return (
 		<>
@@ -63,6 +62,7 @@ export default function DiamondData({ diamond }) {
 								<h6>
 									{diamond.carat} {diamond.color.title} {diamond.clarity.title}
 								</h6>
+								<h6>Price: {diamond.rap_price}</h6>
 							</div>
 						</Col>
 						<div className='data-column__iframe'>

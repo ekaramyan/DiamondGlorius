@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 import { useSelector } from 'react-redux'
 import { Button, Spinner } from 'react-bootstrap'
-import { FilterCircle, FileEarmarkExcel } from 'react-bootstrap-icons'
 import { useMediaQuery } from 'react-responsive'
 
 import useSearchDiamonds from '@/hooks/useSearchDiamonds'
@@ -13,6 +13,7 @@ import TableComponent from '../components/TableComponent'
 import Cards from '../components/Cards'
 import SortList from '@/components/SortList'
 import LimitList from '@/components/UI/LimitList'
+import excel from '@/assets/img/excel.webp'
 
 export default function SearchResults() {
 	const data = useSelector(state => state.searchResults)
@@ -38,21 +39,24 @@ export default function SearchResults() {
 			<div
 				style={{
 					display: 'flex',
-					alignItems: 'flex-start',
+					alignItems: 'center',
 					justifyContent: 'center',
 					flexWrap: 'wrap',
 					gap: 25,
 					marginBottom: 30,
 				}}
 			>
-				<Button onClick={backToFilters}>
-					<FilterCircle width={30} height={30} />
-				</Button>
+				<Button onClick={backToFilters}>Back to search</Button>
 				<Button onClick={() => downloadExcel(limit, page)}>
 					{load ? (
 						<Spinner width={30} height={30} />
 					) : (
-						<FileEarmarkExcel width={30} height={30} />
+						<Image
+							width={30}
+							height={30}
+							src={excel.src}
+							alt={'download excel'}
+						/>
 					)}
 				</Button>
 				{loaded && viewMode === 'cards' && <SortList />}
@@ -75,7 +79,7 @@ export default function SearchResults() {
 			</div>
 			<div
 				style={{
-					overflowX: isMobile && viewMode === 'table' ? 'auto' : 'hidden',
+					overflowX: viewMode === 'table' ? 'auto' : 'hidden',
 					display: 'flex',
 					flexDirection: 'column',
 					alignItems: 'center',
