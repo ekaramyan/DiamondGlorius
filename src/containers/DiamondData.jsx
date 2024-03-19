@@ -9,6 +9,10 @@ import ImageWrapper from '@/components/Wrappers/ImageWrapper'
 
 export default function DiamondData({ diamond }) {
 	const [modalSrc, setModalSrc] = useState(null)
+	if (!diamond) {
+		return <>no data found</>
+	}
+
 	const tableData = diamondTable(diamond)
 
 	const handleOpenModal = src => {
