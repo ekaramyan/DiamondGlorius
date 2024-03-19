@@ -279,7 +279,7 @@ export const defaultState = {
 	filters: initialFormData,
 	theme: 'light',
 	viewMode: 'table',
-	sorting: { sort_by: '', sort_type: null },
+	sorting: { sort_by: '', sort_type: '' },
 	page: 1,
 	limit: 25,
 }

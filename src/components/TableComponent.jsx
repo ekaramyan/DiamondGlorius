@@ -1,9 +1,24 @@
 import { Table } from 'react-bootstrap'
+import { useState } from 'react'
 import TableItem from './UI/TableItem'
 import TableHead from './UI/TableHead'
 import { sortHeadings } from '@/initialFormData'
+import useSorting from '@/hooks/useSorting'
 
 export default function TableComponent({ data }) {
+	const { setSort, sorting, sortResults } = useSorting()
+	const [activeTab, setActiveTab] = useState()
+
+	const toggleSorting = sort_by => {
+		const newSortType =
+			sorting.sort_by === sort_by && sorting.sort_type === 'asc'
+				? 'desc'
+				: 'asc'
+		setSort(sort_by, newSortType)
+		sortResults(sort_by, newSortType)
+		setActiveTab(sort_by)
+	}
+
 	return (
 		<Table striped bordered hover style={{ overflowX: 'auto' }}>
 			<thead>
@@ -13,6 +28,9 @@ export default function TableComponent({ data }) {
 							key={index}
 							title={heading.title}
 							objectKey={heading.objectKey}
+							toggleSorting={toggleSorting}
+							activeTab={activeTab}
+							sorting={sorting}
 						/>
 					))}
 				</tr>

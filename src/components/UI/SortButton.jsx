@@ -1,31 +1,31 @@
 import { Button } from 'react-bootstrap'
-import { useState } from 'react'
 import { ChevronDown } from 'react-bootstrap-icons'
-import useSorting from '@/hooks/useSorting'
 
-export default function SortButton({ title, objectKey }) {
-	const { sortResults, setSort, sorting, loading, error, success } =
-		useSorting()
-
-	const toggleSorting = sort_by => {
-		const newSortType =
-			sorting.sort_by === sort_by && sorting.sort_type === true ? false : true
-		setSort(sort_by, newSortType)
-		sortResults()
-	}
+export default function SortButton({
+	title,
+	toggleSorting,
+	objectKey,
+	activeTab,
+	sorting,
+}) {
 	const chevronClassName = `table__sort ${
-		objectKey === sorting?.sort_by && sorting.sort_type && 'rotate'
+		objectKey === sorting.sort_by && sorting.sort_type === 'desc'
+			? 'rotate'
+			: ''
 	}`
 
+	const buttonClassName = `sort__button ${
+		objectKey !== null && objectKey === activeTab ? 'active' : ''
+	}`
 	return (
 		<>
 			{objectKey && (
 				<Button
-					className='sort__button'
+					className={buttonClassName}
 					onClick={() => toggleSorting(objectKey)}
 				>
 					<p>{title}</p>
-					{objectKey && <ChevronDown className={chevronClassName} />}
+					<ChevronDown className={chevronClassName} />
 				</Button>
 			)}
 		</>

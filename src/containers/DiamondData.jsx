@@ -16,7 +16,6 @@ export default function DiamondData({ diamond }) {
 	if (!diamond) {
 		return <>no data found</>
 	}
-	console.log(diamond)
 	const tableData = diamondTable(diamond)
 
 	const handleOpenModal = src => {

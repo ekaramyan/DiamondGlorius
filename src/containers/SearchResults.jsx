@@ -21,7 +21,7 @@ export default function SearchResults() {
 	const formData = useSelector(state => state.filters)
 	const page = useSelector(state => state.page)
 	const limit = useSelector(state => state.limit)
-	const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
+	const isMobile = useMediaQuery({ query: '(max-width: 1300px)' })
 	const loaded = useLoaded()
 
 	const [searchResults, setSearchResults] = useState([])
@@ -82,11 +82,12 @@ export default function SearchResults() {
 			</div>
 			<div
 				style={{
-					overflowX: viewMode === 'table' ? 'auto' : 'hidden',
+					overflowX: isMobile && viewMode === 'table' ? 'auto' : 'hidden',
 					display: 'flex',
 					flexDirection: 'column',
 					alignItems: 'center',
 					justifyContent: 'center',
+					width: '100%',
 				}}
 			>
 				{loading ? (

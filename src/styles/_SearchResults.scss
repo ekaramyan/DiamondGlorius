@@ -22,6 +22,9 @@
 			text-transform: uppercase;
 			color: var(--blue);
 		}
+		&.active {
+			background: var(--blue);
+		}
 	}
 	&__sort {
 		transition: transform 0.3s ease-in-out;
@@ -33,6 +36,14 @@
 		td {
 			font-size: 13px;
 			text-align: center;
+		}
+	}
+	th {
+		&.active {
+			background: var(--blue);
+			.table__heading p {
+				color: var(--text-color);
+			}
 		}
 	}
 }
