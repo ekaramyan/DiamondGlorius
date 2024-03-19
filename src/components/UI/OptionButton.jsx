@@ -46,7 +46,9 @@ export default function OptionButton({
 							alt={option.title}
 						/>
 					)}
-					<p className='search__descr'>{option.title}</p>
+					<p className='search__descr' style={{ fontSize: imageSource && 10 }}>
+						{option.title}
+					</p>
 				</button>
 			)}
 		</>
