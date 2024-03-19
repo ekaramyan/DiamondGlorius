@@ -32,6 +32,7 @@
 	&-body__text {
 		td {
 			font-size: 13px;
+			text-align: center;
 		}
 	}
 }
@@ -51,5 +52,18 @@
 	.dropdown-toggle.btn.btn-primary {
 		height: 100%;
 		padding: 9px 12px;
+	}
+}
+
+.results {
+	&__total {
+		text-transform: uppercase;
+		font-size: 16px;
+		text-transform: uppercase;
+		margin-bottom: 0;
+		span {
+			color: var(--main-hover-color);
+			font-weight: 700;
+		}
 	}
 }

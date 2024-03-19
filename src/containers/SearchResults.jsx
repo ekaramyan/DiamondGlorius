@@ -67,6 +67,9 @@ export default function SearchResults() {
 						onPageChange={searchDiamonds}
 					/>
 				)}
+				<p className='results__total'>
+					total results: <span>{searchResults.total}</span>
+				</p>
 				{loaded && (
 					<PaginationButtons
 						formData={formData}
