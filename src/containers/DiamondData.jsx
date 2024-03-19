@@ -1,15 +1,18 @@
 import Image from 'next/image'
 import { useState } from 'react'
-import { Row, Col, Table } from 'react-bootstrap'
+import { Row, Col, Table, Button } from 'react-bootstrap'
+import { ArrowLeft } from 'react-bootstrap-icons'
 import { useMediaQuery } from 'react-responsive'
 
 import ImageModal from '@/components/UI/ImageModal'
 import { diamondTable } from '@/initialFormData'
 import ImageWrapper from '@/components/Wrappers/ImageWrapper'
+import { useRouter } from 'next/router'
 
 export default function DiamondData({ diamond }) {
 	const [modalSrc, setModalSrc] = useState(null)
 	const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
+	const router = useRouter()
 	if (!diamond) {
 		return <>no data found</>
 	}
@@ -36,6 +39,23 @@ export default function DiamondData({ diamond }) {
 					marginTop: 10,
 				}}
 			>
+				<div
+					style={{
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
+						flexWrap: 'wrap',
+						gap: 25,
+						marginBottom: 30,
+					}}
+				>
+					<Button onClick={() => router.push('/diamonds')}>
+						<ArrowLeft />
+					</Button>
+					<Button onClick={() => router.push('/diamonds')}>
+						Back to search
+					</Button>
+				</div>
 				<Table striped bordered hover style={{ maxWidth: 300 }}>
 					<tbody>
 						{tableData.map((_, index) => (
