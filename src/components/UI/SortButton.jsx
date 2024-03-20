@@ -1,5 +1,5 @@
 import { Button } from 'react-bootstrap'
-import { ChevronDown } from 'react-bootstrap-icons'
+import { ChevronDown, ChevronUp } from 'react-bootstrap-icons'
 
 export default function SortButton({
 	title,
@@ -20,12 +20,34 @@ export default function SortButton({
 	return (
 		<>
 			{objectKey && (
-				<Button
-					className={buttonClassName}
-					onClick={() => toggleSorting(objectKey)}
-				>
+				<Button className={buttonClassName}>
 					<p>{title}</p>
-					<ChevronDown className={chevronClassName} />
+					{objectKey && (
+						<div style={{ display: 'flex', flexDirection: 'column' }}>
+							{objectKey !== activeTab && (
+								<ChevronUp
+									className={chevronClassName}
+									onClick={() =>
+										toggleSorting(
+											objectKey,
+											sorting.sort_type === 'desc' ? 'asc' : 'desc'
+										)
+									}
+								/>
+							)}
+							{
+								<ChevronDown
+									className={chevronClassName}
+									onClick={() =>
+										toggleSorting(
+											objectKey,
+											sorting.sort_type === 'asc' ? 'desc' : 'asc'
+										)
+									}
+								/>
+							}
+						</div>
+					)}
 				</Button>
 			)}
 		</>

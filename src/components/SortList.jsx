@@ -8,13 +8,9 @@ export default function SortList() {
 	const { setSort, sorting, sortResults } = useSorting()
 	const [activeTab, setActiveTab] = useState()
 
-	const toggleSorting = sort_by => {
-		const newSortType =
-			sorting.sort_by === sort_by && sorting.sort_type === 'asc'
-				? 'desc'
-				: 'asc'
-		setSort(sort_by, newSortType)
-		sortResults(sort_by, newSortType)
+	const toggleSorting = (sort_by, sort_type = 'asc') => {
+		setSort(sort_by, sort_type)
+		sortResults(sort_by, sort_type)
 		setActiveTab(sort_by)
 	}
 	return (
