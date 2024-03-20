@@ -17,6 +17,10 @@ export default function SortButton({
 	const buttonClassName = `sort__button ${
 		objectKey !== null && objectKey === activeTab ? 'active' : ''
 	}`
+
+	const isActive = objectKey === activeTab
+	const isSortingBy = objectKey === sorting.sort_by
+	const isAscending = sorting.sort_type === 'asc'
 	return (
 		<>
 			{objectKey && (
@@ -24,28 +28,30 @@ export default function SortButton({
 					<p>{title}</p>
 					{objectKey && (
 						<div style={{ display: 'flex', flexDirection: 'column' }}>
-							{objectKey !== activeTab && (
-								<ChevronUp
-									className={chevronClassName}
-									onClick={() =>
-										toggleSorting(
-											objectKey,
-											sorting.sort_type === 'desc' ? 'asc' : 'desc'
-										)
-									}
-								/>
+							{isActive ? (
+								isAscending ? (
+									<ChevronUp
+										className={isSortingBy ? '' : 'invisible'}
+										onClick={() => toggleSorting(objectKey, 'desc')}
+									/>
+								) : (
+									<ChevronDown
+										className={isSortingBy ? '' : 'invisible'}
+										onClick={() => toggleSorting(objectKey, 'asc')}
+									/>
+								)
+							) : (
+								<>
+									<ChevronUp
+										className={isSortingBy ? 'invisible' : ''}
+										onClick={() => toggleSorting(objectKey, 'asc')}
+									/>
+									<ChevronDown
+										className={isSortingBy ? 'invisible' : ''}
+										onClick={() => toggleSorting(objectKey, 'desc')}
+									/>
+								</>
 							)}
-							{
-								<ChevronDown
-									className={chevronClassName}
-									onClick={() =>
-										toggleSorting(
-											objectKey,
-											sorting.sort_type === 'asc' ? 'desc' : 'asc'
-										)
-									}
-								/>
-							}
 						</div>
 					)}
 				</Button>

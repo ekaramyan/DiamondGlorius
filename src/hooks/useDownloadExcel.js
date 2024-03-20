@@ -14,13 +14,14 @@ const useDownloadExcel = () => {
 
 	const { reactiveSort: sorting } = useSorting()
 
-	const downloadExcel = async (limit = 2000, page = 1) => {
+	const downloadExcel = async () => {
+		console.log('excel')
 		setLoading(true)
 		try {
 			const url =
-				`${apiUrl}/diamonds/excel?limit=${limit}&page=${page}` +
+				`${apiUrl}/diamonds/excel?` +
 				(sorting.sort_by && sorting.sort_type
-					? `&sort_by=${sorting.sort_by}&sort_type=${sorting.sort_type}`
+					? `sort_by=${sorting.sort_by}&sort_type=${sorting.sort_type}`
 					: '')
 
 			const response = await axios.post(url, formData, {

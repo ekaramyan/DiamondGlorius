@@ -40,7 +40,7 @@ const useSearchDiamonds = () => {
 		} catch (err) {
 			console.log(err.response)
 
-			setError(err.response.data.detail[0].msg || 'An error occurred.')
+			setError(err.response.data?.message || 'An error occurred.')
 			validateState(localStorage.getItem('reduxState'))
 		} finally {
 			setLoading(false)

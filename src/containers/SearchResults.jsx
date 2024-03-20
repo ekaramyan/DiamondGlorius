@@ -33,7 +33,12 @@ export default function SearchResults() {
 	const backToFilters = () => {
 		router.push('/')
 	}
-	const { downloadExcel, load, err, succ } = useDownloadExcel()
+	const {
+		downloadExcel,
+		loading: load,
+		error: err,
+		success: succ,
+	} = useDownloadExcel()
 	return (
 		<div style={{ marginTop: 25 }}>
 			<div
@@ -47,9 +52,18 @@ export default function SearchResults() {
 				}}
 			>
 				<Button onClick={backToFilters}>Back to search</Button>
-				<Button onClick={() => downloadExcel(limit, page)}>
+				<Button
+					onClick={() => downloadExcel()}
+					style={{
+						width: 50,
+						height: 43.6,
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
+					}}
+				>
 					{load ? (
-						<Spinner width={30} height={30} />
+						<Spinner size='sm' />
 					) : (
 						<Image
 							width={30}
@@ -85,7 +99,7 @@ export default function SearchResults() {
 					overflowX: isMobile && viewMode === 'table' ? 'auto' : 'hidden',
 					display: 'flex',
 					flexDirection: 'column',
-					alignItems: 'center',
+					alignItems: isMobile ? 'flex-start' : 'center',
 					justifyContent: 'center',
 					width: '100%',
 				}}
