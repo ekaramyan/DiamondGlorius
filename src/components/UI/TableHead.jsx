@@ -9,8 +9,6 @@ export default function TableHead({
 	sorting,
 }) {
 	const isActive = objectKey === activeTab
-	const isSortingBy = objectKey === sorting.sort_by
-	const isAscending = sorting.sort_type === 'asc'
 
 	return (
 		<th className={isActive ? 'active' : ''}>
@@ -19,27 +17,15 @@ export default function TableHead({
 				{objectKey && (
 					<>
 						{isActive ? (
-							isAscending ? (
-								<ChevronUp
-									className={isSortingBy ? '' : 'invisible'}
-									onClick={() => toggleSorting(objectKey, 'desc')}
-								/>
+							sorting.sort_type === 'asc' ? (
+								<ChevronUp onClick={() => toggleSorting(objectKey, 'desc')} />
 							) : (
-								<ChevronDown
-									className={isSortingBy ? '' : 'invisible'}
-									onClick={() => toggleSorting(objectKey, 'asc')}
-								/>
+								<ChevronDown onClick={() => toggleSorting(objectKey, 'asc')} />
 							)
 						) : (
 							<>
-								<ChevronUp
-									className={isSortingBy ? 'invisible' : ''}
-									onClick={() => toggleSorting(objectKey, 'asc')}
-								/>
-								<ChevronDown
-									className={isSortingBy ? 'invisible' : ''}
-									onClick={() => toggleSorting(objectKey, 'desc')}
-								/>
+								<ChevronUp onClick={() => toggleSorting(objectKey, 'asc')} />
+								<ChevronDown onClick={() => toggleSorting(objectKey, 'desc')} />
 							</>
 						)}
 					</>

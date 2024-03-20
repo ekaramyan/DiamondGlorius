@@ -59,6 +59,10 @@
 			padding: 0;
 			margin: 0;
 		}
+		&.active {
+			background: var(--selected);
+			border-color: var(--selected);
+		}
 	}
 	.dropdown-toggle.btn.btn-primary {
 		height: 100%;

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Dropdown, DropdownButton } from 'react-bootstrap'
 import SortButton from './UI/SortButton'
 import { sortHeadings } from '@/initialFormData'
@@ -13,6 +13,10 @@ export default function SortList() {
 		sortResults(sort_by, sort_type)
 		setActiveTab(sort_by)
 	}
+	useEffect(() => {
+		setActiveTab(sorting.sort_by)
+	}, [])
+
 	return (
 		<DropdownButton title='Sort' className='sort'>
 			{sortHeadings.map((button, index) => (

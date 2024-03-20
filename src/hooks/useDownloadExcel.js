@@ -15,7 +15,6 @@ const useDownloadExcel = () => {
 	const { reactiveSort: sorting } = useSorting()
 
 	const downloadExcel = async () => {
-		console.log('excel')
 		setLoading(true)
 		try {
 			const url =
@@ -23,7 +22,6 @@ const useDownloadExcel = () => {
 				(sorting.sort_by && sorting.sort_type
 					? `sort_by=${sorting.sort_by}&sort_type=${sorting.sort_type}`
 					: '')
-
 			const response = await axios.post(url, formData, {
 				headers: {
 					'Content-Type': 'application/json',

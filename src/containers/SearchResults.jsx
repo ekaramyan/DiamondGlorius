@@ -53,7 +53,7 @@ export default function SearchResults() {
 			>
 				<Button onClick={backToFilters}>Back to search</Button>
 				<Button
-					onClick={() => downloadExcel()}
+					onClick={() => !load && downloadExcel()}
 					style={{
 						width: 50,
 						height: 43.6,

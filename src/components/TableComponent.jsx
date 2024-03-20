@@ -1,5 +1,5 @@
 import { Table } from 'react-bootstrap'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import TableItem from './UI/TableItem'
 import TableHead from './UI/TableHead'
 import { sortHeadings } from '@/initialFormData'
@@ -14,6 +14,10 @@ export default function TableComponent({ data }) {
 		sortResults(sort_by, sort_type)
 		setActiveTab(sort_by)
 	}
+
+	useEffect(() => {
+		setActiveTab(sorting.sort_by)
+	}, [])
 
 	return (
 		<Table striped bordered hover style={{ overflowX: 'auto' }}>

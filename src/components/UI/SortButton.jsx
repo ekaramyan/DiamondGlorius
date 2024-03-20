@@ -19,8 +19,7 @@ export default function SortButton({
 	}`
 
 	const isActive = objectKey === activeTab
-	const isSortingBy = objectKey === sorting.sort_by
-	const isAscending = sorting.sort_type === 'asc'
+
 	return (
 		<>
 			{objectKey && (
@@ -29,25 +28,17 @@ export default function SortButton({
 					{objectKey && (
 						<div style={{ display: 'flex', flexDirection: 'column' }}>
 							{isActive ? (
-								isAscending ? (
-									<ChevronUp
-										className={isSortingBy ? '' : 'invisible'}
-										onClick={() => toggleSorting(objectKey, 'desc')}
-									/>
+								sorting.sort_type === 'asc' ? (
+									<ChevronUp onClick={() => toggleSorting(objectKey, 'desc')} />
 								) : (
 									<ChevronDown
-										className={isSortingBy ? '' : 'invisible'}
 										onClick={() => toggleSorting(objectKey, 'asc')}
 									/>
 								)
 							) : (
 								<>
-									<ChevronUp
-										className={isSortingBy ? 'invisible' : ''}
-										onClick={() => toggleSorting(objectKey, 'asc')}
-									/>
+									<ChevronUp onClick={() => toggleSorting(objectKey, 'asc')} />
 									<ChevronDown
-										className={isSortingBy ? 'invisible' : ''}
 										onClick={() => toggleSorting(objectKey, 'desc')}
 									/>
 								</>
