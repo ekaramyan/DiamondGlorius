@@ -37,9 +37,9 @@ export default function SortButton({
 								)
 							) : (
 								<>
-									<ChevronUp onClick={() => toggleSorting(objectKey, 'asc')} />
+									<ChevronUp onClick={() => toggleSorting(objectKey, 'desc')} />
 									<ChevronDown
-										onClick={() => toggleSorting(objectKey, 'desc')}
+										onClick={() => toggleSorting(objectKey, 'asc')}
 									/>
 								</>
 							)}

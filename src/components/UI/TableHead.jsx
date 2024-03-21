@@ -24,8 +24,8 @@ export default function TableHead({
 							)
 						) : (
 							<>
-								<ChevronUp onClick={() => toggleSorting(objectKey, 'asc')} />
-								<ChevronDown onClick={() => toggleSorting(objectKey, 'desc')} />
+								<ChevronUp onClick={() => toggleSorting(objectKey, 'desc')} />
+								<ChevronDown onClick={() => toggleSorting(objectKey, 'asc')} />
 							</>
 						)}
 					</>

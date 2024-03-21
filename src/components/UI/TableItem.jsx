@@ -39,7 +39,7 @@ export default function TableItem({ searchResult }) {
 	const handleCloseModal = () => {
 		setModalSrc(false)
 	}
-
+	console.log(searchResult)
 	return (
 		<>
 			<tr className='table-body__text'>
@@ -49,6 +49,10 @@ export default function TableItem({ searchResult }) {
 				<td>{searchResult.color.title}</td>
 				<td>{searchResult.clarity.title}</td>
 				<td>{searchResult.color_shade.title}</td>
+				<td>{searchResult.rap_price}</td>
+				<td>{searchResult.disc}</td>
+				<td>{searchResult.rate}</td>
+				<td>{searchResult.amt}</td>
 				<td>{searchResult.cut_type.title}</td>
 				<td>{searchResult.finish_type.title}</td>
 				<td>{searchResult.sym_type.title}</td>
@@ -64,7 +68,15 @@ export default function TableItem({ searchResult }) {
 				<td>{searchResult.milky_type.title}</td>
 				<td>{searchResult.l_w_ratio}</td>
 				<td>
-					<div style={{ display: 'flex', flexWarp: 'wrap', gap: 5 }}>
+					<div
+						style={{
+							display: 'flex',
+							flexWarp: 'wrap',
+							alignItems: 'center',
+							justifyContent: 'center',
+							gap: 5,
+						}}
+					>
 						<Button variant='primary'>
 							<Cart />
 						</Button>
