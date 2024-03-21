@@ -9,10 +9,10 @@ import Cart from '../Cart'
 
 export default function IndexWrapper({ children, ...props }) {
 	const [show, setShow] = useState(false)
-
 	const handleClose = () => setShow(false)
 	const handleShow = () => setShow(true)
 	const router = useRouter()
+
 	const page = router.pathname
 
 	const theme = useSelector(state => state.theme)
@@ -29,7 +29,7 @@ export default function IndexWrapper({ children, ...props }) {
 		<div className='main__bg' {...props}>
 			<Header showCart={handleShow} />
 			<Container
-				fluid={page === '/diamonds' ? 'xxl' : 'md'}
+				fluid={page === '/diamonds' ? 'xxxl' : 'md'}
 				style={{ overflow: show ? 'auto' : 'visible' }}
 			>
 				{children}
