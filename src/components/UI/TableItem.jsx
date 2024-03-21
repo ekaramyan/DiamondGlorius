@@ -50,14 +50,22 @@ export default function TableItem({ searchResult }) {
 				<td>{searchResult.clarity.title}</td>
 				<td>{searchResult.color_shade.title}</td>
 				<td>{searchResult.rap_price}</td>
-				<td>{searchResult.disc}</td>
-				<td>{searchResult.rate}</td>
-				<td>{searchResult.amt}</td>
+				<td style={{ color: '#dc0101', fontWeight: 700 }}>
+					{searchResult.disc}
+				</td>
+				<td style={{ color: '#08a708', fontWeight: 700 }}>
+					{searchResult.rate}
+				</td>
+				<td style={{ color: '#08a708', fontWeight: 700 }}>
+					{searchResult.amt}
+				</td>
 				<td>{searchResult.cut_type.title}</td>
 				<td>{searchResult.finish_type.title}</td>
 				<td>{searchResult.sym_type.title}</td>
 				<td>{searchResult.fluro_type.title}</td>
-				<td>{searchResult.cert.title}</td>
+				<td style={{ color: '#ee8a1b', fontWeight: 700 }}>
+					{searchResult.cert.title}
+				</td>
 				<td>{searchResult.table_per}%</td>
 				<td>{searchResult.depth_per}%</td>
 				<td>{searchResult.measure}</td>
