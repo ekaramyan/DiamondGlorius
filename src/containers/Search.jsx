@@ -13,6 +13,7 @@ import {
 } from 'react-bootstrap'
 import { GenderNeuter, ArrowCounterclockwise } from 'react-bootstrap-icons'
 import useSearchDiamonds from '@/hooks/useSearchDiamonds'
+import useSorting from '@/hooks/useSorting'
 import {
 	initialFormData,
 	getMenuTabs,
@@ -21,7 +22,6 @@ import {
 	diamondShapesImg,
 } from '@/initialFormData'
 import { setFilters } from '../redux/actions'
-
 import AdvanceSearch from '../components/AdvanceSearch'
 import Other from '../components/Other'
 import CircleButton from '../components/UI/CircleButton'
@@ -34,6 +34,7 @@ const CaratFilterList = dynamic(() => import('../components/CaratFilterList'), {
 
 export default function Search({ diamonds }) {
 	const formData = useSelector(state => state.filters)
+	const { setSort } = useSorting()
 
 	const dispatch = useDispatch()
 	const { searchDiamonds, loading, error, success } = useSearchDiamonds()
@@ -68,6 +69,7 @@ export default function Search({ diamonds }) {
 	const page = 1
 
 	const handleSearchClick = () => {
+		setSort('id', 'asc')
 		searchDiamonds(formData, page, limit)
 	}
 
