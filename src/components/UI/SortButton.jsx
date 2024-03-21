@@ -29,11 +29,11 @@ export default function SortButton({
 						<div style={{ display: 'flex', flexDirection: 'column' }}>
 							{isActive ? (
 								sorting.sort_type === 'asc' ? (
-									<ChevronUp onClick={() => toggleSorting(objectKey, 'desc')} />
-								) : (
 									<ChevronDown
-										onClick={() => toggleSorting(objectKey, 'asc')}
+										onClick={() => toggleSorting(objectKey, 'desc')}
 									/>
+								) : (
+									<ChevronUp onClick={() => toggleSorting(objectKey, 'asc')} />
 								)
 							) : (
 								<>

@@ -18,9 +18,9 @@ export default function TableHead({
 					<>
 						{isActive ? (
 							sorting.sort_type === 'asc' ? (
-								<ChevronUp onClick={() => toggleSorting(objectKey, 'desc')} />
+								<ChevronDown onClick={() => toggleSorting(objectKey, 'desc')} />
 							) : (
-								<ChevronDown onClick={() => toggleSorting(objectKey, 'asc')} />
+								<ChevronUp onClick={() => toggleSorting(objectKey, 'asc')} />
 							)
 						) : (
 							<>
