@@ -26,7 +26,7 @@
 		justify-content: center;
 		gap: 15px;
 		margin: 15px 0;
-		font-size: 12.5px;
+		font-size: 10.5px;
 	}
 	&-text {
 		font-size: 1.2em;
@@ -47,7 +47,7 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		gap: 15px;
-		font-size: 12px;
+		font-size: 10px;
 	}
 	&-body {
 		padding: 5px 8px;
@@ -67,10 +67,17 @@
 				.card__image {
 					height: 70px;
 				}
+				button {
+					max-width: 50px;
+				}
 			}
 		}
 		&__titles {
 			font-size: 10px;
+			p,
+			div {
+				font-size: 10px;
+			}
 		}
 	}
 }
